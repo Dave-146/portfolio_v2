@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Professional UX/UI Designer Portfolio - Creating intuitive and beautiful digital experiences that solve real problems">
+<meta name="keywords" content="UX design, UI design, portfolio, web design, user experience, user interface, Dave Crean">
+<meta name="author" content="Dave Crean">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://davecrean.design/">
+<meta property="og:title" content="Portfolio | Dave Crean - UX/UI Designer">
+<meta property="og:description" content="Professional UX/UI Designer Portfolio - Creating intuitive and beautiful digital experiences">
+<meta property="og:image" content="https://davecrean.design/og-image.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://davecrean.design/">
+<meta property="twitter:title" content="Portfolio | Dave Crean - UX/UI Designer">
+<meta property="twitter:description" content="Professional UX/UI Designer Portfolio - Creating intuitive and beautiful digital experiences">
+<meta property="twitter:image" content="https://davecrean.design/twitter-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<title>Portfolio | UX/UI Designer</title>
+
+<!-- Combine Google Fonts into a single request -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- External resources -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<!-- Move Tailwind config to external file later -->
+<script>
+tailwind.config={theme:{extend:{colors:{primary:'#8E6FF7',secondary:'#9F7AEA'},borderRadius:{'none':'0px','sm':'8px',DEFAULT:'12px','md':'16px','lg':'20px','xl':'24px','2xl':'28px','3xl':'32px','full':'9999px','button':'12px'}}}}
+</script>
+<link href="/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm">
+<div class="container mx-auto px-6 py-4 flex items-center justify-between">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">Dave Crean Design</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#work" class="nav-link text-gray-800 hover:text-primary transition-colors">Work</a>
+<a href="#about" class="nav-link text-gray-800 hover:text-primary transition-colors">About</a>
+<a href="#process" class="nav-link text-gray-800 hover:text-primary transition-colors">Process</a>
+<a href="#contact" class="nav-link text-gray-800 hover:text-primary transition-colors">Contact</a>
+<button class="px-6 py-2 bg-primary text-white rounded-button shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Let's Talk</button>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-gray-800 text-2xl"></i>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="w-full min-h-screen pt-24 relative overflow-hidden" style="background-image: url('/images/891b937988963dd7d65516dc5315593d.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-white bg-opacity-80"></div>
+<div class="container mx-auto px-6 py-20 relative z-10 flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 mb-12 md:mb-0">
+<h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-gray-900">Crafting Digital <span class="text-primary">Experiences</span> That Matter</h1>
+<p class="text-xl text-gray-700 mb-8 max-w-lg">I'm a UX/UI designer focused on creating intuitive and beautiful digital products that solve real problems.</p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-3 bg-primary text-white rounded-button shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">View My Work</button>
+<button class="px-8 py-3 border-2 border-primary text-primary rounded-button hover:bg-primary hover:bg-opacity-10 transition-all !rounded-button whitespace-nowrap">Get in Touch</button>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex justify-center relative">
+<div class="blob absolute -top-20 -right-20 w-64 h-64 bg-primary bg-opacity-10 z-0"></div>
+<div class="blob-small absolute bottom-10 left-10 w-32 h-32 bg-secondary bg-opacity-10 z-0"></div>
+<img src="/images/802da93a7f100685a6ad2a43c3752d09.jpg" alt="Designer Portrait" class="w-3/4 rounded-3xl shadow-xl relative z-10 object-cover object-top" loading="lazy">
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section id="work" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-4 text-gray-900">Selected <span class="text-primary">Work</span></h2>
+<p class="text-xl text-gray-700 max-w-2xl mx-auto">Explore my recent projects where I've helped brands create meaningful digital experiences.</p>
+</div>
+<div class="flex flex-wrap gap-8 justify-center">
+<div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all portfolio-item w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+<div class="h-64 overflow-hidden">
+<img src="/images/802da93a7f100685a6ad2a43c3752d09.jpg" alt="Wellness App" class="w-full h-full object-cover object-top" loading="lazy">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary rounded-full text-sm mb-4">Mobile App</span>
+<h3 class="text-xl font-bold mb-2 text-gray-900">Wellness App Redesign</h3>
+<p class="text-gray-700 mb-4">Reimagined the user experience for a wellness app, increasing engagement by 43%.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Study
+<div class="w-5 h-5 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all portfolio-item w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+<div class="h-64 overflow-hidden">
+<img src="/images/bc1502098f8cd051b4f3cfb3a134eef4.jpg" alt="E-commerce Website" class="w-full h-full object-cover object-top" loading="lazy">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-secondary bg-opacity-10 text-secondary rounded-full text-sm mb-4">Web Design</span>
+<h3 class="text-xl font-bold mb-2 text-gray-900">Fashion E-commerce Platform</h3>
+<p class="text-gray-700 mb-4">Designed an intuitive shopping experience that increased conversion rates by 28%.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Study
+<div class="w-5 h-5 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all portfolio-item w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+<div class="h-64 overflow-hidden">
+<img src="/images/fee745b84ddc55bf553930d5319c35b0.jpg" alt="Financial Dashboard" class="w-full h-full object-cover object-top" loading="lazy">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary rounded-full text-sm mb-4">Dashboard</span>
+<h3 class="text-xl font-bold mb-2 text-gray-900">Financial Analytics Dashboard</h3>
+<p class="text-gray-700 mb-4">Created an intuitive dashboard that simplified complex financial data for users.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Study
+<div class="w-5 h-5 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all portfolio-item w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+<div class="h-64 overflow-hidden">
+<img src="/images/a29bea1f09c0d4b2595322a764a183d8.jpg" alt="Educational App" class="w-full h-full object-cover object-top" loading="lazy">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-secondary bg-opacity-10 text-secondary rounded-full text-sm mb-4">Mobile App</span>
+<h3 class="text-xl font-bold mb-2 text-gray-900">Educational App for Children</h3>
+<p class="text-gray-700 mb-4">Designed a playful yet educational interface that improved learning outcomes.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Study
+<div class="w-5 h-5 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all portfolio-item w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+<div class="h-64 overflow-hidden">
+<img src="/images/48efa10abaeaca4ab69f26449013db02.jpg" alt="Smart Home App" class="w-full h-full object-cover object-top" loading="lazy">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-primary bg-opacity-10 text-primary rounded-full text-sm mb-4">IoT App</span>
+<h3 class="text-xl font-bold mb-2 text-gray-900">Smart Home Control System</h3>
+<p class="text-gray-700 mb-4">Simplified complex IoT controls into an intuitive interface for everyday users.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Study
+<div class="w-5 h-5 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all portfolio-item w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+<div class="h-64 overflow-hidden">
+<img src="/images/eef007020093f9965799d8b6e63d30e6.jpg" alt="Travel Booking Website" class="w-full h-full object-cover object-top" loading="lazy">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-secondary bg-opacity-10 text-secondary rounded-full text-sm mb-4">Web App</span>
+<h3 class="text-xl font-bold mb-2 text-gray-900">Travel Booking Platform</h3>
+<p class="text-gray-700 mb-4">Redesigned the booking flow to reduce abandonment and increase conversions.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Study
+<div class="w-5 h-5 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="px-8 py-3 border-2 border-primary text-primary rounded-button hover:bg-primary hover:bg-opacity-10 transition-all !rounded-button whitespace-nowrap">View All Projects</button>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 relative overflow-hidden">
+<div class="blob absolute -top-40 -right-40 w-96 h-96 bg-primary bg-opacity-5 z-0"></div>
+<div class="blob-small absolute bottom-20 left-20 w-64 h-64 bg-secondary bg-opacity-5 z-0"></div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-2/5">
+<div class="relative">
+<div class="blob absolute -top-5 -left-5 w-full h-full bg-primary bg-opacity-10 z-0"></div>
+<img src="https://readdy.ai/api/search-image?query=creative%20designer%20working%20in%20modern%20studio%2C%20professional%20at%20work%20with%20digital%20tablet%20and%20computer%2C%20natural%20lighting%2C%20artistic%20workspace%20with%20design%20elements%2C%20high%20quality%20professional%20photograph&width=600&height=800&seq=131&orientation=portrait" alt="About Me" class="w-full rounded-2xl shadow-xl relative z-10 object-cover object-top" loading="lazy">
+</div>
+</div>
+<div class="w-full md:w-3/5">
+<h2 class="text-4xl font-bold mb-6 text-gray-900">About <span class="text-primary">Me</span></h2>
+<p class="text-lg text-gray-700 mb-6">I'm a passionate UX/UI designer with over 8 years of experience creating intuitive digital experiences that connect with users on a deeper level. My approach combines strategic thinking with creative problem-solving to deliver designs that are both beautiful and functional.</p>
+<p class="text-lg text-gray-700 mb-8">I believe that great design should feel natural and effortless to the user, while still achieving business objectives. My process involves deep user research, iterative prototyping, and continuous testing to ensure that every design decision is purposeful.</p>
+<div class="mb-10">
+<h3 class="text-2xl font-bold mb-6 text-gray-900">My Skills</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center">
+<div class="skill-progress mb-3" style="--percentage: 95%">
+<span>95%</span>
+</div>
+<span class="text-gray-800 font-medium">UI Design</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="skill-progress mb-3" style="--percentage: 90%">
+<span>90%</span>
+</div>
+<span class="text-gray-800 font-medium">UX Research</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="skill-progress mb-3" style="--percentage: 85%">
+<span>85%</span>
+</div>
+<span class="text-gray-800 font-medium">Prototyping</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="skill-progress mb-3" style="--percentage: 80%">
+<span>80%</span>
+</div>
+<span class="text-gray-800 font-medium">Front-end</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-bold mb-6 text-gray-900">Tools I Use</h3>
+<div class="flex flex-wrap gap-4">
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Figma</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Adobe XD</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Sketch</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Photoshop</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Illustrator</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Principle</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">InVision</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">HTML/CSS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section id="process" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-4 text-gray-900">My <span class="text-primary">Process</span></h2>
+<p class="text-xl text-gray-700 max-w-2xl mx-auto">I follow a structured yet flexible approach to design that ensures we solve the right problems in the right way.</p>
+</div>
+<div class="relative">
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
+<div class="space-y-24">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 md:pr-12 mb-8 md:mb-0 md:text-right">
+<h3 class="text-2xl font-bold mb-3 text-gray-900">Discovery & Research</h3>
+<p class="text-gray-700">I begin by understanding the business goals, user needs, and market context. This involves stakeholder interviews, competitive analysis, and user research to identify opportunities and challenges.</p>
+</div>
+<div class="relative flex justify-center">
+<div class="timeline-dot bg-primary text-white">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-search-line"></i>
+</div>
+</div>
+<div class="timeline-connector md:h-24"></div>
+</div>
+<div class="w-full md:w-1/2 md:pl-12 mt-8 md:mt-0">
+<img src="/images/891b937988963dd7d65516dc5315593d.jpg" alt="Discovery & Research" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 md:pr-12 mb-8 md:mb-0 md:text-right order-1 md:order-2">
+<img src="/images/802da93a7f100685a6ad2a43c3752d09.jpg" alt="Strategy & Wireframing" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+</div>
+<div class="relative flex justify-center order-2 md:order-1">
+<div class="timeline-dot bg-primary text-white">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-layout-2-line"></i>
+</div>
+</div>
+<div class="timeline-connector md:h-24"></div>
+</div>
+<div class="w-full md:w-1/2 md:pl-12 mt-8 md:mt-0 order-3">
+<h3 class="text-2xl font-bold mb-3 text-gray-900">Strategy & Wireframing</h3>
+<p class="text-gray-700">Based on research insights, I develop the information architecture and create low-fidelity wireframes to establish the core user flows and layout structures before adding visual design elements.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 md:pr-12 mb-8 md:mb-0 md:text-right">
+<h3 class="text-2xl font-bold mb-3 text-gray-900">Visual Design</h3>
+<p class="text-gray-700">I transform wireframes into high-fidelity designs, focusing on creating a cohesive visual language that aligns with the brand identity while enhancing usability and emotional connection.</p>
+</div>
+<div class="relative flex justify-center">
+<div class="timeline-dot bg-primary text-white">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-palette-line"></i>
+</div>
+</div>
+<div class="timeline-connector md:h-24"></div>
+</div>
+<div class="w-full md:w-1/2 md:pl-12 mt-8 md:mt-0">
+<img src="/images/77a9c2f9800e4ac7d50be695ee9fa168.jpg" alt="Visual Design" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 md:pr-12 mb-8 md:mb-0 md:text-right order-1 md:order-2">
+<img src="/images/d5527ed1667d3e0d2a80f3f3cacf8166.jpg" alt="Prototyping & Testing" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+</div>
+<div class="relative flex justify-center order-2 md:order-1">
+<div class="timeline-dot bg-primary text-white">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-test-tube-line"></i>
+</div>
+</div>
+<div class="timeline-connector md:h-24"></div>
+</div>
+<div class="w-full md:w-1/2 md:pl-12 mt-8 md:mt-0 order-3">
+<h3 class="text-2xl font-bold mb-3 text-gray-900">Prototyping & Testing</h3>
+<p class="text-gray-700">I create interactive prototypes to simulate the real user experience and conduct usability testing to validate design decisions and identify areas for improvement.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 md:pr-12 mb-8 md:mb-0 md:text-right">
+<h3 class="text-2xl font-bold mb-3 text-gray-900">Implementation & Iteration</h3>
+<p class="text-gray-700">I work closely with developers to ensure the design is implemented correctly, and continue to gather feedback after launch to make data-driven improvements to the product.</p>
+</div>
+<div class="relative flex justify-center">
+<div class="timeline-dot bg-primary text-white">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-code-s-slash-line"></i>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 md:pl-12 mt-8 md:mt-0">
+<img src="https://readdy.ai/api/search-image?query=designer%20collaborating%20with%20developers%2C%20design%20handoff%20process%2C%20team%20working%20together%20on%20digital%20product%2C%20professional%20workspace%20with%20multiple%20screens%2C%20collaborative%20environment%2C%20high%20quality%20photograph&width=500&height=300&seq=136&orientation=landscape" alt="Implementation & Iteration" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-20">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-4 text-gray-900">Client <span class="text-primary">Testimonials</span></h2>
+<p class="text-xl text-gray-700 max-w-2xl mx-auto">Here's what some of my clients have to say about working with me.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-xl shadow-md relative">
+<div class="w-12 h-12 flex items-center justify-center text-4xl text-primary opacity-20 absolute top-6 left-6">
+<i class="ri-double-quotes-l"></i>
+</div>
+<div class="relative z-10">
+<p class="text-gray-700 mb-6">Working with this designer was a game-changer for our app. They took the time to understand our users and created an interface that not only looks beautiful but significantly improved our user engagement metrics.</p>
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+<img src="/images/26ba220f627204977f019a6fb3621595.jpg" alt="Sarah Johnson" class="w-full h-full object-cover object-top" loading="lazy">
+</div>
+<div>
+<h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+<p class="text-gray-600 text-sm">Product Manager, HealthTech Inc.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-md relative">
+<div class="w-12 h-12 flex items-center justify-center text-4xl text-primary opacity-20 absolute top-6 left-6">
+<i class="ri-double-quotes-l"></i>
+</div>
+<div class="relative z-10">
+<p class="text-gray-700 mb-6">The redesign of our e-commerce platform exceeded our expectations. The designer's attention to detail and focus on the user journey helped us increase our conversion rate by 28% within just two months of launch.</p>
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+<img src="/images/f256a1c671397f5237c62b2ae5e14e3e.jpg" alt="David Chen" class="w-full h-full object-cover object-top" loading="lazy">
+</div>
+<div>
+<h4 class="font-bold text-gray-900">David Chen</h4>
+<p class="text-gray-600 text-sm">CEO, StyleHub</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-md relative">
+<div class="w-12 h-12 flex items-center justify-center text-4xl text-primary opacity-20 absolute top-6 left-6">
+<i class="ri-double-quotes-l"></i>
+</div>
+<div class="relative z-10">
+<p class="text-gray-700 mb-6">I was impressed by how the designer transformed our complex financial data into an intuitive dashboard. Our users can now make informed decisions quickly without feeling overwhelmed by information.</p>
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20business%20woman%2C%2035s%2C%20professional%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait%20photograph&width=100&height=100&seq=139&orientation=squarish" alt="Emily Rodriguez" class="w-full h-full object-cover object-top" loading="lazy">
+</div>
+<div>
+<h4 class="font-bold text-gray-900">Emily Rodriguez</h4>
+<p class="text-gray-600 text-sm">CTO, FinanceVision</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50 relative overflow-hidden">
+<div class="blob absolute -top-40 -left-40 w-96 h-96 bg-primary bg-opacity-5 z-0"></div>
+<div class="blob-small absolute bottom-20 right-20 w-64 h-64 bg-secondary bg-opacity-5 z-0"></div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold mb-4 text-gray-900">Let's <span class="text-primary">Connect</span></h2>
+<p class="text-xl text-gray-700">Have a project in mind? I'd love to hear about it.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<form class="space-y-6" id="contactForm" novalidate>
+<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+<div class="relative">
+<label for="name" class="sr-only">Your Name</label>
+<input type="text" 
+       id="name" 
+       name="name"
+       class="w-full px-6 py-4 bg-gray-50 rounded-xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-20" 
+       placeholder="Your Name"
+       aria-required="true"
+       required>
+<div class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400" aria-hidden="true">
+<i class="ri-user-line"></i>
+</div>
+<span id="name-error" class="hidden text-red-500 text-sm mt-1"></span>
+</div>
+<div class="relative">
+<input type="email" id="email" name="email" class="w-full px-6 py-4 bg-gray-50 rounded-xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-20" placeholder="Your Email">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-mail-line"></i>
+</div>
+</div>
+<div class="relative">
+<input type="text" id="subject" name="subject" class="w-full px-6 py-4 bg-gray-50 rounded-xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-20" placeholder="Subject">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-chat-1-line"></i>
+</div>
+</div>
+<div class="relative">
+<textarea id="message" rows="4" name="message" class="w-full px-6 py-4 bg-gray-50 rounded-xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-20" placeholder="Your Message"></textarea>
+<div class="absolute left-4 top-6 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-message-2-line"></i>
+</div>
+</div>
+<button type="submit" class="w-full py-4 bg-primary text-white text-sm font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all !rounded-button whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<div class="space-y-8">
+<div class="bg-gray-50 p-6 rounded-xl">
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mr-4">
+<i class="ri-map-pin-line text-xl text-primary"></i>
+</div>
+<div>
+<h3 class="font-bold text-gray-900 mb-1">Location</h3>
+<p class="text-gray-600">San Francisco, California</p>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 p-6 rounded-xl">
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mr-4">
+<i class="ri-mail-line text-xl text-primary"></i>
+</div>
+<div>
+<h3 class="font-bold text-gray-900 mb-1">Email</h3>
+<p class="text-gray-600">hello@designportfolio.com</p>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 p-6 rounded-xl">
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mr-4">
+<i class="ri-phone-line text-xl text-primary"></i>
+</div>
+<div>
+<h3 class="font-bold text-gray-900 mb-1">Phone</h3>
+<p class="text-gray-600">+1 (415) 555-1234</p>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<h3 class="font-bold text-gray-900 mb-4">Connect With Me</h3>
+<div class="flex space-x-4">
+<a href="https://dribbble.com/username" 
+   class="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+   aria-label="View my work on Dribbble"
+   rel="noopener noreferrer"
+   target="_blank">
+    <i class="ri-dribbble-line" aria-hidden="true"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<i class="ri-behance-line"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<i class="ri-linkedin-line"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<i class="ri-instagram-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between mb-12">
+<div class="mb-8 md:mb-0 md:w-1/3">
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 inline-block">Dave Crean Design</a>
+<p class="text-gray-400 mb-6 max-w-sm">Creating intuitive and beautiful digital experiences that solve real problems and delight users.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
+<i class="ri-dribbble-line text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
+<i class="ri-behance-line text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
+<i class="ri-linkedin-line text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
+<i class="ri-instagram-line text-white"></i>
+</a>
+</div>
+</div>
+<div class="mb-8 md:mb-0">
+<h3 class="text-lg font-bold mb-4">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#work" class="text-gray-400 hover:text-white transition-colors">Work</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+<li><a href="#process" class="text-gray-400 hover:text-white transition-colors">Process</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div class="mb-8 md:mb-0">
+<h3 class="text-lg font-bold mb-4">Services</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">UI Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">UX Research</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Prototyping</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Design Systems</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Front-end Development</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Newsletter</h3>
+<p class="text-gray-400 mb-4">Subscribe to receive design tips and updates.</p>
+<form class="flex">
+<input type="email" placeholder="Your email" class="px-4 py-2 bg-gray-800 text-white rounded-l-button focus:outline-none w-full">
+<button type="submit" class="px-4 py-2 bg-primary text-white rounded-r-button !rounded-button whitespace-nowrap">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 mb-4 md:mb-0">© 2025 UX/UI Designer Portfolio. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+<a href="#" class="text-gray-500 hover:text-white transition-colors">Cookies Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="/js/script.js" defer></script>
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Dave Crean",
+    "jobTitle": "UX/UI Designer",
+    "url": "https://davecrean.design",
+    "sameAs": [
+        "https://dribbble.com/username",
+        "https://behance.net/username",
+        "https://linkedin.com/in/username",
+        "https://instagram.com/username"
+    ],
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+    }
+}
+</script>
+</body>
+</html>

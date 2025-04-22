@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition-colors duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-300;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-dark mb-8;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .nav-link {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .skill-progress {
+    @apply relative w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center;
+  }
+
+  .skill-progress::before {
+    content: '';
+    @apply absolute inset-0 rounded-full border-8 border-gray-200;
+  }
+
+  .skill-progress::after {
+    content: '';
+    @apply absolute inset-0 rounded-full border-8 border-primary;
+    clip-path: polygon(0 0, 100% 0, 100% var(--percentage), 0 var(--percentage));
+  }
+
+  .skill-progress span {
+    @apply text-xl font-bold text-gray-800;
+  }
+}
+
+/* Custom styles that can't be achieved with Tailwind */
+.blob-shape {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #8E6FF7, #6B46C1);
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.2;
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.blob-shape-alt {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #6B46C1, #8E6FF7);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.15;
+  z-index: -1;
+  animation: float 8s ease-in-out infinite;
+}
+
+.organic-divider {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8E6FF7, transparent);
+  margin: 2rem 0;
+}
+
+.custom-bullet {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.custom-bullet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #8E6FF7;
+  border-radius: 50%;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid #8E6FF7;
+  border-radius: 15px;
+}
+
+.scroll-indicator::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: #8E6FF7;
+  border-radius: 50%;
+  animation: scroll 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Focus styles for better accessibility */
+:focus-visible {
+  outline: 2px solid #8E6FF7;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* Portfolio item hover effect */
+.portfolio-item {
+  transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8E6FF7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B46C1;
+} 

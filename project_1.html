@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 1 - Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body class="bg-white">
+<!-- Header Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">logo</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="#" class="text-gray-800 hover:text-primary transition-colors">Projects</a>
+<a href="#" class="text-gray-800 hover:text-primary transition-colors">About</a>
+<a href="#" class="text-gray-800 hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-24 relative overflow-hidden">
+<div class="absolute inset-0 z-0" style="background-image: url('https://readdy.ai/api/search-image?query=abstract%20organic%20fluid%20shapes%20with%20soft%20purple%20gradient%2C%20minimalist%20design%2C%20clean%20modern%20aesthetic%2C%20flowing%20curves%20and%20shapes%2C%20light%20background%20with%20subtle%20texture%2C%20professional%20UI%20design%20inspiration&width=1600&height=800&seq=1&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.15;"></div>
+<div class="container mx-auto px-6 pt-12 pb-24 relative z-10">
+<div class="max-w-4xl mx-auto text-center">
+<span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-medium mb-6">UX/UI Case Study</span>
+<h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">Harmony: Redesigning the Music Experience</h1>
+<p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">A comprehensive redesign of a music streaming platform focused on enhancing user engagement and accessibility while maintaining brand identity.</p>
+<div class="flex flex-wrap justify-center gap-6 mb-16">
+<div class="rounded-lg bg-white shadow-lg p-6 flex flex-col items-center w-40">
+<span class="text-sm text-gray-500 mb-1">Timeline</span>
+<span class="font-semibold text-gray-800">12 Weeks</span>
+</div>
+<div class="rounded-lg bg-white shadow-lg p-6 flex flex-col items-center w-40">
+<span class="text-sm text-gray-500 mb-1">My Role</span>
+<span class="font-semibold text-gray-800">Lead Designer</span>
+</div>
+<div class="rounded-lg bg-white shadow-lg p-6 flex flex-col items-center w-40">
+<span class="text-sm text-gray-500 mb-1">Tools</span>
+<span class="font-semibold text-gray-800">Figma, Miro</span>
+</div>
+</div>
+<div class="scroll-indicator flex flex-col items-center">
+<span class="text-sm text-gray-500 mb-2">Scroll to explore</span>
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-arrow-down-line ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Overview -->
+<section class="py-20 bg-gradient-to-b from-white to-gray-50">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-3xl font-bold mb-6 text-gray-900">Project Overview</h2>
+<p class="text-gray-600 mb-6">Harmony, a growing music streaming service, faced challenges with user retention and engagement. My task was to redesign their mobile application to improve the user experience while maintaining their brand identity.</p>
+<p class="text-gray-600 mb-8">The goal was to create an intuitive, visually appealing interface that would encourage longer session times and increase user satisfaction.</p>
+<div class="flex flex-col space-y-4">
+<div class="custom-bullet">
+<p class="text-gray-800">Increased user engagement by <span class="font-semibold text-primary">47%</span> after implementation</p>
+</div>
+<div class="custom-bullet">
+<p class="text-gray-800">Reduced user drop-off rate by <span class="font-semibold text-primary">32%</span> during onboarding</p>
+</div>
+<div class="custom-bullet">
+<p class="text-gray-800">Improved accessibility score from <span class="font-semibold text-primary">76%</span> to <span class="font-semibold text-primary">94%</span></p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="blob-shape-alt bg-primary/5 absolute -z-10 w-full h-full transform translate-x-4 translate-y-4"></div>
+<img src="https://readdy.ai/api/search-image?query=modern%20music%20streaming%20app%20interface%20on%20smartphone%2C%20clean%20UI%20design%20with%20purple%20accent%20colors%2C%20showing%20playlist%20view%20with%20album%20artwork%2C%20minimalist%20design%20with%20good%20typography%20and%20spacing%2C%20professional%20UI%20mockup&width=600&height=800&seq=2&orientation=portrait" alt="Harmony App Interface" class="rounded-lg shadow-xl w-full object-cover object-top">
+</div>
+</div>
+</div>
+</section>
+<!-- Challenge & Solution -->
+<section class="py-20">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold mb-12 text-center text-gray-900">The Challenge & Solution</h2>
+<div class="grid md:grid-cols-2 gap-12 mb-16">
+<div class="blob-shape bg-white shadow-lg p-8 relative">
+<div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<i class="ri-error-warning-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4 text-gray-800">The Challenge</h3>
+<p class="text-gray-600 mb-4">Users were finding it difficult to discover new music and navigate through their existing libraries. The previous interface was cluttered and lacked visual hierarchy.</p>
+<p class="text-gray-600">User research revealed that 68% of users were frustrated with the recommendation system, and 54% found the navigation confusing.</p>
+</div>
+<div class="blob-shape-alt bg-white shadow-lg p-8 relative">
+<div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<i class="ri-lightbulb-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4 text-gray-800">The Solution</h3>
+<p class="text-gray-600 mb-4">I redesigned the interface with a focus on content discovery and personalization. The new design features an intuitive navigation system and a visually appealing layout.</p>
+<p class="text-gray-600">The recommendation algorithm was enhanced with visual cues to help users understand why certain content was being suggested to them.</p>
+</div>
+</div>
+<div class="flex justify-center">
+<img src="https://readdy.ai/api/search-image?query=before%20and%20after%20UI%20comparison%20of%20music%20app%20interfaces%2C%20showing%20cluttered%20design%20on%20left%20and%20clean%20modern%20design%20on%20right%20with%20purple%20accents%2C%20professional%20UI%20mockup%20with%20clear%20improvement%20in%20visual%20hierarchy%20and%20usability&width=1000&height=600&seq=3&orientation=landscape" alt="Before and After Comparison" class="rounded-lg shadow-xl w-full object-cover object-top">
+</div>
+</div>
+</div>
+</section>
+<!-- Design Process -->
+<div class="organic-divider"></div>
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-16 text-center text-gray-900">Design Process</h2>
+<div class="max-w-5xl mx-auto">
+<div class="relative">
+<!-- Process Timeline -->
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 transform -translate-x-1/2"></div>
+<!-- Process Steps -->
+<div class="space-y-24">
+<!-- Step 1: Research -->
+<div class="relative">
+<div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white z-10 mx-auto md:mx-0 mb-6 md:mb-0">
+<span class="font-semibold">01</span>
+</div>
+<div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+<div class="md:text-right mb-8 md:mb-0">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">Research & Discovery</h3>
+<p class="text-gray-600">I conducted user interviews, competitive analysis, and heuristic evaluations to understand user pain points and identify opportunities for improvement.</p>
+<div class="mt-4 flex md:justify-end">
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">2 Weeks</span>
+</div>
+</div>
+<div class="blob-shape bg-white shadow-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=UX%20research%20session%20with%20affinity%20mapping%2C%20sticky%20notes%20on%20whiteboard%2C%20people%20discussing%20user%20insights%2C%20professional%20design%20thinking%20workshop%2C%20collaborative%20UX%20process&width=600&height=400&seq=4&orientation=landscape" alt="Research Phase" class="w-full h-64 object-cover object-top">
+</div>
+</div>
+</div>
+<!-- Step 2: Ideation -->
+<div class="relative">
+<div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white z-10 mx-auto md:mx-0 mb-6 md:mb-0">
+<span class="font-semibold">02</span>
+</div>
+<div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+<div class="order-2 md:order-1 blob-shape-alt bg-white shadow-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=UX%20wireframing%20and%20sketching%20process%2C%20digital%20wireframes%20on%20tablet%2C%20low-fidelity%20mockups%20for%20music%20app%2C%20professional%20design%20process%20documentation&width=600&height=400&seq=5&orientation=landscape" alt="Ideation Phase" class="w-full h-64 object-cover object-top">
+</div>
+<div class="order-1 md:order-2 mb-8 md:mb-0">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">Ideation & Wireframing</h3>
+<p class="text-gray-600">I created user flows, information architecture, and low-fidelity wireframes to explore different solutions. Multiple iterations were developed based on stakeholder feedback.</p>
+<div class="mt-4">
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">3 Weeks</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Design -->
+<div class="relative">
+<div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white z-10 mx-auto md:mx-0 mb-6 md:mb-0">
+<span class="font-semibold">03</span>
+</div>
+<div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+<div class="md:text-right mb-8 md:mb-0">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">UI Design & Prototyping</h3>
+<p class="text-gray-600">I developed a comprehensive design system and created high-fidelity mockups. Interactive prototypes were built to test the user experience and validate design decisions.</p>
+<div class="mt-4 flex md:justify-end">
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">4 Weeks</span>
+</div>
+</div>
+<div class="blob-shape bg-white shadow-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=UI%20design%20system%20for%20music%20app%20with%20purple%20color%20palette%2C%20component%20library%20showing%20buttons%2C%20cards%2C%20and%20typography%2C%20professional%20Figma%20interface%20with%20organized%20components&width=600&height=400&seq=6&orientation=landscape" alt="Design Phase" class="w-full h-64 object-cover object-top">
+</div>
+</div>
+</div>
+<!-- Step 4: Testing -->
+<div class="relative">
+<div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white z-10 mx-auto md:mx-0 mb-6 md:mb-0">
+<span class="font-semibold">04</span>
+</div>
+<div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+<div class="order-2 md:order-1 blob-shape-alt bg-white shadow-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=usability%20testing%20session%20for%20music%20app%2C%20person%20using%20smartphone%20with%20eye%20tracking%2C%20UX%20researcher%20taking%20notes%2C%20professional%20testing%20environment%20with%20recording%20equipment&width=600&height=400&seq=7&orientation=landscape" alt="Testing Phase" class="w-full h-64 object-cover object-top">
+</div>
+<div class="order-1 md:order-2 mb-8 md:mb-0">
+<h3 class="text-2xl font-semibold mb-4 text-gray-800">Testing & Iteration</h3>
+<p class="text-gray-600">I conducted usability testing with 15 participants to identify issues and areas for improvement. The design was iterated based on user feedback and quantitative data analysis.</p>
+<div class="mt-4">
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">3 Weeks</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Features -->
+<section class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-16 text-center text-gray-900">Key Features & Improvements</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=personalized%20music%20recommendation%20UI%20screen%20with%20album%20covers%20and%20artist%20images%2C%20purple%20accent%20colors%2C%20clean%20modern%20interface%20with%20good%20typography%2C%20professional%20UI%20design%20for%20music%20app&width=600&height=400&seq=8&orientation=landscape" alt="Personalized Recommendations" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-800">Personalized Recommendations</h3>
+<p class="text-gray-600">Enhanced algorithm with visual explanations for why content is recommended, helping users discover new music aligned with their tastes.</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=music%20player%20interface%20with%20intuitive%20controls%2C%20waveform%20visualization%2C%20album%20art%20display%2C%20purple%20accent%20colors%2C%20clean%20modern%20UI%20design%20for%20mobile%20app&width=600&height=400&seq=9&orientation=landscape" alt="Streamlined Player Interface" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-800">Streamlined Player Interface</h3>
+<p class="text-gray-600">Redesigned music player with intuitive controls, visual feedback, and seamless transitions between browsing and listening.</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=music%20library%20organization%20interface%20with%20smart%20playlists%2C%20folder%20structure%2C%20search%20functionality%2C%20purple%20accent%20colors%2C%20clean%20modern%20UI%20design%20for%20music%20app&width=600&height=400&seq=10&orientation=landscape" alt="Smart Library Organization" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-800">Smart Library Organization</h3>
+<p class="text-gray-600">Intelligent organization system that automatically categorizes music and creates smart playlists based on listening habits.</p>
+</div>
+</div>
+</div>
+<div class="mt-16 max-w-4xl mx-auto">
+<div class="bg-white rounded-lg shadow-lg p-8">
+<h3 class="text-2xl font-semibold mb-6 text-gray-800">Accessibility Improvements</h3>
+<div class="grid md:grid-cols-2 gap-8">
+<div>
+<div class="flex items-start mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+<i class="ri-contrast-2-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-1">Enhanced Color Contrast</h4>
+<p class="text-gray-600">Improved contrast ratios throughout the interface to meet WCAG AA standards.</p>
+</div>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+<i class="ri-font-size-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-1">Dynamic Text Sizing</h4>
+<p class="text-gray-600">Support for system text size preferences and scalable interface elements.</p>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-start mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+<i class="ri-voice-recognition-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-1">Voice Control Integration</h4>
+<p class="text-gray-600">Comprehensive voice command support for hands-free operation.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+<i class="ri-keyboard-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-1">Keyboard Navigation</h4>
+<p class="text-gray-600">Improved focus states and keyboard shortcuts for non-touch navigation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Results & Impact -->
+<div class="organic-divider transform rotate-180"></div>
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-16 text-center text-gray-900">Results & Impact</h2>
+<div class="max-w-5xl mx-auto">
+<!-- Metrics Chart -->
+<div class="bg-white rounded-lg shadow-lg p-8 mb-16">
+<h3 class="text-xl font-semibold mb-6 text-gray-800">Key Performance Metrics</h3>
+<div id="metricsChart" class="w-full h-80"></div>
+</div>
+<!-- Testimonials -->
+<div class="grid md:grid-cols-2 gap-8">
+<div class="rounded-lg bg-white shadow-lg p-8">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4">
+<i class="ri-user-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Emily Richardson</h4>
+<p class="text-gray-500 text-sm">Product Manager at Harmony</p>
+</div>
+</div>
+<p class="text-gray-600 italic">"The redesign exceeded our expectations. User engagement metrics have improved significantly, and we've received overwhelmingly positive feedback from our user base. The design perfectly balances aesthetics with functionality."</p>
+</div>
+<div class="blob-shape-alt bg-white shadow-lg p-8">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4">
+<i class="ri-user-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Michael Torres</h4>
+<p class="text-gray-500 text-sm">Harmony User</p>
+</div>
+</div>
+<p class="text-gray-600 italic">"The new app is so much easier to use. I love how it suggests new music based on what I'm listening to, and the organization makes finding my favorite tracks effortless. It's become my go-to music app."</p>
+</div>
+</div>
+<!-- Impact Summary -->
+<div class="mt-16 bg-white rounded-lg shadow-lg p-8">
+<h3 class="text-xl font-semibold mb-6 text-gray-800">Business Impact</h3>
+<div class="grid md:grid-cols-3 gap-6 text-center">
+<div class="p-6">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+<i class="ri-user-add-line ri-2x"></i>
+</div>
+<h4 class="text-3xl font-bold text-gray-800 mb-2">+28%</h4>
+<p class="text-gray-600">New User Acquisition</p>
+</div>
+<div class="p-6">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+<i class="ri-time-line ri-2x"></i>
+</div>
+<h4 class="text-3xl font-bold text-gray-800 mb-2">+47%</h4>
+<p class="text-gray-600">Average Session Time</p>
+</div>
+<div class="p-6">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+<i class="ri-customer-service-line ri-2x"></i>
+</div>
+<h4 class="text-3xl font-bold text-gray-800 mb-2">-42%</h4>
+<p class="text-gray-600">Support Tickets</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lessons Learned -->
+<section class="py-20">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Lessons Learned</h2>
+<div class="bg-white rounded-lg shadow-lg p-8">
+<div class="mb-8">
+<h3 class="text-xl font-semibold mb-4 text-gray-800">Key Takeaways</h3>
+<p class="text-gray-600 mb-6">This project reinforced several important principles and provided valuable insights for future work:</p>
+<div class="space-y-4">
+<div class="custom-bullet">
+<p class="text-gray-800"><span class="font-semibold">User-centered design is paramount.</span> The most successful features were those directly addressing user pain points identified during research.</p>
+</div>
+<div class="custom-bullet">
+<p class="text-gray-800"><span class="font-semibold">Iteration is essential.</span> Multiple rounds of testing and refinement were crucial to achieving the final design quality.</p>
+</div>
+<div class="custom-bullet">
+<p class="text-gray-800"><span class="font-semibold">Accessibility benefits everyone.</span> Features designed for accessibility improved the experience for all users, not just those with specific needs.</p>
+</div>
+<div class="custom-bullet">
+<p class="text-gray-800"><span class="font-semibold">Visual design and functionality must work together.</span> The aesthetic improvements enhanced usability rather than competing with it.</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-gray-800">What I Would Do Differently</h3>
+<p class="text-gray-600 mb-6">If I were to approach this project again, I would:</p>
+<div class="space-y-4">
+<div class="custom-bullet">
+<p class="text-gray-800">Involve developers earlier in the process to better understand technical constraints.</p>
+</div>
+<div class="custom-bullet">
+<p class="text-gray-800">Conduct more international user testing to ensure the design works across different cultural contexts.</p>
+</div>
+<div class="custom-bullet">
+<p class="text-gray-800">Create a more comprehensive design system from the start to improve consistency and development efficiency.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Next Project Section -->
+<section class="py-20 relative overflow-hidden">
+<div class="absolute inset-0 z-0" style="background-image: url('https://readdy.ai/api/search-image?query=abstract%20organic%20fluid%20shapes%20with%20soft%20purple%20gradient%2C%20flowing%20curves%20and%20shapes%2C%20light%20background%20with%20subtle%20texture%2C%20professional%20UI%20design%20inspiration%2C%20minimalist%20design%20pattern&width=1600&height=600&seq=11&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.15;"></div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-6 text-gray-900">Ready to see more?</h2>
+<p class="text-xl text-gray-600 mb-8">Check out my next project where I redesigned an e-commerce platform.</p>
+<a href="#" class="inline-block px-8 py-3 bg-primary text-white font-medium rounded-button shadow-lg hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap">View Next Project</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-16">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-12">
+<div class="col-span-1">
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">logo</a>
+<p class="text-gray-400 mb-6">UX/UI Designer specializing in creating intuitive and engaging digital experiences.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-dribbble-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-behance-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Navigation</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Contact</h3>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-400">hello@designer.com</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-400">+1 (555) 123-4567</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-400">San Francisco, CA</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+<p class="text-gray-400 mb-4">Get updates on new projects and design insights.</p>
+<form class="flex">
+<input type="email" placeholder="Your email" class="px-4 py-2 bg-gray-800 text-white rounded-l-button border-none focus:outline-none w-full">
+<button type="submit" class="px-4 py-2 bg-primary text-white rounded-r-button hover:bg-primary/90 transition-colors whitespace-nowrap">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-gray-800 text-center">
+<p class="text-gray-500">&copy; 2025 Designer Portfolio. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all z-50">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+<!-- Scripts -->
+<script src="js/project_1.js"></script>
+</body>
+</html>
