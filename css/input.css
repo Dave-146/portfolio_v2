@@ -45,34 +45,34 @@
 
 /* Custom styles that can't be achieved with Tailwind */
 .blob-shape {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(45deg, #8E6FF7, #6B46C1);
-  border-radius: 50%;
-  filter: blur(50px);
-  opacity: 0.2;
-  z-index: -1;
-  animation: float 6s ease-in-out infinite;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #41c1ba, #339d97);
+    filter: blur(50px);
+    opacity: 0.2;
+    animation: float 6s ease-in-out infinite;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .blob-shape-alt {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(45deg, #6B46C1, #8E6FF7);
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.15;
-  z-index: -1;
-  animation: float 8s ease-in-out infinite;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #339d97, #41c1ba);
+    filter: blur(40px);
+    opacity: 0.15;
+    animation: float 8s ease-in-out infinite;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .organic-divider {
-  position: relative;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #8E6FF7, transparent);
-  margin: 2rem 0;
+    position: relative;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #41c1ba, transparent);
+    margin: 2rem 0;
 }
 
 .custom-bullet {
@@ -87,7 +87,7 @@
   top: 0.5rem;
   width: 0.5rem;
   height: 0.5rem;
-  background-color: #8E6FF7;
+  background-color: #41c1ba;
   border-radius: 50%;
 }
 
@@ -98,7 +98,7 @@
   transform: translateX(-50%);
   width: 30px;
   height: 50px;
-  border: 2px solid #8E6FF7;
+  border: 2px solid #41c1ba;
   border-radius: 15px;
 }
 
@@ -110,18 +110,9 @@
   width: 6px;
   height: 6px;
   margin-left: -3px;
-  background-color: #8E6FF7;
+  background-color: #41c1ba;
   border-radius: 50%;
   animation: scroll 2s infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
 }
 
 @keyframes scroll {
@@ -137,7 +128,7 @@
 
 /* Focus styles for better accessibility */
 :focus-visible {
-  outline: 2px solid #8E6FF7;
+  outline: 2px solid #41c1ba ;
   outline-offset: 2px;
 }
 
@@ -175,10 +166,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8E6FF7;
+  background: #41c1ba;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6B46C1;
+  background: #339d97;
 } 

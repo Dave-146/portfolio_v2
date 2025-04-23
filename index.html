@@ -33,41 +33,31 @@
 <!-- Combine Google Fonts into a single request -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- External resources -->
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script src="https://cdn.tailwindcss.com/3.4.1"></script>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 
 <!-- Move Tailwind config to external file later -->
 <script>
-tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},borderRadius:{'none':'0px','sm':'8px',DEFAULT:'12px','md':'16px','lg':'20px','xl':'24px','2xl':'28px','3xl':'32px','full':'9999px','button':'12px'}}}}
+tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},borderRadius:{'none':'0px','sm':'8px',DEFAULT:'12px','md':'16px','lg':'20px','xl':'24px','2xl':'28px','3xl':'32px','full':'9999px','button':'12px'},fontFamily:{heading:['Comfortaa','cursive'],body:['Montserrat','sans-serif']}}}}
 </script>
 <link href="/css/style.css" rel="stylesheet">
 </head>
-<body class="bg-white">
-<!-- Header -->
-<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm opacity-0 -translate-y-full" id="navbar">
-<div class="container mx-auto px-6 py-4 flex items-center justify-between">
-<a href="#" class="text-2xl font-['Pacifico'] text-primary">Dave Crean Design</a>
-<nav class="hidden md:flex items-center space-x-8">
-<a href="#work" class="nav-link text-gray-800 hover:text-primary transition-colors">Work</a>
-<a href="#about" class="nav-link text-gray-800 hover:text-primary transition-colors">About</a>
-<a href="#process" class="nav-link text-gray-800 hover:text-primary transition-colors">Process</a>
-<a href="#contact" class="px-6 py-2 bg-primary text-white rounded-button shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">Let's Talk</a>
-</nav>
-<button class="md:hidden w-10 h-10 flex items-center justify-center">
-<i class="ri-menu-line text-gray-800 text-2xl"></i>
-</button>
-</div>
-</header>
+<body class="bg-white overflow-x-hidden">
+<!-- Components -->
+<script src="/components/navbar.js"></script>
+<script src="/components/footer.js"></script>
+
 <!-- Hero Section -->
-<section class="w-full min-h-screen pt-24 relative overflow-hidden" style="background-image: url('/images/891b937988963dd7d65516dc5315593d.jpg'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-white bg-opacity-80"></div>
+<section class="w-full min-h-screen pt-24 relative overflow-hidden" style="background-image: url('/images/backgrounds/purple-wave.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-white/80"></div>
+<div class="absolute inset-0 bg-primary/10 backdrop-blur-[2px]"></div>
 <div class="container mx-auto px-6 py-20 relative z-10 flex flex-col md:flex-row items-center">
 <div class="w-full md:w-1/2 mb-12 md:mb-0">
-<h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-gray-900">Crafting Digital <span class="text-primary">Experiences</span> That Matter</h1>
-<p class="text-xl text-gray-700 mb-8 max-w-lg">I'm a UX/UI designer focused on creating intuitive and beautiful digital products that solve real problems.</p>
+<h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-gray-900 font-heading">Crafting Digital <span class="text-primary">Experiences</span> That Matter</h1>
+<p class="text-xl text-gray-700 mb-8 max-w-lg font-body">With a background in civil engineering and experience at Apple, I transitioned into UX/UI design to create intuitive and engaging user experiences. My goal is to blend functionality with creativity, ensuring that every design decision is purposeful.</p>
 <div class="flex flex-wrap gap-4">
 <a href="#work" class="px-8 py-3 bg-primary text-white rounded-button shadow-md hover:shadow-lg transition-all !rounded-button whitespace-nowrap">View My Work</a>
 <a href="#contact" class="px-8 py-3 border-2 border-primary text-primary rounded-button hover:bg-primary hover:bg-opacity-10 transition-all !rounded-button whitespace-nowrap">Get in Touch</a>
@@ -89,8 +79,8 @@ tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},b
 <section id="work" class="py-20 bg-gray-50">
 <div class="container mx-auto px-6">
 <div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4 text-gray-900">Selected <span class="text-primary">Work</span></h2>
-<p class="text-xl text-gray-700 max-w-2xl mx-auto">Explore my recent projects where I've helped brands create meaningful digital experiences.</p>
+<h2 class="text-4xl font-bold mb-4 text-gray-900 font-heading">Selected <span class="text-primary">Work</span></h2>
+<p class="text-xl text-gray-700 max-w-2xl mx-auto font-body">Explore my recent projects where I've helped brands create meaningful digital experiences.</p>
 </div>
 <div class="flex flex-wrap gap-8 justify-center">
 <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all portfolio-item w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
@@ -208,49 +198,50 @@ View Case Study
 </div>
 </div>
 <div class="w-full md:w-3/5">
-<h2 class="text-4xl font-bold mb-6 text-gray-900">About <span class="text-primary">Me</span></h2>
-<p class="text-lg text-gray-700 mb-6">I'm a passionate UX/UI designer with over 8 years of experience creating intuitive digital experiences that connect with users on a deeper level. My approach combines strategic thinking with creative problem-solving to deliver designs that are both beautiful and functional.</p>
-<p class="text-lg text-gray-700 mb-8">I believe that great design should feel natural and effortless to the user, while still achieving business objectives. My process involves deep user research, iterative prototyping, and continuous testing to ensure that every design decision is purposeful.</p>
+<h2 class="text-4xl font-bold mb-6 text-gray-900 font-heading">About <span class="text-primary">Me</span></h2>
+<p class="text-lg text-gray-700 mb-6 font-body">I am a dynamic UX/UI designer with a passion for crafting user-centric solutions, I honed my skills at George Brown College's Interaction Design program.</p>
+<p class="text-lg text-gray-700 mb-8 font-body">Specializing in design thinking and digital product development, I bring together technical acumen and customer service insights to create intuitive and impactful digital experiences.</p>
+<p class="text-lg text-gray-700 mb-8 font-body">My design philosophy is rooted in close observation of customer interactions, enabling me to engineer designs that are technically sound and deeply connect with users' needs.</p>
 <div class="mb-10">
-<h3 class="text-2xl font-bold mb-6 text-gray-900">My Skills</h3>
+<h3 class="text-2xl font-bold mb-6 text-gray-900 font-heading">My Skills</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
 <div class="flex flex-col items-center">
 <div class="skill-progress mb-3" style="--percentage: 95%">
-<span>95%</span>
+<span class="font-body">95%</span>
 </div>
-<span class="text-gray-800 font-medium">UI Design</span>
+<span class="text-gray-800 font-medium font-body">UI Design</span>
 </div>
 <div class="flex flex-col items-center">
 <div class="skill-progress mb-3" style="--percentage: 90%">
-<span>90%</span>
+<span class="font-body">90%</span>
 </div>
-<span class="text-gray-800 font-medium">UX Research</span>
+<span class="text-gray-800 font-medium font-body">UX Research</span>
 </div>
 <div class="flex flex-col items-center">
 <div class="skill-progress mb-3" style="--percentage: 85%">
-<span>85%</span>
+<span class="font-body">85%</span>
 </div>
-<span class="text-gray-800 font-medium">Prototyping</span>
+<span class="text-gray-800 font-medium font-body">Prototyping</span>
 </div>
 <div class="flex flex-col items-center">
 <div class="skill-progress mb-3" style="--percentage: 80%">
-<span>80%</span>
+<span class="font-body">80%</span>
 </div>
-<span class="text-gray-800 font-medium">Front-end</span>
+<span class="text-gray-800 font-medium font-body">Front-end</span>
 </div>
 </div>
 </div>
 <div>
-<h3 class="text-2xl font-bold mb-6 text-gray-900">Tools I Use</h3>
+<h3 class="text-2xl font-bold mb-6 text-gray-900 font-heading">Tools I Use</h3>
 <div class="flex flex-wrap gap-4">
-<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Figma</span>
-<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Adobe XD</span>
-<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Sketch</span>
-<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Photoshop</span>
-<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Illustrator</span>
-<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">Principle</span>
-<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">InVision</span>
-<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800">HTML/CSS</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800 font-body">Figma</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800 font-body">Adobe XD</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800 font-body">Sketch</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800 font-body">Photoshop</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800 font-body">Illustrator</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800 font-body">Principle</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800 font-body">InVision</span>
+<span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800 font-body">HTML/CSS</span>
 </div>
 </div>
 </div>
@@ -261,16 +252,16 @@ View Case Study
 <section id="process" class="py-20 bg-gray-50">
 <div class="container mx-auto px-6">
 <div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4 text-gray-900">My <span class="text-primary">Process</span></h2>
-<p class="text-xl text-gray-700 max-w-2xl mx-auto">I follow a structured yet flexible approach to design that ensures we solve the right problems in the right way.</p>
+<h2 class="text-4xl font-bold mb-4 text-gray-900 font-heading">My <span class="text-primary">Process</span></h2>
+<p class="text-xl text-gray-700 max-w-2xl mx-auto font-body">I follow a structured yet flexible approach to design that ensures we solve the right problems in the right way.</p>
 </div>
 <div class="relative">
 <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
 <div class="space-y-24">
 <div class="relative grid grid-cols-[1fr,auto,1fr] items-center gap-8">
 <div class="text-right">
-<h3 class="text-2xl font-bold mb-3 text-gray-900">Discovery & Research</h3>
-<p class="text-gray-700">I begin by understanding the business goals, user needs, and market context. This involves stakeholder interviews, competitive analysis, and user research to identify opportunities and challenges.</p>
+<h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Discovery & Research</h3>
+<p class="text-gray-700 font-body">I begin by understanding the business goals, user needs, and market context.</p>
 </div>
 <div class="relative flex justify-center z-10">
 <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center">
@@ -353,8 +344,8 @@ View Case Study
 <div class="container mx-auto px-6 relative z-10">
 <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
 <div class="text-center mb-12">
-<h2 class="text-4xl font-bold mb-4 text-gray-900">Let's <span class="text-primary">Connect</span></h2>
-<p class="text-xl text-gray-700">Have a project in mind? I'd love to hear about it.</p>
+<h2 class="text-4xl font-bold mb-4 text-gray-900 font-heading">Let's <span class="text-primary">Connect</span></h2>
+<p class="text-xl text-gray-700 font-body">Have a project in mind? I'd love to hear about it.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 <div class="space-y-8">
@@ -469,119 +460,6 @@ View Case Study
 </div>
 </div>
 </section>
-<!-- Footer -->
-<footer class="bg-gray-900 text-white pt-16 pb-8">
-<div class="container mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between mb-12">
-<div class="mb-8 md:mb-0 md:w-1/3">
-<a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 inline-block">Dave Crean Design</a>
-<p class="text-gray-400 mb-6 max-w-sm">Creating intuitive and beautiful digital experiences that solve real problems and delight users.</p>
-<div class="flex space-x-4">
-<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
-<i class="ri-dribbble-line text-white"></i>
-</a>
-<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
-<i class="ri-behance-line text-white"></i>
-</a>
-<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
-<i class="ri-linkedin-line text-white"></i>
-</a>
-<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
-<i class="ri-instagram-line text-white"></i>
-</a>
-</div>
-</div>
-<div class="mb-8 md:mb-0">
-<h3 class="text-lg font-bold mb-4">Quick Links</h3>
-<ul class="space-y-3">
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-<li><a href="#work" class="text-gray-400 hover:text-white transition-colors">Work</a></li>
-<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-<li><a href="#process" class="text-gray-400 hover:text-white transition-colors">Process</a></li>
-<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-</ul>
-</div>
-<div class="mb-8 md:mb-0">
-<h3 class="text-lg font-bold mb-4">Services</h3>
-<ul class="space-y-3">
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">UI Design</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">UX Research</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Prototyping</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Design Systems</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Front-end Development</a></li>
-</ul>
-</div>
-<div>
-<h3 class="text-lg font-bold mb-4">Newsletter</h3>
-<p class="text-gray-400 mb-4">Subscribe to receive design tips and updates.</p>
-<form class="flex">
-<input type="email" placeholder="Your email" class="px-4 py-2 bg-gray-800 text-white rounded-l-button focus:outline-none w-full">
-<button type="submit" class="px-4 py-2 bg-primary text-white rounded-r-button !rounded-button whitespace-nowrap">Subscribe</button>
-</form>
-</div>
-</div>
-<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-<p class="text-gray-500 mb-4 md:mb-0">© 2025 UX/UI Designer Portfolio. All rights reserved.</p>
-<div class="flex space-x-6">
-<a href="#" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
-<a href="#" class="text-gray-500 hover:text-white transition-colors">Terms of Service</a>
-<a href="#" class="text-gray-500 hover:text-white transition-colors">Cookies Policy</a>
-</div>
-</div>
-</div>
-</footer>
-<script src="/js/script.js" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.getElementById('navbar');
-    const hero = document.querySelector('section');
-    let lastScrollPosition = window.pageYOffset;
-    
-    function updateNavbar() {
-        const heroHeight = hero.offsetHeight;
-        const currentScroll = window.pageYOffset;
-        
-        // Show navbar after scrolling past hero section
-        if (currentScroll > heroHeight - 100) {
-            navbar.classList.remove('-translate-y-full', 'opacity-0');
-        } else {
-            navbar.classList.add('-translate-y-full', 'opacity-0');
-        }
-        
-        lastScrollPosition = currentScroll;
-    }
-    
-    // Initial check
-    updateNavbar();
-    
-    // Update on scroll
-    window.addEventListener('scroll', updateNavbar);
-    
-    // Update on resize
-    window.addEventListener('resize', updateNavbar);
-});
-</script>
-<script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "Person",
-    "name": "Dave Crean",
-    "jobTitle": "UX/UI Designer",
-    "url": "https://davecrean.design",
-    "sameAs": [
-        "https://dribbble.com/username",
-        "https://behance.net/username",
-        "https://linkedin.com/in/username",
-        "https://instagram.com/username"
-    ],
-    "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "San Francisco",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-    }
-}
-</script>
-<!-- Deploy trigger -->
+<script src="/js/script.js"></script>
 </body>
 </html>

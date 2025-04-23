@@ -4,443 +4,374 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion E-commerce Platform - Case Study | Dave Crean Design</title>
-    <meta name="description" content="Case study of Fashion E-commerce Platform - A modern e-commerce solution for a luxury fashion brand, focusing on seamless shopping experience and brand storytelling.">
+    <meta name="description" content="Case study of Fashion E-commerce Platform - A comprehensive e-commerce solution focused on enhancing the online shopping experience.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://davecrean.design/projects/fashion-ecommerce/">
     <meta property="og:title" content="Fashion E-commerce Platform - Case Study | Dave Crean Design">
-    <meta property="og:description" content="Case study of Fashion E-commerce Platform - A modern e-commerce solution for a luxury fashion brand, focusing on seamless shopping experience and brand storytelling.">
+    <meta property="og:description" content="Case study of Fashion E-commerce Platform - A comprehensive e-commerce solution focused on enhancing the online shopping experience.">
     <meta property="og:image" content="https://davecrean.design/images/fashion-ecommerce-hero.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://davecrean.design/projects/fashion-ecommerce/">
     <meta property="twitter:title" content="Fashion E-commerce Platform - Case Study | Dave Crean Design">
-    <meta property="twitter:description" content="Case study of Fashion E-commerce Platform - A modern e-commerce solution for a luxury fashion brand, focusing on seamless shopping experience and brand storytelling.">
+    <meta property="twitter:description" content="Case study of Fashion E-commerce Platform - A comprehensive e-commerce solution focused on enhancing the online shopping experience.">
     <meta property="twitter:image" content="https://davecrean.design/images/fashion-ecommerce-hero.jpg">
 
     <!-- External resources -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config -->
+    <script>
+    tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},borderRadius:{'none':'0px','sm':'8px',DEFAULT:'12px','md':'16px','lg':'20px','xl':'24px','2xl':'28px','3xl':'32px','full':'9999px','button':'12px'},fontFamily:{heading:['Comfortaa','cursive'],body:['Montserrat','sans-serif']}}}}
+    </script>
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/input.css" rel="stylesheet">
 </head>
-<body class="bg-white">
-    <!-- Blob shapes -->
-    <div class="blob-shape" style="top: -100px; right: -100px;"></div>
-    <div class="blob-shape-alt" style="bottom: -50px; left: -50px;"></div>
+<body class="bg-white overflow-x-hidden">
+    <!-- Components -->
+    <script src="/components/navbar.js"></script>
+    <script src="/components/footer.js"></script>
 
-    <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white bg-opacity-90 backdrop-blur-sm">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="text-2xl font-['Pacifico'] text-primary">Dave Crean Design</a>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="/#work" class="nav-link text-gray-800 hover:text-primary transition-colors">Work</a>
-                <a href="/#about" class="nav-link text-gray-800 hover:text-primary transition-colors">About</a>
-                <a href="/#process" class="nav-link text-gray-800 hover:text-primary transition-colors">Process</a>
-                <a href="/#contact" class="nav-link text-gray-800 hover:text-primary transition-colors">Contact</a>
-            </nav>
-            <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobileMenuButton">
-                <i class="ri-menu-line text-gray-800 text-2xl"></i>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="mobile-menu fixed top-0 right-0 w-64 h-full bg-white shadow-lg z-50 p-6 md:hidden">
-            <div class="flex justify-end mb-8">
-                <button class="w-10 h-10 flex items-center justify-center" id="closeMenuButton">
-                    <i class="ri-close-line text-gray-800 text-2xl"></i>
-                </button>
-            </div>
-            <nav class="flex flex-col space-y-6">
-                <a href="/#work" class="nav-link text-gray-800 hover:text-primary transition-colors">Work</a>
-                <a href="/#about" class="nav-link text-gray-800 hover:text-primary transition-colors">About</a>
-                <a href="/#process" class="nav-link text-gray-800 hover:text-primary transition-colors">Process</a>
-                <a href="/#contact" class="nav-link text-gray-800 hover:text-primary transition-colors">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-24 relative overflow-hidden">
+            <div class="container mx-auto px-6 pt-12 pb-24 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-medium mb-6">E-commerce Case Study</span>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">Fashion E-commerce Platform</h1>
+                    <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">A modern e-commerce solution for a luxury fashion brand, focusing on seamless shopping experience and brand storytelling.</p>
+                    
+                    <!-- Project Stats -->
+                    <div class="flex flex-wrap justify-center gap-6 mb-16">
+                        <div class="card">
+                            <div class="text-3xl font-bold text-primary mb-2">+65%</div>
+                            <div class="text-gray-600">Conversion Rate</div>
+                        </div>
+                        <div class="card">
+                            <div class="text-3xl font-bold text-primary mb-2">+50%</div>
+                            <div class="text-gray-600">Average Order Value</div>
+                        </div>
+                        <div class="card">
+                            <div class="text-3xl font-bold text-primary mb-2">-30%</div>
+                            <div class="text-gray-600">Cart Abandonment</div>
+                        </div>
+                    </div>
 
-    <!-- Hero Section -->
-    <section class="pt-24 relative overflow-hidden">
-        <div class="container mx-auto px-6 pt-12 pb-24 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-medium mb-6">E-commerce Case Study</span>
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">Fashion E-commerce Platform</h1>
-                <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">A modern e-commerce solution for a luxury fashion brand, focusing on seamless shopping experience and brand storytelling.</p>
-                
-                <!-- Project Stats -->
-                <div class="flex flex-wrap justify-center gap-6 mb-16">
-                    <div class="card">
-                        <div class="text-3xl font-bold text-primary mb-2">+65%</div>
-                        <div class="text-gray-600">Conversion Rate</div>
-                    </div>
-                    <div class="card">
-                        <div class="text-3xl font-bold text-primary mb-2">+50%</div>
-                        <div class="text-gray-600">Average Order Value</div>
-                    </div>
-                    <div class="card">
-                        <div class="text-3xl font-bold text-primary mb-2">-30%</div>
-                        <div class="text-gray-600">Cart Abandonment</div>
-                    </div>
-                </div>
-
-                <!-- Project Details -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                    <div>
-                        <h3 class="text-lg font-bold mb-2 text-gray-900">Timeline</h3>
-                        <p class="text-gray-600">16 Weeks</p>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold mb-2 text-gray-900">Role</h3>
-                        <p class="text-gray-600">Lead UX/UI Designer</p>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold mb-2 text-gray-900">Tools</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Figma</span>
-                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Shopify</span>
-                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Webflow</span>
+                    <!-- Project Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                        <div>
+                            <h3 class="text-lg font-bold mb-2 text-gray-900">Timeline</h3>
+                            <p class="text-gray-600">16 Weeks</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2 text-gray-900">Role</h3>
+                            <p class="text-gray-600">Lead UX/UI Designer</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold mb-2 text-gray-900">Tools</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Figma</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Shopify</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Webflow</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator"></div>
-    </section>
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator"></div>
+        </section>
 
-    <!-- Challenge & Solution -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6 text-gray-900">The Challenge</h2>
-                        <p class="text-gray-600 mb-4">The luxury fashion brand needed a modern e-commerce platform that could showcase their products while maintaining their premium brand image and improving conversion rates.</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Outdated design and poor mobile experience</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">High cart abandonment rates</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Limited product visualization options</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6 text-gray-900">The Solution</h2>
-                        <p class="text-gray-600 mb-4">A modern e-commerce platform with enhanced product visualization, streamlined checkout process, and immersive brand storytelling.</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">360° product views and AR try-on features</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">One-click checkout and saved payment options</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Immersive brand storytelling and lookbooks</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process & Approach -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Process & Approach</h2>
-                <div class="space-y-16">
-                    <!-- Research Phase -->
-                    <div class="flex flex-col md:flex-row items-center gap-8">
-                        <div class="w-full md:w-1/2">
-                            <h3 class="text-2xl font-bold mb-4 text-gray-900">Research</h3>
-                            <p class="text-gray-600 mb-4">Conducted market research and user interviews to understand luxury fashion shopping behaviors and pain points.</p>
+        <!-- Challenge & Solution -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-6 text-gray-900">The Challenge</h2>
+                            <p class="text-gray-600 mb-4">The luxury fashion brand needed a modern e-commerce platform that could showcase their products while maintaining their premium brand image and improving conversion rates.</p>
                             <ul class="space-y-3">
                                 <li class="flex items-start">
                                     <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                    <span class="text-gray-600">User interviews with 30 luxury shoppers</span>
+                                    <span class="text-gray-600">Outdated design and poor mobile experience</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                    <span class="text-gray-600">Competitive analysis of leading fashion e-commerce sites</span>
+                                    <span class="text-gray-600">High cart abandonment rates</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Limited product visualization options</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="w-full md:w-1/2">
-                            <img src="/images/fashion-research.jpg" alt="Research Phase" class="rounded-xl shadow-md">
-                        </div>
-                    </div>
-
-                    <!-- Design Phase -->
-                    <div class="flex flex-col md:flex-row-reverse items-center gap-8">
-                        <div class="w-full md:w-1/2">
-                            <h3 class="text-2xl font-bold mb-4 text-gray-900">Design</h3>
-                            <p class="text-gray-600 mb-4">Created a modern, luxurious design system that reflects the brand's identity while ensuring optimal user experience.</p>
+                        <div>
+                            <h2 class="text-3xl font-bold mb-6 text-gray-900">The Solution</h2>
+                            <p class="text-gray-600 mb-4">A modern e-commerce platform with enhanced product visualization, streamlined checkout process, and immersive brand storytelling.</p>
                             <ul class="space-y-3">
                                 <li class="flex items-start">
                                     <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                    <span class="text-gray-600">Luxury-focused UI design system</span>
+                                    <span class="text-gray-600">360° product views and AR try-on features</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                    <span class="text-gray-600">Enhanced product visualization components</span>
+                                    <span class="text-gray-600">One-click checkout and saved payment options</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Immersive brand storytelling and lookbooks</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="w-full md:w-1/2">
-                            <img src="/images/fashion-design.jpg" alt="Design Phase" class="rounded-xl shadow-md">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process & Approach -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Process & Approach</h2>
+                    <div class="space-y-16">
+                        <!-- Research Phase -->
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900">Research</h3>
+                                <p class="text-gray-600 mb-4">Conducted market research and user interviews to understand luxury fashion shopping behaviors and pain points.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                        <span class="text-gray-600">User interviews with 30 luxury shoppers</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                        <span class="text-gray-600">Competitive analysis of leading fashion e-commerce sites</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <img src="/images/fashion-research.jpg" alt="Research Phase" class="rounded-xl shadow-md">
+                            </div>
+                        </div>
+
+                        <!-- Design Phase -->
+                        <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900">Design</h3>
+                                <p class="text-gray-600 mb-4">Created a modern, luxurious design system that reflects the brand's identity while ensuring optimal user experience.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                        <span class="text-gray-600">Luxury-focused UI design system</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                        <span class="text-gray-600">Enhanced product visualization components</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <img src="/images/fashion-design.jpg" alt="Design Phase" class="rounded-xl shadow-md">
+                            </div>
+                        </div>
+
+                        <!-- Testing Phase -->
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="w-full md:w-1/2">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-900">Testing</h3>
+                                <p class="text-gray-600 mb-4">Conducted extensive usability testing and A/B testing to optimize the shopping experience.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                        <span class="text-gray-600">Usability testing with 20 participants</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                        <span class="text-gray-600">A/B testing of checkout flow variations</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <img src="/images/fashion-testing.jpg" alt="Testing Phase" class="rounded-xl shadow-md">
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Testing Phase -->
-                    <div class="flex flex-col md:flex-row items-center gap-8">
-                        <div class="w-full md:w-1/2">
-                            <h3 class="text-2xl font-bold mb-4 text-gray-900">Testing</h3>
-                            <p class="text-gray-600 mb-4">Conducted extensive usability testing and A/B testing to optimize the shopping experience.</p>
+        <!-- Key Features -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Key Features</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Feature 1 -->
+                        <div class="card">
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="ri-shopping-bag-line text-xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-gray-900">360° Product Views</h3>
+                            <p class="text-gray-600">Interactive product visualization with 360° views and zoom capabilities.</p>
+                        </div>
+                        <!-- Feature 2 -->
+                        <div class="card">
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="ri-camera-line text-xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-gray-900">AR Try-On</h3>
+                            <p class="text-gray-600">Augmented reality feature for virtual product try-on and visualization.</p>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="card">
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="ri-shopping-cart-line text-xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-gray-900">One-Click Checkout</h3>
+                            <p class="text-gray-600">Streamlined checkout process with saved payment options and shipping details.</p>
+                        </div>
+                        <!-- Feature 4 -->
+                        <div class="card">
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="ri-book-open-line text-xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-gray-900">Digital Lookbook</h3>
+                            <p class="text-gray-600">Interactive digital lookbook with shoppable product links and styling tips.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results & Impact -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Results & Impact</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                        <div class="card text-center">
+                            <div class="text-4xl font-bold text-primary mb-2">+65%</div>
+                            <div class="text-gray-600">Conversion Rate</div>
+                        </div>
+                        <div class="card text-center">
+                            <div class="text-4xl font-bold text-primary mb-2">+50%</div>
+                            <div class="text-gray-600">Average Order Value</div>
+                        </div>
+                        <div class="card text-center">
+                            <div class="text-4xl font-bold text-primary mb-2">-30%</div>
+                            <div class="text-gray-600">Cart Abandonment</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Key Achievements</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Reduced checkout time by 60%</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Increased mobile conversion by 75%</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Achieved 90% customer satisfaction rate</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Learned -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Lessons Learned</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="card">
+                            <h3 class="text-xl font-bold mb-4 text-gray-900">What Worked Well</h3>
                             <ul class="space-y-3">
                                 <li class="flex items-start">
                                     <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                    <span class="text-gray-600">Usability testing with 20 participants</span>
+                                    <span class="text-gray-600">AR try-on feature significantly reduced returns</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                    <span class="text-gray-600">A/B testing of checkout flow variations</span>
+                                    <span class="text-gray-600">One-click checkout improved conversion rates</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="w-full md:w-1/2">
-                            <img src="/images/fashion-testing.jpg" alt="Testing Phase" class="rounded-xl shadow-md">
+                        <div class="card">
+                            <h3 class="text-xl font-bold mb-4 text-gray-900">Challenges Overcome</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Balancing luxury aesthetics with usability</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Implementing AR features across devices</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Key Features -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Key Features</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Feature 1 -->
+        <!-- Next Steps -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Next Steps & Future Improvements</h2>
                     <div class="card">
-                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                            <i class="ri-shopping-bag-line text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-gray-900">360° Product Views</h3>
-                        <p class="text-gray-600">Interactive product visualization with 360° views and zoom capabilities.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="card">
-                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                            <i class="ri-camera-line text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-gray-900">AR Try-On</h3>
-                        <p class="text-gray-600">Augmented reality feature for virtual product try-on and visualization.</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="card">
-                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                            <i class="ri-shopping-cart-line text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-gray-900">One-Click Checkout</h3>
-                        <p class="text-gray-600">Streamlined checkout process with saved payment options and shipping details.</p>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div class="card">
-                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                            <i class="ri-book-open-line text-xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-gray-900">Digital Lookbook</h3>
-                        <p class="text-gray-600">Interactive digital lookbook with shoppable product links and styling tips.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results & Impact -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Results & Impact</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div class="card text-center">
-                        <div class="text-4xl font-bold text-primary mb-2">+65%</div>
-                        <div class="text-gray-600">Conversion Rate</div>
-                    </div>
-                    <div class="card text-center">
-                        <div class="text-4xl font-bold text-primary mb-2">+50%</div>
-                        <div class="text-gray-600">Average Order Value</div>
-                    </div>
-                    <div class="card text-center">
-                        <div class="text-4xl font-bold text-primary mb-2">-30%</div>
-                        <div class="text-gray-600">Cart Abandonment</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Key Achievements</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Reduced checkout time by 60%</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Increased mobile conversion by 75%</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Achieved 90% customer satisfaction rate</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lessons Learned -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Lessons Learned</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="card">
-                        <h3 class="text-xl font-bold mb-4 text-gray-900">What Worked Well</h3>
-                        <ul class="space-y-3">
+                        <ul class="space-y-4">
                             <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">AR try-on feature significantly reduced returns</span>
+                                <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-arrow-right-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900">AI Styling Assistant</h3>
+                                    <p class="text-gray-600">Implement AI-powered styling recommendations based on user preferences</p>
+                                </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">One-click checkout improved conversion rates</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3 class="text-xl font-bold mb-4 text-gray-900">Challenges Overcome</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Balancing luxury aesthetics with usability</span>
+                                <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-arrow-right-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900">Virtual Fitting Room</h3>
+                                    <p class="text-gray-600">Expand AR capabilities to include full-body virtual fitting</p>
+                                </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Implementing AR features across devices</span>
+                                <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-arrow-right-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900">Social Shopping</h3>
+                                    <p class="text-gray-600">Add social features for sharing outfits and getting feedback</p>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Next Steps -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Next Steps & Future Improvements</h2>
-                <div class="card">
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                <i class="ri-arrow-right-line text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2 text-gray-900">AI Styling Assistant</h3>
-                                <p class="text-gray-600">Implement AI-powered styling recommendations based on user preferences</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                <i class="ri-arrow-right-line text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2 text-gray-900">Virtual Fitting Room</h3>
-                                <p class="text-gray-600">Expand AR capabilities to include full-body virtual fitting</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                <i class="ri-arrow-right-line text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2 text-gray-900">Social Shopping</h3>
-                                <p class="text-gray-600">Add social features for sharing outfits and getting feedback</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between mb-12">
-                <div class="mb-8 md:mb-0 md:w-1/3">
-                    <a href="/" class="text-3xl font-['Pacifico'] text-white mb-4 inline-block">Dave Crean Design</a>
-                    <p class="text-gray-400 mb-6 max-w-sm">Creating intuitive and beautiful digital experiences that solve real problems and delight users.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
-                            <i class="ri-dribbble-line text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
-                            <i class="ri-behance-line text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
-                            <i class="ri-linkedin-line text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-all">
-                            <i class="ri-instagram-line text-white"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="mb-8 md:mb-0">
-                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="/#work" class="text-gray-400 hover:text-white transition-colors">Work</a></li>
-                        <li><a href="/#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="/#process" class="text-gray-400 hover:text-white transition-colors">Process</a></li>
-                        <li><a href="/#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
-                    <p class="text-gray-400 mb-4">Subscribe to receive design tips and updates.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 bg-gray-800 text-white rounded-l-button focus:outline-none w-full">
-                        <button type="submit" class="px-4 py-2 bg-primary text-white rounded-r-button !rounded-button whitespace-nowrap">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 mb-4 md:mb-0">© 2025 UX/UI Designer Portfolio. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Terms of Service</a>
-                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Cookies Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
     <script src="/js/script.js"></script>
 </body>
 </html> 
