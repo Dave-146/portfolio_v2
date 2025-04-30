@@ -8,18 +8,10 @@ const footer = `
             <p class="text-gray-400 mt-4 max-w-md text-center">Creating intuitive and beautiful digital experiences that solve real problems.</p>
         </div>
         <div class="flex justify-center space-x-6 mb-12">
-            <a href="https://dribbble.com/username" class="text-gray-400 hover:text-white transition-colors">
-                <i class="ri-dribbble-line text-2xl"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                <i class="ri-behance-line text-2xl"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <a href="https://linkedin.com/in/davecrean" class="text-gray-400 hover:text-white transition-colors">
                 <i class="ri-linkedin-line text-2xl"></i>
             </a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                <i class="ri-instagram-line text-2xl"></i>
-            </a>
+           
         </div>
         <div class="border-t border-gray-800 mt-8 pt-8 text-center">
             <p class="text-gray-400">© 2025 Dave Crean Design</p>

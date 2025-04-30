@@ -166,6 +166,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Portfolio View All Projects functionality
+    const viewAllButton = document.getElementById('view-all-projects');
+    const hiddenProjects = document.querySelectorAll('[data-hidden-project]');
+    let projectsVisible = false;
+
+    if (viewAllButton && hiddenProjects.length > 0) {
+        viewAllButton.addEventListener('click', function() {
+            hiddenProjects.forEach(project => {
+                project.classList.toggle('hidden');
+            });
+            
+            // Update button text
+            projectsVisible = !projectsVisible;
+            viewAllButton.textContent = projectsVisible ? 'Show Less' : 'View All Projects';
+        });
+    }
 });
 
 // Helper function to validate email

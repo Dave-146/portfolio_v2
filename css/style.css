@@ -1893,7 +1893,7 @@ select {
 
 .text-primary {
   --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+  color: rgb(65 193 186 / var(--tw-text-opacity)) !important;
 }
 
 .text-red-500 {
@@ -2094,7 +2094,7 @@ select {
 /* Focus styles for better accessibility */
 
 :focus-visible {
-  outline: 2px solid #41c1ba ;
+  outline: 2px solid #41c1ba;
   outline-offset: 2px;
 }
 
@@ -2195,11 +2195,11 @@ html {
 
 .hover\:bg-primary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+  background-color: rgb(65 193 186 / var(--tw-bg-opacity)) !important;
 }
 
-.hover\:bg-primary\/90:hover {
-  background-color: rgb(37 99 235 / 0.9);
+.hover\:bg-primary\/10:hover {
+  background-color: rgb(65 193 186 / 0.1) !important;
 }
 
 .hover\:bg-secondary:hover {
@@ -2213,7 +2213,7 @@ html {
 
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+  color: rgb(65 193 186 / var(--tw-text-opacity)) !important;
 }
 
 .hover\:text-white:hover {
@@ -2246,7 +2246,7 @@ html {
 
 .focus\:ring-primary:focus {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(37 99 235 / var(--tw-ring-opacity, 1));
+  --tw-ring-color: rgb(65 193 186 / var(--tw-ring-opacity, 1));
 }
 
 .focus\:ring-opacity-20:focus {
@@ -2362,5 +2362,45 @@ html {
 @media (min-width: 1024px) {
   .lg\:w-\[calc\(33\.333\%-1\.5rem\)\] {
     width: calc(33.333% - 1.5rem);
+  }
+}
+
+.blob {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: blob-animation 8s ease-in-out infinite;
+}
+
+@keyframes blob-animation {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  33% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  }
+  66% {
+    border-radius: 30% 70% 70% 30% / 70% 30% 30% 70%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+.blob-small {
+  border-radius: 70% 30% 30% 70% / 30% 70% 30% 70%;
+  animation: blob-small-animation 8s ease-in-out infinite;
+}
+
+@keyframes blob-small-animation {
+  0% {
+    border-radius: 70% 30% 30% 70% / 30% 70% 30% 70%;
+  }
+  33% {
+    border-radius: 30% 70% 70% 30% / 70% 30% 70% 30%;
+  }
+  66% {
+    border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
+  }
+  100% {
+    border-radius: 70% 30% 30% 70% / 30% 70% 30% 70%;
   }
 } 
