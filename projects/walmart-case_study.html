@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart UX/UI Case Study | Dave Crean Design</title>
+    <meta name="description" content="Case study of Walmart.ca's search and review experience redesign - A comprehensive UX redesign focused on improving product discovery and review experience.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davecrean.design/projects/walmart-case_study/">
+    <meta property="og:title" content="Walmart UX Case Study | Dave Crean Design">
+    <meta property="og:description" content="Case study of Walmart.ca's search and review experience redesign - A comprehensive UX redesign focused on improving product discovery and review experience.">
+    <meta property="og:image" content="https://davecrean.design/images/walmart-hero.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://davecrean.design/projects/walmart-case_study/">
+    <meta property="twitter:title" content="Walmart UX Case Study | Dave Crean Design">
+    <meta property="twitter:description" content="Case study of Walmart.ca's search and review experience redesign - A comprehensive UX redesign focused on improving product discovery and review experience.">
+    <meta property="twitter:image" content="https://davecrean.design/images/walmart-hero.jpg">
+
+    <!-- External resources -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+    tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},borderRadius:{'none':'0px','sm':'8px',DEFAULT:'12px','md':'16px','lg':'20px','xl':'24px','2xl':'28px','3xl':'32px','full':'9999px','button':'12px'},fontFamily:{heading:['Comfortaa','cursive'],body:['Montserrat','sans-serif']}}}}
+    </script>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/input.css" rel="stylesheet">
+</head>
+<body class="bg-white overflow-x-hidden">
+    <!-- Components -->
+    <script src="/components/navbar.js"></script>
+    <script src="/components/footer.js"></script>
+
+    <!-- Main Content -->
+    <main>
+    <!-- Hero Section -->
+    <section class="pt-24 relative overflow-hidden min-h-[80vh]">
+        <div class="absolute inset-0" style="background-image: url('/images/backgrounds/walmart_hero.svg'); background-size: cover; background-position: right center; background-repeat: no-repeat; width: 100%; height: 100%; shape-rendering: crispEdges; image-rendering: crisp-edges; transform: scale(1.02);"></div>
+        <div class="absolute inset-0 bg-white/70"></div>
+        <div class="absolute inset-0 bg-primary/10"></div>
+        <div class="container mx-auto px-6 pt-12 pb-24 relative z-10 h-full">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-medium mb-6 font-body">UX/UI Case Study</span>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 font-heading">Walmart.ca Case Study</h1>
+                <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto font-body">A UX Audit and Redesign focused on improving the core shopping experience for 1.5 million daily customers.</p>
+                
+                <!-- Project Stats -->
+                <div class="flex flex-wrap justify-center gap-6 mb-16">
+                    <div class="card">
+                        <div class="text-3xl font-bold text-primary mb-2 font-heading">1.5M</div>
+                        <div class="text-gray-600 font-body">Daily Customers</div>
+                    </div>
+                    <div class="card">
+                        <div class="text-3xl font-bold text-primary mb-2 font-heading">4.8/5</div>
+                        <div class="text-gray-600 font-body">User Satisfaction</div>
+                    </div>
+                    <div class="card">
+                        <div class="text-3xl font-bold text-primary mb-2 font-heading">12</div>
+                        <div class="text-gray-600 font-body">Weeks Timeline</div>
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="text-center">
+                        <h3 class="text-lg font-bold mb-2 text-gray-900 font-heading">Timeline</h3>
+                        <p class="text-gray-600 font-body">12 Weeks</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-lg font-bold mb-2 text-gray-900 font-heading">Role</h3>
+                        <p class="text-gray-600 font-body">UX/UI Researcher & Designer</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-lg font-bold mb-2 text-gray-900 font-heading">Tools</h3>
+                        <div class="flex flex-wrap justify-center gap-2 font-body">
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Figma</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Notion</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Tobii Eye Tracker 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Challenge & Solution -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-gray-900 font-heading">The Challenge</h2>
+                        <p class="text-gray-600 mb-4 font-body">Faced with significant usability hurdles, Walmart.ca e-commerce platform needed a comprehensive audit and redesign to provide a streamlined and intuitive shopping experience for its over 1.5 million daily customers, addressing cluttered navigation, inconsistent layouts, inefficient filtering, suboptimal product information, and accessibility issues, thereby enhancing usability and user focus</p>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-gray-900 font-heading">The Solution</h2>
+                        <p class="text-gray-600 mb-4 font-body">We redesigned the core parts of the user journey (Homepage, Category Page, Product Page, and Cart Page) to fix the usability issues we found. Now it's easier for users to search, add items to their cart, and complete their purchase. The result: a smoother experience with less mental effort.</p>
+                        <ul class="space-y-3 font-body">
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Simplified navigation by reducing menu clutter and standardizing terminology</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Enhanced product discovery with a consistent, single sidebar filter system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Redesigned product listing tiles with clearer visual hierarchy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Improved accessibility with increased font sizes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Clarified interactive elements and refined cart actions</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process & Approach -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Process & Approach</h2>
+                <div class="space-y-16">
+                    <!-- Audit Phase -->
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="w-full md:w-1/2 text-center">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900 font-heading">Audit</h3>
+                            <p class="text-gray-600 mb-4 font-body">Completed a comprehensive website audit of the existing site against established UX principles and discovered a number of usability hurdles.</p>
+                            <ul class="space-y-3 font-body text-left">
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600"><b>Menu Navigation Issues:</b> Too many items and unclear labels in the main menu and "Departments" section.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600"><b>Usability Issues:</b> Filter sliders are unsuitable for "Speed" and "Price," product page font sizes are too small, and it's unclear that hyperlinked items are editable.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600"><b>Inconsistent Page Layouts and Redundant Filters:</b> Department main pages have inconsistent layouts, and the horizontal filter bar is unnecessary.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600"><b>Limited Cart Functionality:</b> Pickup/delivery details are not visible while scrolling, and promo codes cannot be applied until after checkout.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <img src="/images/website_audit.png" alt="Walmart website audit showing navigation and usability issues" class="rounded-xl shadow-lg w-full">
+                        </div>
+                    </div>
+
+                    <!-- Design Phase -->
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                        <div class="w-full md:w-1/2 text-center">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900 font-heading">Design</h3>
+                            <p class="text-gray-600 mb-4 font-body">Based on the audit findings and user hypotheses, redesigns were conceptualized and executed through wireframing and high-fidelity prototypes:</p>
+                            <ul class="space-y-3 font-body text-left">
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Simplified menus and standardized page structures</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Optimized filter controls and improved information hierarchy</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Enhanced accessibility with increased font sizes</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <!-- Carousel Container -->
+                            <div class="relative">
+                                <!-- Carousel Images -->
+                                <div class="carousel-container overflow-hidden rounded-xl shadow-lg">
+                                    <div class="carousel-slides flex transition-transform duration-300">
+                                        <img src="/images/web_lofi_home.png" alt="Homepage Wireframe" class="w-full h-auto">
+                                        <img src="/images/web_hifi_home.png" alt="Homepage Final Design" class="w-full h-auto">
+                                        <img src="/images/web_lofi_menu_1.png" alt="Menu Navigation Wireframe" class="w-full h-auto">
+                                        <img src="/images/web_hifi_menu_1.png" alt="Menu Navigation Final Design" class="w-full h-auto">
+                                        <img src="/images/web_lofi_menu_2.png" alt="Department Menu Wireframe" class="w-full h-auto">
+                                        <img src="/images/web_hifi_menu_2.png" alt="Department Menu Final Design" class="w-full h-auto">
+                                        <img src="/images/web_lofi_category.png" alt="Category Page Wireframe" class="w-full h-auto">
+                                        <img src="/images/web_hifi_category.png" alt="Category Page Final Design" class="w-full h-auto">
+                                        <img src="/images/web_lofi_product.png" alt="Product Page Wireframe" class="w-full h-auto">
+                                        <img src="/images/web_hifi_product.png" alt="Product Page Final Design" class="w-full h-auto">
+                                    </div>
+                                </div>
+                                
+                                <!-- Navigation Buttons -->
+                                <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-all" onclick="moveSlide(-1)">
+                                    <i class="ri-arrow-left-s-line text-xl"></i>
+                                </button>
+                                <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-all" onclick="moveSlide(1)">
+                                    <i class="ri-arrow-right-s-line text-xl"></i>
+                                </button>
+                                
+                                <!-- Dots Navigation -->
+                                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot active" onclick="goToSlide(0)"></button>
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(1)"></button>
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(2)"></button>
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(3)"></button>
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(4)"></button>
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(5)"></button>
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(6)"></button>
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(7)"></button>
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(8)"></button>
+                                    <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all dot" onclick="goToSlide(9)"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testing Phase -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 mt-16">
+                        <div class="w-full md:w-1/2 text-center">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900 font-heading">Testing</h3>
+                            <p class="text-gray-600 mb-4 font-body">We ran in-person usability tests with Figma prototypes to validate our redesign ideas. We also used heatmaps to track user interactions. Here's what we found:</p>
+                            <ul class="space-y-3 font-body text-left">
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Users expected quicker access to categories from the homepage and clearer menu labels (e.g., "Department" was confusing).</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Filtering needed to be faster — users wanted instant results when selecting filters, without clicking "Apply."</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">On product pages, users wanted lifestyle icons in reviews and found "Related Items" interrupting the product details.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">In the cart, users expected images to show product variants and preferred "Add to Favourites" over "Save for Later."</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <div class="flex flex-col space-y-4">
+                                <img src="/images/heatmap_testing_1.png" alt="User testing session with laptop showing product page" class="rounded-xl shadow-md w-full">
+                                <img src="/images/heatmap_testing_2.png" alt="Heatmap analysis showing user interaction hotspots" class="rounded-xl shadow-md w-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .carousel-container {
+                            width: 100%;
+                            position: relative;
+                        }
+                        .carousel-slides {
+                            display: flex;
+                            width: 1000%;  /* 100% * number of slides */
+                        }
+                        .carousel-slides img {
+                            width: 10%;  /* 100% / number of slides */
+                            flex-shrink: 0;
+                        }
+                        .dot.active {
+                            background-color: white;
+                        }
+                    </style>
+
+                    <script>
+                        let currentSlide = 0;
+                        const totalSlides = 10;
+
+                        function moveSlide(direction) {
+                            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+                            updateSlidePosition();
+                        }
+
+                        function goToSlide(slideIndex) {
+                            currentSlide = slideIndex;
+                            updateSlidePosition();
+                        }
+
+                        function updateSlidePosition() {
+                            const slides = document.querySelector('.carousel-slides');
+                            slides.style.transform = `translateX(-${currentSlide * 10}%)`;
+                            
+                            // Update dots
+                            document.querySelectorAll('.dot').forEach((dot, index) => {
+                                dot.classList.toggle('active', index === currentSlide);
+                            });
+                        }
+
+                        // Auto-advance slides every 5 seconds
+                        setInterval(() => {
+                            moveSlide(1);
+                        }, 5000);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Key Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="ri-menu-line text-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Simplified Navigation</h3>
+                        <p class="text-gray-600 font-body">Reduced menu items and clearer labeling for intuitive browsing experience.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="ri-layout-line text-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Standardized Layouts</h3>
+                        <p class="text-gray-600 font-body">Consistent structure across department category pages for reduced cognitive load.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="ri-filter-line text-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Optimized Filtering</h3>
+                        <p class="text-gray-600 font-body">Single, persistent sidebar filter with clearer options and an "Apply" button for multi-selection.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="ri-eye-line text-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Enhanced Accessibility</h3>
+                        <p class="text-gray-600 font-body">Increased font sizes and improved visual hierarchy for better readability and usability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results & Impact -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Results & Impact</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">+40%</div>
+                        <div class="text-gray-600 font-body">User Engagement</div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">+35%</div>
+                        <div class="text-gray-600 font-body">Retention Rate</div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">4.8/5</div>
+                        <div class="text-gray-600 font-body">App Store Rating</div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 font-heading">Key Achievements</h3>
+                    <ul class="space-y-3 font-body">
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Conducted thorough heuristic evaluation identifying critical usability flaws</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Developed targeted, principle-based redesigns for core e-commerce user flows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Executed mixed-methods usability testing with think-aloud and eye-tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Successfully validated key design hypotheses through user testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Iterated designs based on nuanced qualitative and quantitative feedback</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Lessons Learned</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">What Worked Well</h3>
+                        <ul class="space-y-3 font-body">
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Persistent user reliance on search bar validated by heat mapping</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Balanced needs of different user segments through thoughtful design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Strong visual design alongside clear labeling for diverse audiences</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Challenges Overcome</h3>
+                        <ul class="space-y-3 font-body">
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Balancing search complexity with ease of use</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Managing large volumes of product reviews effectively</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Accommodating different user expectations for filter interactions</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Next Steps & Future Improvements</h2>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <ul class="space-y-4 font-body">
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-arrow-right-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 font-heading">Search Optimization</h3>
+                                <p class="text-gray-600 font-body">Prioritize research and optimization of search-based interaction flow based on user behavior patterns</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-arrow-right-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 font-heading">Localization Features</h3>
+                                <p class="text-gray-600 font-body">Enhance support for non-English speaking users through improved visual cues and localization</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-arrow-right-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 font-heading">Mobile Experience</h3>
+                                <p class="text-gray-600 font-body">Further optimize the mobile shopping experience for on-the-go users</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+</html> 
