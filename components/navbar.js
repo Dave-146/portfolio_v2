@@ -82,9 +82,14 @@ const navbar = `
     max-width: 64rem;
     margin: 0 auto;
     background: rgba(255, 255, 255, 1) !important; /* Added !important */
-    box-shadow: 0 0 0 transparent !important; /* More explicit shadow reset */
-    -webkit-box-shadow: 0 0 0 transparent !important; /* More explicit shadow reset */
+    box-shadow: 0 8px 32px 0 rgba(60, 60, 90, 0.18), 0 1.5px 6px 0 rgba(60, 60, 90, 0.10) !important; /* Added shadow */
+    -webkit-box-shadow: 0 8px 32px 0 rgba(60, 60, 90, 0.18), 0 1.5px 6px 0 rgba(60, 60, 90, 0.10) !important; /* Added shadow for Safari */
     border: none !important; /* Added !important */
+}
+
+.nav-scrolled .rounded-button {
+    border-radius: 9999px !important;
+    transition: border-radius 0.3s;
 }
     
 
