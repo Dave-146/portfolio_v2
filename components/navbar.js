@@ -7,10 +7,10 @@ const navbar = `
                     <img src="https://dave-146.github.io/portfolio_v2/images/logo.svg" alt="Dave Crean Design" class="h-8 w-auto">
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="/portfolio_v2/#work" class="text-gray-800 hover:text-primary transition-colors">Work</a>
-                    <a href="/portfolio_v2/#about" class="text-gray-800 hover:text-primary transition-colors">About</a>
-                    <a href="/portfolio_v2/#process" class="text-gray-800 hover:text-primary transition-colors">Process</a>
-                    <a href="/portfolio_v2/#contact" class="inline-flex items-center px-4 py-2 bg-primary text-white font-medium rounded-button hover:bg-primary/90 transition-colors">Let's Talk</a>
+                    <a href="/#work" class="text-gray-800 hover:text-primary transition-colors">Work</a>
+                    <a href="/#about" class="text-gray-800 hover:text-primary transition-colors">About</a>
+                    <a href="/#process" class="text-gray-800 hover:text-primary transition-colors">Process</a>
+                    <a href="/#contact" class="inline-flex items-center px-4 py-2 bg-primary text-white font-medium rounded-button hover:bg-primary/90 transition-colors">Let's Talk</a>
                 </nav>
                 <button class="md:hidden menu-button relative w-8 h-8" id="mobileMenuButton" aria-label="Toggle mobile menu">
                     <div class="menu-icon">
@@ -26,10 +26,10 @@ const navbar = `
     <div id="mobileMenu" class="fixed inset-0 bg-white transform translate-y-full transition-transform duration-500 ease-in-out">
         <div class="h-full flex flex-col justify-center items-center">
             <nav class="flex flex-col space-y-8 text-center">
-                <a href="/portfolio_v2/#work" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all transform translate-y-8 opacity-0">Work</a>
-                <a href="/portfolio_v2/#about" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all transform translate-y-8 opacity-0">About</a>
-                <a href="/portfolio_v2/#process" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all transform translate-y-8 opacity-0">Process</a>
-                <a href="/portfolio_v2/#contact" class="mobile-menu-link text-3xl font-heading text-primary hover:text-primary/80 transition-all transform translate-y-8 opacity-0">Let's Talk</a>
+                <a href="/#work" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all transform translate-y-8 opacity-0">Work</a>
+                <a href="/#about" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all transform translate-y-8 opacity-0">About</a>
+                <a href="/#process" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all transform translate-y-8 opacity-0">Process</a>
+                <a href="/#contact" class="mobile-menu-link text-3xl font-heading text-primary hover:text-primary/80 transition-all transform translate-y-8 opacity-0">Let's Talk</a>
             </nav>
         </div>
     </div>
