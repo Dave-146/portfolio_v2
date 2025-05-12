@@ -4,7 +4,7 @@ const navbar = `
         <div class="nav-container bg-white bg-opacity-95 transition-all duration-500 rounded-none w-screen">
             <div class="flex items-center justify-between px-8 py-4 max-w-[2000px] mx-auto">
                 <a href="https://dave-146.github.io/portfolio_v2/" class="flex items-center">
-                    <img src="../images/logo.svg" alt="Dave Crean Design" class="h-8 w-auto">
+                    <img src="https://dave-146.github.io/portfolio_v2/images/logo.svg" alt="Dave Crean Design" class="h-8 w-auto">
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="/#work" class="text-gray-800 hover:text-primary transition-colors">Work</a>
@@ -207,4 +207,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         lastScroll = currentScroll;
     });
+
+    const logoImg = document.querySelector('#navbar img');
+    if (logoImg) {
+        // Find the base path for the logo
+        let base = window.location.pathname.split('/');
+        // Remove the last part if it's a file (has a dot)
+        if (base[base.length - 1].includes('.')) base.pop();
+        // Count how many levels deep we are
+        let depth = base.length - 2; // -2 because /portfolio_v2/ is the root
+        let prefix = '';
+        for (let i = 0; i < depth; i++) prefix += '../';
+        logoImg.src = prefix + 'images/logo.svg';
+    }
 }); 
