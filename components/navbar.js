@@ -56,6 +56,7 @@ const navbar = `
     transform-origin: center;
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
+    border: none !important;
     transition: 
         width 0.3s ease-out,
         max-width 0.3s ease-out,
