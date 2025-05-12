@@ -217,14 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const logoImg = document.querySelector('#navbar img');
     if (logoImg) {
-        // Find the base path for the logo
-        let base = window.location.pathname.split('/');
-        // Remove the last part if it's a file (has a dot)
-        if (base[base.length - 1].includes('.')) base.pop();
-        // Count how many levels deep we are
-        let depth = base.length - 2; // -2 because /portfolio_v2/ is the root
-        let prefix = '';
-        for (let i = 0; i < depth; i++) prefix += '../';
-        logoImg.src = prefix + 'images/logo.svg';
+        logoImg.src = 'images/logo.svg'; // Path relative to the <base> href
     }
 }); 
