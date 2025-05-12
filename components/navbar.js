@@ -23,7 +23,7 @@ const navbar = `
         </div>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-0 bg-white transform -translate-y-full transition-transform duration-500 ease-in-out">
+    <div id="mobileMenu" class="fixed inset-0 bg-white transform -translate-y-full transition-transform duration-500 ease-in-out z-40">
         <div class="h-full flex flex-col justify-center items-center">
             <nav class="flex flex-col space-y-8 text-center">
                 <a href="https://dave-146.github.io/portfolio_v2/#work" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">Work</a>
