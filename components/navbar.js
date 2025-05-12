@@ -143,20 +143,20 @@ const navbar = `
 }
 
 /* Mobile menu animation states */
-#navbar.mobile-menu-is-active #mobileMenu {
+#mobileMenu.menu-is-shown {
     transform: translateY(0);
 }
 
-#navbar.mobile-menu-is-active #mobileMenu .mobile-menu-link {
+#mobileMenu.menu-is-shown .mobile-menu-link {
     transform: translateY(0);
     opacity: 1;
     transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-#navbar.mobile-menu-is-active #mobileMenu .mobile-menu-link:nth-child(1) { transition-delay: 0.1s; }
-#navbar.mobile-menu-is-active #mobileMenu .mobile-menu-link:nth-child(2) { transition-delay: 0.2s; }
-#navbar.mobile-menu-is-active #mobileMenu .mobile-menu-link:nth-child(3) { transition-delay: 0.3s; }
-#navbar.mobile-menu-is-active #mobileMenu .mobile-menu-link:nth-child(4) { transition-delay: 0.4s; }
+#mobileMenu.menu-is-shown .mobile-menu-link:nth-child(1) { transition-delay: 0.1s; }
+#mobileMenu.menu-is-shown .mobile-menu-link:nth-child(2) { transition-delay: 0.2s; }
+#mobileMenu.menu-is-shown .mobile-menu-link:nth-child(3) { transition-delay: 0.3s; }
+#mobileMenu.menu-is-shown .mobile-menu-link:nth-child(4) { transition-delay: 0.4s; }
 
 #navbar {
   border-bottom-width: 0 !important;
@@ -177,8 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function toggleMobileMenu() {
         mobileMenuButton.classList.toggle('menu-open');
-        if (navbarElement) {
-            navbarElement.classList.toggle('mobile-menu-is-active');
+        if (mobileMenu) {
+            mobileMenu.classList.toggle('menu-is-shown');
         }
         document.body.classList.toggle('overflow-hidden');
     }
