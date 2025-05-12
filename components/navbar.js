@@ -23,13 +23,13 @@ const navbar = `
         </div>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-0 bg-white transform translate-y-full transition-transform duration-500 ease-in-out">
+    <div id="mobileMenu" class="fixed inset-0 bg-white transform -translate-y-full transition-transform duration-500 ease-in-out">
         <div class="h-full flex flex-col justify-center items-center">
             <nav class="flex flex-col space-y-8 text-center">
-                <a href="/#work" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all transform translate-y-8 opacity-0">Work</a>
-                <a href="/#about" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all transform translate-y-8 opacity-0">About</a>
-                <a href="/#process" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all transform translate-y-8 opacity-0">Process</a>
-                <a href="/#contact" class="mobile-menu-link text-3xl font-heading text-primary hover:text-primary/80 transition-all transform translate-y-8 opacity-0">Let's Talk</a>
+                <a href="/#work" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">Work</a>
+                <a href="/#about" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">About</a>
+                <a href="/#process" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">Process</a>
+                <a href="/#contact" class="mobile-menu-link text-3xl font-heading text-primary hover:text-primary/80 transition-all opacity-0">Let's Talk</a>
             </nav>
         </div>
     </div>
@@ -97,6 +97,7 @@ const navbar = `
 /* Mobile menu styles */
 .menu-button {
     cursor: pointer;
+    z-index: 60; /* Ensures it stays on top of the full-screen menu */
 }
 
 .menu-icon {
@@ -148,9 +149,8 @@ const navbar = `
 }
 
 #mobileMenu.menu-is-shown .mobile-menu-link {
-    transform: translateY(0);
     opacity: 1;
-    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition: opacity 0.6s ease;
 }
 
 #mobileMenu.menu-is-shown .mobile-menu-link:nth-child(1) { transition-delay: 0.1s; }
