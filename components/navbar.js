@@ -157,6 +157,12 @@ const navbar = `
 .menu-open + #mobileMenu .mobile-menu-link:nth-child(2) { transition-delay: 0.2s; }
 .menu-open + #mobileMenu .mobile-menu-link:nth-child(3) { transition-delay: 0.3s; }
 .menu-open + #mobileMenu .mobile-menu-link:nth-child(4) { transition-delay: 0.4s; }
+
+#navbar {
+  border-bottom-width: 0 !important;
+  border-bottom-style: none !important; /* Explicitly set style to none */
+  box-shadow: none !important; /* In case a shadow is mimicking a line */
+}
 </style>
 `;
 
