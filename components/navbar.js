@@ -22,6 +22,7 @@ const navbar = `
             </div>
         </div>
     </div>
+</header>
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="fixed inset-0 bg-white transform -translate-y-full transition-transform duration-500 ease-in-out z-40">
         <div class="h-full flex flex-col justify-center items-center">
@@ -33,7 +34,6 @@ const navbar = `
             </nav>
         </div>
     </div>
-</header>
 
 <style>
 /* Base navbar styles */
