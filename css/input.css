@@ -172,4 +172,29 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #339d97;
+}
+
+/* Organic blob shapes for background elements */
+.blob {
+  width: 16rem;
+  height: 16rem;
+  background: linear-gradient(135deg, #41c1ba 60%, #339d97 100%);
+  border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
+  opacity: 0.18;
+  filter: blur(24px);
+  animation: float 7s ease-in-out infinite;
+  position: absolute;
+  z-index: 0;
+}
+
+.blob-small {
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(120deg, #339d97 60%, #41c1ba 100%);
+  border-radius: 60% 50% 40% 50% / 50% 60% 50% 40%;
+  opacity: 0.13;
+  filter: blur(18px);
+  animation: float 9s ease-in-out infinite;
+  position: absolute;
+  z-index: 0;
 } 
