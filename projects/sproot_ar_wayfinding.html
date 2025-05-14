@@ -204,14 +204,14 @@
                     </div>
 
                     <!-- Carousel Section -->
-                    <section class="py-10 bg-gray-100">
-                        <div class="relative w-full overflow-hidden" id="project-carousel">
+                    <section class="py-10 bg-white">
+                        <div class="relative w-full overflow-hidden rounded-xl" id="project-carousel">
                             <div class="flex transition-transform duration-700 ease-in-out" id="carousel-slides">
                                 <!-- Slide 1 -->
                                 <div class="w-full flex-shrink-0">
                                     <figure class="relative">
                                         <img src="./images/carousel-placeholder-1.jpg" alt="Carousel Image 1" class="w-full h-[30rem] md:h-[40rem] object-cover">
-                                        <figcaption class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-black bg-opacity-60 text-white text-center">
+                                        <figcaption class="absolute bottom-4 left-1/2 transform -translate-x-1/2 p-4 md:p-6 bg-white rounded-lg text-gray-800 text-center w-11/12 md:w-3/4 lg:w-1/2 shadow-md">
                                             <p class="text-sm md:text-base">Caption for Slide 1: Detailed view of the AR interface.</p>
                                         </figcaption>
                                     </figure>
@@ -220,7 +220,7 @@
                                 <div class="w-full flex-shrink-0">
                                     <figure class="relative">
                                         <img src="./images/carousel-placeholder-2.jpg" alt="Carousel Image 2" class="w-full h-[30rem] md:h-[40rem] object-cover">
-                                        <figcaption class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-black bg-opacity-60 text-white text-center">
+                                        <figcaption class="absolute bottom-4 left-1/2 transform -translate-x-1/2 p-4 md:p-6 bg-white rounded-lg text-gray-800 text-center w-11/12 md:w-3/4 lg:w-1/2 shadow-md">
                                             <p class="text-sm md:text-base">Caption for Slide 2: User testing session highlights.</p>
                                         </figcaption>
                                     </figure>
@@ -229,7 +229,7 @@
                                 <div class="w-full flex-shrink-0">
                                     <figure class="relative">
                                         <img src="./images/carousel-placeholder-3.jpg" alt="Carousel Image 3" class="w-full h-[30rem] md:h-[40rem] object-cover">
-                                        <figcaption class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-black bg-opacity-60 text-white text-center">
+                                        <figcaption class="absolute bottom-4 left-1/2 transform -translate-x-1/2 p-4 md:p-6 bg-white rounded-lg text-gray-800 text-center w-11/12 md:w-3/4 lg:w-1/2 shadow-md">
                                             <p class="text-sm md:text-base">Caption for Slide 3: Iteration of the wayfinding feature.</p>
                                         </figcaption>
                                     </figure>
@@ -238,7 +238,7 @@
                                 <div class="w-full flex-shrink-0">
                                     <figure class="relative">
                                         <img src="./images/carousel-placeholder-4.jpg" alt="Carousel Image 4" class="w-full h-[30rem] md:h-[40rem] object-cover">
-                                        <figcaption class="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-black bg-opacity-60 text-white text-center">
+                                        <figcaption class="absolute bottom-4 left-1/2 transform -translate-x-1/2 p-4 md:p-6 bg-white rounded-lg text-gray-800 text-center w-11/12 md:w-3/4 lg:w-1/2 shadow-md">
                                             <p class="text-sm md:text-base">Caption for Slide 4: Final product showcase on different devices.</p>
                                         </figcaption>
                                     </figure>
@@ -254,13 +254,10 @@
                             </button>
 
                             <!-- Indicators -->
-                            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2 md:space-x-3 z-10" id="carousel-indicators">
+                            <div class="absolute bottom-28 left-1/2 transform -translate-x-1/2 flex space-x-2 md:space-x-3 z-10" id="carousel-indicators">
                                 <!-- JS will populate this -->
                             </div>
                         </div>
-                        <script>
-                        document.addEventListener('DOMContentLoaded',function(){const t=document.getElementById('carousel-slides');if(!t)return;const e=Array.from(t.children),n=document.getElementById('prev-slide'),r=document.getElementById('next-slide'),o=document.getElementById('carousel-indicators');let s=0;const l=e.length;if(0===l)return;if(o){e.forEach((t,i)=>{const e=document.createElement('button');e.setAttribute('aria-label', `Go to slide ${i + 1}`);e.classList.add('w-2.5','h-2.5','md:w-3','md:h-3','rounded-full','bg-white','transition-all','duration-300','ease-in-out');i===s?(e.classList.add('bg-opacity-100','scale-125'),e.classList.remove('bg-opacity-50')):(e.classList.add('bg-opacity-50'),e.classList.remove('bg-opacity-100','scale-125'));e.addEventListener('click',()=>{s=i,a()});o.appendChild(e)})}const i=o?Array.from(o.children):[];function a(){t.style.transform=`translateX(-${s*100}%)`;i.length>0&&i.forEach((t,e)=>{t.classList.toggle('bg-opacity-100',e===s);t.classList.toggle('scale-125',e===s);t.classList.toggle('bg-opacity-50',e!==s)})}r&&r.addEventListener('click',()=>{s=(s+1)%l,a()});n&&n.addEventListener('click',()=>{s=(s-1+l)%l,a()});a()});
-                        </script>
                     </section>
 
                     <!-- Design Phase -->

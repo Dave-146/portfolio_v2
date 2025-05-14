@@ -183,6 +183,68 @@ document.addEventListener('DOMContentLoaded', () => {
             viewAllButton.textContent = projectsVisible ? 'Show Less' : 'View All Projects';
         });
     }
+
+    // Carousel Script
+    const carouselSlides = document.getElementById('carousel-slides');
+    if (carouselSlides) {
+        const slides = Array.from(carouselSlides.children);
+        const prevButton = document.getElementById('prev-slide');
+        const nextButton = document.getElementById('next-slide');
+        const indicatorsContainer = document.getElementById('carousel-indicators');
+        let currentIndex = 0;
+        const numSlides = slides.length;
+
+        if (numSlides > 0) {
+            if (indicatorsContainer) {
+                slides.forEach((slide, index) => {
+                    const button = document.createElement('button');
+                    button.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                    button.classList.add('w-2.5', 'h-2.5', 'md:w-3', 'md:h-3', 'rounded-full', 'bg-primary', 'transition-all', 'duration-300', 'ease-in-out');
+                    if (index === currentIndex) {
+                        button.classList.add('bg-opacity-100', 'scale-125');
+                        button.classList.remove('bg-opacity-50');
+                    } else {
+                        button.classList.add('bg-opacity-50');
+                        button.classList.remove('bg-opacity-100', 'scale-125');
+                    }
+                    button.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateCarousel();
+                    });
+                    indicatorsContainer.appendChild(button);
+                });
+            }
+
+            const indicators = indicatorsContainer ? Array.from(indicatorsContainer.children) : [];
+
+            function updateCarousel() {
+                carouselSlides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                if (indicators.length > 0) {
+                    indicators.forEach((indicator, index) => {
+                        indicator.classList.toggle('bg-opacity-100', index === currentIndex);
+                        indicator.classList.toggle('scale-125', index === currentIndex);
+                        indicator.classList.toggle('bg-opacity-50', index !== currentIndex);
+                    });
+                }
+            }
+
+            if (nextButton) {
+                nextButton.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % numSlides;
+                    updateCarousel();
+                });
+            }
+
+            if (prevButton) {
+                prevButton.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + numSlides) % numSlides;
+                    updateCarousel();
+                });
+            }
+            updateCarousel(); // Initial setup
+        }
+    }
+    // End Carousel Script
 });
 
 // Helper function to validate email
@@ -201,4 +263,4 @@ function showError(input, message) {
         errorElement.classList.remove('hidden');
         input.classList.add('border-red-500');
     }
-} 
+}
