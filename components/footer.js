@@ -11,6 +11,9 @@ const footer = `
             <a href="https://linkedin.com/in/davecrean" class="text-gray-400 hover:text-white transition-colors">
                 <i class="ri-linkedin-line text-2xl"></i>
             </a>
+            <a href="https://drive.google.com/file/d/14mE-9M8ZawHy9OnEOmMd3TGR4j2-iDmh/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors px-4 py-2 border border-gray-400 hover:border-white rounded">
+                Resume
+            </a>
            
         </div>
         <div class="border-t border-gray-800 mt-8 pt-8 text-center">
