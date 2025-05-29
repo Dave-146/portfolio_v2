@@ -49,6 +49,50 @@ tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},b
   html {
     scroll-padding-top: 100px; /* Offset for fixed navbar height */
   }
+  .timeline-container {
+    position: relative;
+  }
+  .timeline-line-bg {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: #e0f7fa;
+    transform: translateX(-50%);
+    z-index: 0;
+    border-radius: 3px;
+  }
+  .timeline-line-fg {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 6px;
+    background: #41c1ba;
+    transform: translateX(-50%);
+    z-index: 1;
+    height: 0;
+    border-radius: 3px;
+    transition: height 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  .timeline-section {
+    opacity: 0;
+    pointer-events: none;
+    position: static;
+    transition: opacity 0.15s, transform 0.15s;
+    transform: translateY(5px);
+    z-index: 2;
+  }
+  .timeline-section.visible {
+    opacity: 1;
+    pointer-events: auto;
+    position: static;
+    transform: none;
+    z-index: 2;
+  }
+  .timeline-section.fading {
+    opacity: 0.2;
+  }
 </style>
 </head>
 <body class="bg-white overflow-x-hidden">
@@ -280,89 +324,88 @@ tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},b
 <div class="container mx-auto px-6">
 <div class="text-center mb-16">
 <h2 class="text-4xl font-bold mb-4 text-gray-900 font-heading">My <span class="text-primary">Process</span></h2>
-<p class="text-xl text-gray-700 max-w-2xl mx-auto font-body">Great design comes from a thoughtful, flexible approach. My process centres on understanding the people I'm designing for, always with the users needs in mind.</p>
+<p class="text-xl text-gray-700 max-w-2xl mx-auto font-body">Great design comes from a thoughtful, flexible approach. My process centres on understanding the people I'm designing for, always with the users needs in mind.</p>
 </div>
-<div class="relative">
-<div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
-<div class="space-y-24">
-<div class="relative grid grid-cols-[1fr,auto,1fr] items-center gap-8">
-<div class="text-center">
-<h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Discovery & Research</h3>
-<p class="text-gray-700 font-body">My design journey kicks off with deep-dive research,  gathering insights about users, the business, and the market. Connecting every insight to uncover those important core user needs. Combining all of this creates the essential blueprint for impactful design.<p>
+<!-- Timeline Animation Wrapper Start -->
+<div class="timeline-container relative">
+  <div class="timeline-line-bg"></div>
+  <div class="timeline-line-fg"></div>
+  <div class="space-y-24">
+    <!-- Add timeline-section class to each timeline grid row below -->
+    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
+      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10">
+        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
+          <i class="ri-search-line text-xl"></i>
+        </div>
+      </div>
+      <div class="order-2 md:order-3 md:pl-8 z-0">
+        <img src="./images/home/Discovery & Research.webp" alt="Discovery & Research" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+      </div>
+      <div class="order-3 md:order-1 md:text-center z-10">
+        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Discovery & Research</h3>
+        <p class="text-gray-700 font-body">My design journey kicks off with deep-dive research, gathering insights about users, the business, and the market. Connecting every insight to uncover those important core user needs. Combining all of this creates the essential blueprint for impactful design.<p>
+      </div>
+    </div>
+    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
+      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10">
+        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
+          <i class="ri-layout-2-line text-xl"></i>
+        </div>
+      </div>
+      <div class="order-2 md:order-3 md:pl-8 z-0">
+        <img src="./images/home/Ideation & Wireframing.webp" alt="Strategy & Wireframing" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+      </div>
+      <div class="order-3 md:order-1 md:text-right z-10">
+        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Ideation & Wireframing</h3>
+        <p class="text-gray-700 font-body">With the research insights in hand, I start creating the experience, by developing the information architecture and sketch out low-fidelity wireframes. This step is crucial for clearly defining how users will use the product and their core journey. It ensures everything is intuitive and usable before any visual elements are introduced.</p>
+      </div>
+    </div>
+    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
+      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10">
+        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
+          <i class="ri-palette-line text-xl"></i>
+        </div>
+      </div>
+      <div class="order-2 md:order-3 md:pl-8 z-0">
+        <img src="./images/home/Visual Design.webp" alt="Visual Design" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+      </div>
+      <div class="order-3 md:order-1 md:text-right z-10">
+        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Visual Design</h3>
+        <p class="text-gray-700 font-body">Once the structural foundation is set, I start working on the visual aspect. Turning wireframes into high-fidelity designs, to build that cohesive visual language that communicates the brands identity. This means creating something that looks great and aligns with the brand, but also enhances usability and an emotional connection with users.</p>
+      </div>
+    </div>
+    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
+      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10"> 
+        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
+          <i class="ri-test-tube-line text-xl"></i>
+        </div>
+      </div>
+      <div class="order-2 md:order-3 md:pl-8 z-0">
+        <img src="./images/home/Prototyping & Testing.webp" alt="Prototyping & Testing" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+      </div>
+      <div class="order-3 md:order-1 md:text-right z-10">
+        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Prototyping & Testing</h3>
+        <p class="text-gray-700 font-body">After Visual Design, I develop interactive prototypes to simulate the user experience. Putting these to the test through usability testing, gathering direct feedback. This crucial step validates design decisions and brings to light key opportunities for improvements, making sure the product meets core user needs.</p>
+      </div>
+    </div>
+    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
+      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10">
+        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
+          <i class="ri-code-s-slash-line text-xl"></i>
+        </div>
+      </div>
+      <div class="order-2 md:order-3 md:pl-8 z-0">
+        <img src="./images/home/Implementation & Iteration.webp" alt="Implementation & Iteration" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
+      </div>
+      <div class="order-3 md:order-1 md:text-right z-10">
+        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Implementation & Iteration</h3>
+        <p class="text-gray-700 font-body">My work doesn't stop at the hand-off. Even after launch, I continue to gather feedback and data, using these insights to make thoughtful improvements and iterate on the experience.</p>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="relative flex justify-center z-10">
-<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center">
-<i class="ri-search-line text-xl"></i>
-</div>
-</div>
-<div class="pl-8">
-<img src="./images/home/Discovery & Research.webp" alt="Discovery & Research" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
-</div>
-</div>
-
-<div class="relative grid grid-cols-[1fr,auto,1fr] items-center gap-8">
-<div class="text-right">
-<img src="./images/home/Ideation & Wireframing.webp" alt="Strategy & Wireframing" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
-</div>
-<div class="relative flex justify-center z-10">
-<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center">
-<i class="ri-layout-2-line text-xl"></i>
-</div>
-</div>
-<div class="pl-8">
-<h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Ideation & Wireframing</h3>
-<p class="text-gray-700 font-body">With the research insights in hand, I start creating the experience, by developing the information architecture and sketch out low-fidelity wireframes. This step is crucial for clearly defining how users will use the product and their core journey. It ensures everything is intuitive and usable before any visual elements are introduced.</p>
-</div>
-</div>
-
-<div class="relative grid grid-cols-[1fr,auto,1fr] items-center gap-8">
-<div class="text-right">
-<h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Visual Design</h3>
-<p class="text-gray-700 font-body">Once the structural foundation is set, I start working on the visual aspect. Turning wireframes into high-fidelity designs, to build that cohesive visual language that communicates the brands identity. This means creating something that looks great and aligns with the brand, but also enhances usability and an emotional connection with users.</p>
-</div>
-<div class="relative flex justify-center z-10">
-<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center">
-<i class="ri-palette-line text-xl"></i>
-</div>
-</div>
-<div class="pl-8">
-<img src="./images/home/Visual Design.webp" alt="Visual Design" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
-</div>
-</div>
-
-<div class="relative grid grid-cols-[1fr,auto,1fr] items-center gap-8">
-<div class="text-right">
-<img src="./images/home/Prototyping & Testing.webp" alt="Prototyping & Testing" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
-</div>
-<div class="relative flex justify-center z-10"> 
-<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center">
-<i class="ri-test-tube-line text-xl"></i>
-</div>
-</div>
-<div class="pl-8">
-<h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Prototyping & Testing</h3>
-<p class="text-gray-700 font-body">After Visual Design, I develop interactive prototypes to simulate the user experience. Putting these to the test through usability testing, gathering direct feedback. This crucial step validates design decisions and brings to light key opportunities for improvements, making sure the product meets core user needs.</p>
-</div>
-</div>
-
-<div class="relative grid grid-cols-[1fr,auto,1fr] items-center gap-8">
-<div class="text-right">
-<h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Implementation & Iteration</h3>
-<p class="text-gray-700 font-body">My work doesn't stop at the hand-off. Even after launch, I continue to gather feedback and data, using these insights to make thoughtful improvements and iterate on the experience.</p>
-</div>
-<div class="relative flex justify-center z-10">
-<div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center">
-<i class="ri-code-s-slash-line text-xl"></i>
-</div>
-</div>
-<div class="pl-8">
-  <img src="./images/home/Implementation & Iteration.webp" alt="Implementation & Iteration" class="w-full rounded-xl shadow-md object-cover object-top" loading="lazy">
-</div>
-</div>
-</div>
-</div>
+<!-- Timeline Animation Wrapper End -->
 </div>  
-</div>
 </section>
 <div class="blob absolute -top-40 -left-40 w-96 h-96 bg-primary bg-opacity-5 z-0"></div>
 <!-- Contact Section -->
@@ -488,5 +531,72 @@ tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},b
 </div>
 </section>
 <script src="./js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('.timeline-section');
+  const fgLine = document.querySelector('.timeline-line-fg');
+  const container = document.querySelector('.timeline-container');
+
+  function updateTimeline() {
+    let activeIdx = 0;
+
+    // Find the step whose icon is currently in the viewport
+    sections.forEach((section, idx) => {
+      const icon = section.querySelector('.w-12.h-12.bg-primary');
+      if (!icon) return;
+      const iconRect = icon.getBoundingClientRect();
+      if (iconRect.top < window.innerHeight && iconRect.bottom > 0) {
+        activeIdx = idx;
+      }
+    });
+
+    // If scrolling up and no icon is in the viewport, fallback to the previous icon that has left the bottom
+    if (activeIdx === 0) {
+      sections.forEach((section, idx) => {
+        const icon = section.querySelector('.w-12.h-12.bg-primary');
+        if (!icon) return;
+        const iconRect = icon.getBoundingClientRect();
+        if (iconRect.bottom < window.innerHeight && iconRect.top < 0) {
+          activeIdx = idx;
+        }
+      });
+    }
+
+    sections.forEach((section, idx) => {
+      const icon = section.querySelector('.w-12.h-12.bg-primary');
+      const iconRect = icon ? icon.getBoundingClientRect() : { top: Infinity, bottom: -Infinity };
+
+      // Show if top is in viewport
+      if (section.getBoundingClientRect().top < window.innerHeight && section.getBoundingClientRect().bottom > 0) {
+        section.classList.add('visible');
+      } else {
+        section.classList.remove('visible');
+      }
+
+      // Fading logic: previous step fades as its icon hits the top
+      if (idx === activeIdx - 1 && icon && iconRect.top <= 0 && section.getBoundingClientRect().bottom > 0) {
+        section.classList.add('fading');
+      } else {
+        section.classList.remove('fading');
+      }
+    });
+
+    // Fill the line up to the active icon
+    const icon = sections[activeIdx].querySelector('.w-12.h-12.bg-primary');
+    if (icon) {
+      const iconRect = icon.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const fillHeight = iconRect.top - containerRect.top;
+      fgLine.style.height = fillHeight + 'px';
+    }
+  }
+
+  window.addEventListener('scroll', updateTimeline);
+  window.addEventListener('resize', updateTimeline);
+  updateTimeline();
+});
+</script>
 </body>
+</html>
+
 </html>
