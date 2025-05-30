@@ -83,3 +83,78 @@ body {
     opacity: 0.7;
   }
 }
+
+.process-header {
+  position: sticky;
+  top: 100px;
+  z-index: 30;
+  background: #f9fafb;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.timeline-container {
+  position: relative;
+}
+.timeline-line-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  background: #d1d5db;
+  height: 100%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  z-index: 0;
+}
+.timeline-line-fg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  background: #6366f1;
+  height: 0;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  z-index: 1;
+  transition: height 0.3s ease-in-out;
+}
+.timeline-section {
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+.timeline-section.fade-in {
+  opacity: 1;
+}
+.timeline-section.fade-out {
+  opacity: 0.3;
+}
+@media (max-width: 767px) {
+  .timeline-container {
+    padding-left: 2rem;
+  }
+  .timeline-line-bg,
+  .timeline-line-fg {
+    left: 0;
+    transform: none;
+  }
+  .timeline-section {
+    grid-template-columns: auto 1fr !important;
+    align-items: flex-start;
+  }
+  .timeline-icon {
+    margin-right: 1rem;
+  }
+  .timeline-section > .timeline-icon {
+    justify-self: start;
+  }
+}
+
+/* Hide process section for now */
+#process {
+  display: none !important;
+}
+
+/* End Hide process section */
