@@ -100,11 +100,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div>
                         <h2 class="text-3xl font-bold mb-6 text-gray-900 font-heading">Challenge</h2>
-                        <p class="text-gray-600 mb-4">In-person grocery shopping has not kept up with our fast-paced lives, rising prices, and increasing dietary restrictions. Shoppers need a better way to find their everyday essentials without wandering aisles or reading endless labels.</p>
-                        <ul class="space-y-3">
+                        <p class="text-gray-600 mb-4">In person grocery shopping in large stores, like Loblaws can  lead to frustration for some of the following reasons:</p>
+                        <ul class="space-y-3 mb-4">
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Unintuitive store navigation</span>
+                                <span class="text-gray-600">Shoppers can’t find items easily</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
@@ -112,27 +112,30 @@
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Information overload when comparing deals</span>
+                                <span class="text-gray-600">Digital coupons and promotions go unnoticed</span>
                             </li>
                         </ul>
+                        <p class="text-gray-600 mb-4">Retailers face their own issues: missed opportunities to promote deals or suggest relevant products. These gaps highlighted a need for a smart, fast, shopper-focused digital assistant.</p>
+                        
                     </div>
                     <div>
                         <h2 class="text-3xl font-bold mb-6 text-gray-900 font-heading">Solution</h2>
-                        <p class="text-gray-600 mb-4">A intuitive mobile app with Augmented Reality wayfinding, personalized recommendations, and seamless shopping experience.</p>
-                        <ul class="space-y-3">
+                        <p class="text-gray-600 mb-4"><strong>Sproot</strong> is an AR-powered grocery companion app. It uses a smartphone camera to guide users through the store and deliver instant product information. Key features of this app include:</p>
+                        <ul class="space-y-3 mb-4">
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Easy navigation to items on the users shopping list using AR way finding</span>
+                                <span class="text-gray-600"><strong>AR Navigation:</strong> Real-time arrows guide shoppers directly to the items</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Personalized recommendations based on shopping history and preferences</span>
+                                <span class="text-gray-600"><strong>Personalized Recommendations:</strong> Based on past purchases and preferences</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Seamless integration with store loyalty programs, deals, and rewards</span>
+                                <span class="text-gray-600"><strong>Promotion recommendations:</strong>Recommended sale items offered to user based on items in their shopping list</span>
                             </li>
                         </ul>
+                        <p class="text-gray-600 mb-4">The result is a faster, smarter trips for users and better visibility for retailers.</p>
                     </div>
                 </div>
             </div>
@@ -149,57 +152,144 @@
                     <div class="flex flex-col items-center gap-8">
                         <div class="w-full">
                             <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center md:text-left font-heading">Research</h3>
-                            <p class="text-gray-600 mb-4">To understand the problem, my field study took place at a local grocery store. Research methods included:</p>
-                            <ul class="space-y-3 mb-8">
-                                <li class="flex items-start">
-                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                    <span class="text-gray-600">A competitive analysis of the grocery store app and its competitors</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                    <span class="text-gray-600">User interviews with grocery shoppers</span>
-                                </li>
-                            </ul>
+                            <p class="text-gray-600 mb-6">To investigate the struggles of everyday grocery shopping and shoppers, I conducted a thorough research plan to understand shoppers’ needs and find gaps in existing apps. This involved Field Research, User Interviews along with competitive analysis of the competition.</p>
+
+                            <!-- Collapsible 1: Competitive Analysis -->
+                            <div class="mb-6">
+                                <button class="flex justify-between items-center w-full py-3 px-1 text-left text-xl font-bold text-gray-900 font-heading hover:text-primary focus:outline-none transition-colors duration-200" onclick="toggleCollapse('competitiveAnalysisContent', this)" aria-expanded="false" aria-controls="competitiveAnalysisContent">
+                                    <span>Where Others Missed the Mark: Competitive Analysis</span>
+                                    <i class="ri-arrow-down-s-line transform transition-transform duration-200 text-2xl"></i>
+                                </button>
+                                <div id="competitiveAnalysisContent" class="hidden mt-4 text-gray-600 space-y-4 prose prose-sm max-w-none">
+                                    <p>Following a competitive analysis of other grocery apps, I was able to list features they offered and the strengths of that feature, and this led me to discover some gaps Sproot could fill.</p>
+                                    <p>Here’s a summary of what I found:</p>
+                                    <div class="overflow-x-auto my-4 shadow border border-gray-200 rounded-lg">
+                                        <table class="min-w-full w-full text-sm divide-y divide-gray-200">
+                                            <thead class="bg-gray-50">
+                                                <tr class="divide-x divide-gray-200">
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Loblaws (PC Express)</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Walmart App</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Instacart</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                <tr class="divide-x divide-gray-200">
+                                                    <td class="px-4 py-3 align-top font-semibold text-gray-800">Product</td>
+                                                    <td class="px-4 py-3 align-top">Loblaws’ grocery pickup & delivery app with PC Optimum loyalty integration</td>
+                                                    <td class="px-4 py-3 align-top">Walmarts shopping app (groceries & general merchandise)</td>
+                                                    <td class="px-4 py-3 align-top">3rd-party grocery delivery platform connecting customers with local retailers</td>
+                                                </tr>
+                                                <tr class="divide-x divide-gray-200">
+                                                    <td class="px-4 py-3 align-top font-semibold text-gray-800">Key Features</td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Online orders with scheduled pickup/delivery</li>
+                                                            <li>Scan barcodes to check prices & find product details</li>
+                                                            <li>Recurring shopping lists (pre-trip planning)</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Multi-store online shopping</li>
+                                                            <li>In-store item locator/maps (only for select stores)</li>
+                                                            <li>Digital weekly flyer</li>
+                                                            <li>Standard shipping</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Earn/redeem PC Optimum points on purchases</li>
+                                                            <li>Same-day delivery (as fast as 2h)</li>
+                                                            <li>Digital Coupons (redeemable in-store)</li>
+                                                            <li>Instacart+ subscription (unlimited free delivery)</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr class="divide-x divide-gray-200">
+                                                    <td class="px-4 py-3 align-top font-semibold text-gray-800">Strengths</td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Strong loyalty rewards (PC Optimum) drive repeat use</li>
+                                                            <li>Large Canadian grocery chain support</li>
+                                                            <li>Unified, user-friendly app experience</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Omnichannel reach (in-store, pickup, delivery)</li>
+                                                            <li>Barcode scanning for price/details</li>
+                                                            <li>Personalized recommendations</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Wide variety of partner stores</li>
+                                                            <li>Convenience</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr class="divide-x divide-gray-200">
+                                                    <td class="px-4 py-3 align-top font-semibold text-gray-800">Weaknesses</td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Primarily focused on pickup/delivery, not active in-store assistance</li>
+                                                            <li>Limited direct in-store navigation or item location features</li>
+                                                            <li>Limited to Canadian markets and Loblaws-owned stores</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>No standalone points-based loyalty program</li>
+                                                            <li>Occasional app reliability or stock-out issues</li>
+                                                            <li>Fewer personalization options</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Delivery and service fees can add up</li>
+                                                            <li>Inventory data can be inaccurate</li>
+                                                            <li>No integrated loyalty program</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <p>One important takeaway from this analysis is that these apps focus mostly on online orders and delivery – they fell short in the actual in-store experience. No app specifically focused on helping shoppers inside the aisles or offering real-time promotion nudges. Using this information, it led to focus on the in store experience by making the in-store trip faster, smarter, and less frustrating.</p>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible 2: User Interviews -->
+                            <div class="mb-6">
+                                <button class="flex justify-between items-center w-full py-3 px-1 text-left text-xl font-bold text-gray-900 font-heading hover:text-primary focus:outline-none transition-colors duration-200" onclick="toggleCollapse('userInterviewsContent', this)" aria-expanded="false" aria-controls="userInterviewsContent">
+                                    <span>Listening to the Shoppers: User Interviews</span>
+                                    <i class="ri-arrow-down-s-line transform transition-transform duration-200 text-2xl"></i>
+                                </button>
+                                <div id="userInterviewsContent" class="hidden mt-4 text-gray-600 space-y-4 prose prose-sm max-w-none">
+                                    <p>Surveys and user interviews were also conducted to validate the findings above, the core pain points that the project aimed to solve:</p>
+                                    <ul class="list-disc list-outside pl-5 space-y-2">
+                                        <li><strong>Time is Gold:</strong> Shoppers desperately want to save time and make their trips more efficient.</li>
+                                        <li><strong>Health Matters:</strong> Easy access to nutritional info and health benefits is a huge priority.</li>
+                                        <li><strong>"Where Is It?!"</strong> Most in-store apps just weren't cutting it for navigation or finding deals, leading to wasted time and missed savings.</li>
+                                    </ul>
+                                    <p>These insights solidified the core problem: shoppers are frustrated by “not finding items”, and missing coupons.</p>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible 3: Persona Development -->
+                            <div class="mb-6">
+                                <button class="flex justify-between items-center w-full py-3 px-1 text-left text-xl font-bold text-gray-900 font-heading hover:text-primary focus:outline-none transition-colors duration-200" onclick="toggleCollapse('personaDevelopmentContent', this)" aria-expanded="false" aria-controls="personaDevelopmentContent">
+                                    <span>Bringing Users to Life: Persona Development</span>
+                                    <i class="ri-arrow-down-s-line transform transition-transform duration-200 text-2xl"></i>
+                                </button>
+                                <div id="personaDevelopmentContent" class="hidden mt-4 text-gray-600 space-y-4 prose prose-sm max-w-none">
+                                    <p>With these insights in mind, I created two personas that embodied the diverse needs and frustrations found in my research. These personas give me a focus point to ensure Sproot's features were designed with real users in mind, driving every decision from AR navigation to personalized recommendations.</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="w-full">
                             <img src="images/fashion-research.jpg" alt="Research Phase" class="rounded-xl shadow-md w-full h-auto object-cover" style="max-height: 500px;">
-                        </div>
-                    </div>
-
-                    <!-- Competitive Analysis Section -->
-                    <div class="mt-16">
-                        <h4 class="text-xl font-bold mb-8 text-gray-900 text-center md:text-left font-heading">Competitive Analysis</h4>
-                        <div class="space-y-12">
-                            <!-- Google Lens -->
-                            <div class="grid md:grid-cols-2 gap-8 items-start">
-                                <div class="text-gray-600">
-                                    <h5 class="text-lg font-semibold mb-3 text-gray-800 font-heading">Google Lens</h5>
-                                    <p class="mb-2"><strong class="font-medium text-gray-700">Technology:</strong> Google Lens is a visual search tool that uses augmented reality (AR) and computer vision to recognize and provide information about objects in the real world when viewed through a smartphone camera.</p>
-                                    <p class="mb-2"><strong class="font-medium text-gray-700">Application:</strong> Similar to Sproot, Google Lens allows users to scan and identify items, landmarks, or objects. It can provide information, translate text, and perform various other tasks based on the visual input. It empowers users with knowledge and context in real-time.</p>
-                                    <p class="mb-2"><strong class="font-medium text-gray-700">Hardware:</strong> Android and some iOS smartphones with a camera</p>
-                                    <p class="mb-2"><strong class="font-medium text-gray-700">Software:</strong> Integrated into the Google app on Android and available as a standalone app on iOS.</p>
-                                    <p><strong class="font-medium text-gray-700">Platform:</strong> iOS and Android</p>
-                                </div>
-                                <div class="w-full">
-                                    <img src="images/sproot_ar_wayfinding/google_lens.jpg" alt="Google Lens Screenshot" class="rounded-xl shadow-md w-full h-auto object-cover" style="max-height: 350px;">
-                                    <!-- Replace with actual image path -->
-                                </div>
-                            </div>
-                            <!-- IKEA Place -->
-                            <div class="grid md:grid-cols-2 gap-8 items-start">
-                                <div class="w-full">
-                                    <img src="images/sproot_ar_wayfinding/ikea_place.jpg" alt="IKEA Place Screenshot" class="rounded-xl shadow-md w-full h-auto object-cover" style="max-height: 350px;">
-                                    <!-- Replace with actual image path -->
-                                </div>
-                                <div class="text-gray-600">
-                                    <h5 class="text-lg font-semibold mb-3 text-gray-800 font-heading"> IKEA Place</h5>
-                                    <p class="mb-2"><strong class="font-medium text-gray-700">Technology:</strong> IKEA Place is an AR app that allows users to visualize how IKEA furniture would look and fit in their own space by superimposing 3D models of furniture into their surroundings through the smartphone camera.</p>
-                                    <p class="mb-2"><strong class="font-medium text-gray-700">Application:</strong> While different in focus, IKEA Place shares a common use of AR in the context of retail. It helps customers make informed purchasing decisions by allowing them to see how a product fits into their home environment, similar to how Sproot uses AR to inform and inspire in the grocery shopping context.</p>
-                                    <p class="mb-2"><strong class="font-medium text-gray-700">Hardware:</strong> Android and iOS smartphones with a camera</p>
-                                    <p class="mb-2"><strong class="font-medium text-gray-700">Software:</strong> ARKit (for iOS), ARCore (for Android)</p>
-                                    <p><strong class="font-medium text-gray-700">Platform:</strong> iOS and Android</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -486,6 +576,23 @@
     </section>
     </main>
 
+    <script>
+        function toggleCollapse(contentId, button) {
+            const content = document.getElementById(contentId);
+            const icon = button.querySelector('i');
+            if (content) {
+                const isHidden = content.classList.toggle('hidden');
+                button.setAttribute('aria-expanded', String(!isHidden));
+                if (isHidden) {
+                    icon.classList.remove('ri-arrow-up-s-line');
+                    icon.classList.add('ri-arrow-down-s-line');
+                } else {
+                    icon.classList.remove('ri-arrow-down-s-line');
+                    icon.classList.add('ri-arrow-up-s-line');
+                }
+            }
+        }
+    </script>
     <script src="js/script.js"></script>
 </body>
-</html> 
+</html>
