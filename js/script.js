@@ -264,3 +264,28 @@ function showError(input, message) {
         input.classList.add('border-red-500');
     }
 }
+
+// Image hover effect for project cards
+document.addEventListener('DOMContentLoaded', function() {
+  const projectCards = document.querySelectorAll('.project-card');
+
+  projectCards.forEach(card => {
+    const img = card.querySelector('img[data-static-src]');
+    if (img) {
+      const staticSrc = img.dataset.staticSrc;
+      const animatedSrc = img.dataset.animatedSrc;
+
+      card.addEventListener('mouseenter', () => {
+        if (animatedSrc) {
+          img.src = animatedSrc;
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (staticSrc) {
+          img.src = staticSrc;
+        }
+      });
+    }
+  });
+});
