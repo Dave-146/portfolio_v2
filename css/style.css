@@ -83,3 +83,15 @@ body {
     opacity: 0.7;
   }
 }
+
+.image-zoom-container {
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
+}
+
+.image-zoom {
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the zoom effect */
+}
+
+.image-zoom-container:hover .image-zoom {
+  transform: scale(1.1); /* Zoom effect - adjust scale as needed */
+}
