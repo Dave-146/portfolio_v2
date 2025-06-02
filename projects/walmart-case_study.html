@@ -75,7 +75,7 @@
             </div>
             <div class="hidden md:block md:w-1/2 lg:w-2/5 pl-8">
                 <!-- Image for the right column -->
-                <img src="images/walmart_case_study/mockup.png" alt="Walmart Case Study Mockup" class="rounded-lg shadow-xl object-contain h-full w-auto mx-auto" style="max-height: 70vh;">
+                <img src="images/walmart_case_study/mockup.png" alt="Walmart Case Study Mockup" style="max-height: 70vh;">
             </div>
         </div>
         <div class="scroll-indicator"></div>
@@ -315,9 +315,121 @@
                         }
 
                         // Auto-advance slides every 5 seconds
-                        setInterval(() => {
+                        let autoSlideInterval = setInterval(() => {
                             moveSlide(1);
                         }, 5000);
+
+                        // Lightbox Logic
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const lightbox = document.getElementById('imageLightbox');
+                            const lightboxCard = document.getElementById('lightboxCard'); // Get the card element
+                            const lightboxImage = document.getElementById('lightboxImage');
+                            const closeLightboxBtn = document.getElementById('closeLightbox');
+                            const carouselImages = document.querySelectorAll('.carousel-slides img');
+                            const prevLightboxBtn = document.getElementById('prevLightboxImage'); // New
+                            const nextLightboxBtn = document.getElementById('nextLightboxImage'); // New
+                            let currentLightboxIndex = 0; // New
+
+                            if (lightbox && lightboxCard && lightboxImage && closeLightboxBtn && carouselImages.length > 0 && prevLightboxBtn && nextLightboxBtn) {
+                                carouselImages.forEach((image, index) => { // Added index here
+                                    image.addEventListener('click', () => {
+                                        currentLightboxIndex = index; // Store index
+                                        lightboxImage.src = image.src;
+                                        lightbox.classList.remove('hidden');
+                                        // Trigger card appearance animation
+                                        setTimeout(() => {
+                                            lightboxCard.classList.remove('scale-95', 'opacity-0');
+                                            lightboxCard.classList.add('scale-100', 'opacity-100');
+                                        }, 50); // Small delay to ensure transition is applied
+                                        clearInterval(autoSlideInterval); // Pause carousel
+                                    });
+                                });
+
+                                function closeLightbox() { // Function to restore
+                                    // Trigger card disappearance animation
+                                    lightboxCard.classList.remove('scale-100', 'opacity-100');
+                                    lightboxCard.classList.add('scale-95', 'opacity-0');
+                                    
+                                    // Hide lightbox after animation (duration-300 from Tailwind class)
+                                    setTimeout(() => {
+                                        lightbox.classList.add('hidden');
+                                    }, 300);
+
+                                    clearInterval(autoSlideInterval);
+                                    autoSlideInterval = setInterval(() => {
+                                        moveSlide(1);
+                                    }, 5000);
+                                }
+
+                                closeLightboxBtn.addEventListener('click', closeLightbox); // Restore listener
+                                lightbox.addEventListener('click', (e) => { // Restore overlay click listener
+                                    if (e.target === lightbox) {
+                                        closeLightbox();
+                                    }
+                                });
+
+                                function showLightboxImage(index) {
+                                    if (index >= 0 && index < carouselImages.length) {
+                                        lightboxImage.src = carouselImages[index].src;
+                                        currentLightboxIndex = index;
+                                    }
+                                }
+
+                                prevLightboxBtn.addEventListener('click', () => {
+                                    let newIndex = currentLightboxIndex - 1;
+                                    if (newIndex < 0) {
+                                        newIndex = carouselImages.length - 1; // Loop to last
+                                    }
+                                    showLightboxImage(newIndex);
+                                });
+
+                                nextLightboxBtn.addEventListener('click', () => {
+                                    let newIndex = currentLightboxIndex + 1;
+                                    if (newIndex >= carouselImages.length) {
+                                        newIndex = 0; // Loop to first
+                                    }
+                                    showLightboxImage(newIndex);
+                                });
+
+                                // Optional: Keyboard navigation for lightbox
+                                document.addEventListener('keydown', (e) => {
+                                    if (!lightbox.classList.contains('hidden')) {
+                                        if (e.key === 'Escape') { // Restore Escape key functionality
+                                            closeLightbox();
+                                        } else if (e.key === 'ArrowLeft') {
+                                            prevLightboxBtn.click(); // Trigger click on prev button
+                                        } else if (e.key === 'ArrowRight') {
+                                            nextLightboxBtn.click(); // Trigger click on next button
+                                        }
+                                    }
+                                });
+
+                                // Logic to toggle prototypes based on screen width
+                                const desktopPrototype = document.getElementById('desktopPrototype');
+                                const mobilePrototype = document.getElementById('mobilePrototype');
+                                const breakpoint = 768; // Tailwind's md breakpoint
+
+                                function togglePrototypes() {
+                                    if (desktopPrototype && mobilePrototype) {
+                                        if (window.innerWidth < breakpoint) {
+                                            desktopPrototype.classList.add('hidden');
+                                            mobilePrototype.classList.remove('hidden');
+                                        } else {
+                                            desktopPrototype.classList.remove('hidden');
+                                            mobilePrototype.classList.add('hidden');
+                                        }
+                                    }
+                                }
+
+                                // Initial check
+                                togglePrototypes();
+
+                                // Check on resize
+                                window.addEventListener('resize', togglePrototypes);
+                            } else {
+                                console.error('Lightbox elements not found. Check IDs or script placement.');
+                            }
+                        });
                     </script>
                 </div>
             </div>
@@ -366,7 +478,10 @@
                 <div class="py-12 my-8 bg-gray-100 rounded-xl shadow-md">
                     <h3 class="text-2xl font-bold mb-8 text-center text-gray-900 font-heading">Interactive Prototype</h3>
                     <div class="flex justify-center">
-                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 500px;" src="https://embed.figma.com/proto/v4LAFPUEMG01laMfeZTMyD/Walmart-UX-Audit?page-id=617%3A22088&node-id=1368-36884&viewport=655%2C665%2C0.02&scaling=width&content-scaling=responsive&starting-point-node-id=1368%3A36884&embed-host=share" allowfullscreen></iframe>
+                        <!-- Desktop Prototype -->
+                        <iframe id="desktopPrototype" style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 75vh;" src="https://embed.figma.com/proto/v4LAFPUEMG01laMfeZTMyD/Walmart-UX-Audit?page-id=617%3A22088&node-id=1368-36884&viewport=655%2C665%2C0.02&scaling=width&content-scaling=responsive&starting-point-node-id=1368%3A36884&embed-host=share" allowfullscreen></iframe>
+                        <!-- Mobile Prototype (initially hidden) -->
+                        <iframe id="mobilePrototype" style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 75vh;" src="https://embed.figma.com/proto/v4LAFPUEMG01laMfeZTMyD/Walmart-UX-Audit?page-id=617%3A22088&node-id=1368-60500&viewport=5139%2C2371%2C0.18&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1368%3A60500&show-proto-sidebar=1&embed-host=share" allowfullscreen class="hidden"></iframe>
                     </div>
                 </div>
             </div>
@@ -509,6 +624,27 @@
         </div>
     </section>
     </main>
+
+    <!-- Lightbox Structure -->
+    <div id="imageLightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden p-4 md:p-8">
+        <div class="bg-white p-3 md:p-4 rounded-lg shadow-xl relative w-full max-w-3xl transform transition-all duration-300 ease-out scale-95 opacity-0" id="lightboxCard">
+            <!-- Lightbox Image -->
+            <img id="lightboxImage" src="" alt="Enlarged image" class="w-full h-auto max-h-[75vh] object-contain rounded-md">
+            
+            <!-- Close Button -->
+            <button id="closeLightbox" class="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-primary hover:bg-opacity-80 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-lg md:text-xl shadow-lg z-10">&times;</button>
+            
+            <!-- Prev Button -->
+            <button id="prevLightboxImage" class="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-xl md:text-2xl shadow-md z-10">
+                <i class="ri-arrow-left-s-line"></i>
+            </button>
+            
+            <!-- Next Button -->
+            <button id="nextLightboxImage" class="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-xl md:text-2xl shadow-md z-10">
+                <i class="ri-arrow-right-s-line"></i>
+            </button>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
