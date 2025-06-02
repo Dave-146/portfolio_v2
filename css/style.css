@@ -95,3 +95,8 @@ body {
 .image-zoom-container:hover .image-zoom {
   transform: scale(1.1); /* Zoom effect - adjust scale as needed */
 }
+
+/* Hero section text overlay */
+.hero-text-overlay {
+  background-color: rgba(255, 255, 255, 0.5); /* Equivalent to bg-white/70 */
+}
