@@ -44,16 +44,23 @@
   <!-- Main Content -->
   <main class="pt-20">
     <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-12">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6">Portfolio</h1>
-        <p class="text-xl text-gray-600 mb-8">A personal portfolio website showcasing my UX/UI design work and process, featuring a clean and modern design aesthetic.</p>
-        <div class="flex gap-4 items-center">
-          <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600">UX/UI Design</span>
-          <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600">Web Development</span>
-          <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600">2024</span>
+    <section class="pt-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 py-12 relative z-10 flex flex-col md:flex-row items-center">
+            <!-- Left Column for Text -->
+            <div class="w-full md:w-1/2 lg:w-3/5 text-center md:text-left py-8 md:py-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6">Portfolio</h1>
+                <p class="text-xl text-gray-600 mb-8 mx-auto md:mx-0">A personal portfolio website showcasing my UX/UI design work and process, featuring a clean and modern design aesthetic.</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 items-center">
+                    <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600">UX/UI Design</span>
+                    <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600">Web Development</span>
+                    <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600">2024</span>
+                </div>
+            </div>
+            <!-- Right Column (for spacing on larger screens) -->
+            <div class="hidden md:block md:w-1/2 lg:w-2/5">
+                <!-- Intentionally empty to create the two-column effect with text on left -->
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Project Overview -->
