@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="hidden md:block md:w-1/2 lg:w-2/5 flex items-center justify-center">
-                <div class="w-full max-w-md">
+                <div class="w-full max-w-lg">
                     <img id="heroGif" src="images/north_ventures_branding/North Ventures Mockup hero.gif" alt="North Ventures App Mockup" class="w-full h-auto opacity-0 transition-opacity duration-1000">
                 </div>
             </div>
@@ -154,7 +154,7 @@
                             </ul>
                         </div>
                         <div class="w-full md:w-1/2">
-                            <img src="./images/financial-research.jpg" alt="Research Phase" class="rounded-xl shadow-md">
+                            <img id="researchGif" src="images/north_ventures_branding/North Ventures Research.gif" alt="Research Phase" class="rounded-xl shadow-md opacity-0 transition-opacity duration-1000">
                         </div>
                     </div>
 
@@ -402,40 +402,44 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Control gif playback - only play on initial load
+        // Control gif playback - play once then switch to static images
         document.addEventListener('DOMContentLoaded', function() {
+            // Hero gif functionality
             const heroGif = document.getElementById('heroGif');
-            
             if (heroGif) {
                 // Show the gif with fade-in effect
                 setTimeout(() => {
                     heroGif.classList.remove('opacity-0');
                 }, 500);
                 
-                // Stop the gif after it completes one cycle (adjust timing as needed)
-                // Most gifs are around 3-5 seconds, adjust this value based on your gif duration
+                // After gif completes one cycle, switch to static PNG image
                 setTimeout(() => {
-                    // Create a canvas to freeze the gif at its last frame
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-                    
-                    // Set canvas dimensions to match the image
-                    heroGif.onload = function() {
-                        canvas.width = this.naturalWidth;
-                        canvas.height = this.naturalHeight;
-                        
-                        // Draw the current frame to canvas
-                        ctx.drawImage(this, 0, 0);
-                        
-                        // Replace the gif with the static canvas image
-                        const staticImage = new Image();
-                        staticImage.src = canvas.toDataURL();
-                        staticImage.className = heroGif.className;
-                        staticImage.alt = heroGif.alt;
-                        
-                        heroGif.parentNode.replaceChild(staticImage, heroGif);
-                    };
-                }, 6000); // Adjust this timing based on your gif duration
+                    const staticImg = document.createElement('img');
+                    staticImg.src = 'images/north_ventures_branding/North Ventures Mockup hero.png';
+                    staticImg.className = heroGif.className;
+                    staticImg.alt = heroGif.alt;
+                    staticImg.style.pointerEvents = 'none';
+                    heroGif.parentNode.replaceChild(staticImg, heroGif);
+                }, 4000); // Adjust timing based on your gif duration
+            }
+
+            // Research gif functionality
+            const researchGif = document.getElementById('researchGif');
+            if (researchGif) {
+                // Show the gif with fade-in effect
+                setTimeout(() => {
+                    researchGif.classList.remove('opacity-0');
+                }, 1000); // Slight delay after hero gif
+                
+                // After gif completes one cycle, switch to static PNG image
+                setTimeout(() => {
+                    const staticImg = document.createElement('img');
+                    staticImg.src = 'images/north_ventures_branding/North Ventures Research.png';
+                    staticImg.className = researchGif.className;
+                    staticImg.alt = researchGif.alt;
+                    staticImg.style.pointerEvents = 'none';
+                    researchGif.parentNode.replaceChild(staticImg, researchGif);
+                }, 5000); // Adjust timing based on your gif duration
             }
         });
     </script>
