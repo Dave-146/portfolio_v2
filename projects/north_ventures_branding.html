@@ -73,8 +73,10 @@
                     </div>
                 </div>
             </div>
-            <div class="hidden md:block md:w-1/2 lg:w-2/5">
-                <!-- Intentionally empty to create the two-column effect with text on left -->
+            <div class="hidden md:block md:w-1/2 lg:w-2/5 flex items-center justify-center">
+                <div class="w-full max-w-md">
+                    <img id="heroGif" src="images/north_ventures_branding/North Ventures Mockup hero.gif" alt="North Ventures App Mockup" class="w-full h-auto opacity-0 transition-opacity duration-1000">
+                </div>
             </div>
         </div>
         <!-- Scroll Indicator -->
@@ -399,5 +401,43 @@
     </main>
 
     <script src="js/script.js"></script>
+    <script>
+        // Control gif playback - only play on initial load
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroGif = document.getElementById('heroGif');
+            
+            if (heroGif) {
+                // Show the gif with fade-in effect
+                setTimeout(() => {
+                    heroGif.classList.remove('opacity-0');
+                }, 500);
+                
+                // Stop the gif after it completes one cycle (adjust timing as needed)
+                // Most gifs are around 3-5 seconds, adjust this value based on your gif duration
+                setTimeout(() => {
+                    // Create a canvas to freeze the gif at its last frame
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Set canvas dimensions to match the image
+                    heroGif.onload = function() {
+                        canvas.width = this.naturalWidth;
+                        canvas.height = this.naturalHeight;
+                        
+                        // Draw the current frame to canvas
+                        ctx.drawImage(this, 0, 0);
+                        
+                        // Replace the gif with the static canvas image
+                        const staticImage = new Image();
+                        staticImage.src = canvas.toDataURL();
+                        staticImage.className = heroGif.className;
+                        staticImage.alt = heroGif.alt;
+                        
+                        heroGif.parentNode.replaceChild(staticImage, heroGif);
+                    };
+                }, 6000); // Adjust this timing based on your gif duration
+            }
+        });
+    </script>
 </body>
 </html> 
