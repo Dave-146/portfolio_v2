@@ -402,45 +402,75 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Control gif playback - play once then switch to static images
+        // Control gif playback with smooth crossfade transition
         document.addEventListener('DOMContentLoaded', function() {
-            // Hero gif functionality
-            const heroGif = document.getElementById('heroGif');
-            if (heroGif) {
-                // Show the gif with fade-in effect
-                setTimeout(() => {
-                    heroGif.classList.remove('opacity-0');
-                }, 500);
+            
+            function createSmoothGifTransition(gifElement, staticSrc, fadeInDelay, transitionDelay) {
+                if (!gifElement) return;
                 
-                // After gif completes one cycle, switch to static PNG image
-                setTimeout(() => {
-                    const staticImg = document.createElement('img');
-                    staticImg.src = 'images/north_ventures_branding/North Ventures Mockup hero.png';
-                    staticImg.className = heroGif.className;
-                    staticImg.alt = heroGif.alt;
-                    staticImg.style.pointerEvents = 'none';
-                    heroGif.parentNode.replaceChild(staticImg, heroGif);
-                }, 4000); // Adjust timing based on your gif duration
-            }
-
-            // Research gif functionality
-            const researchGif = document.getElementById('researchGif');
-            if (researchGif) {
-                // Show the gif with fade-in effect
-                setTimeout(() => {
-                    researchGif.classList.remove('opacity-0');
-                }, 1000); // Slight delay after hero gif
+                // Create static image element
+                const staticImg = new Image();
+                staticImg.onload = function() {
+                    // Show the gif first
+                    setTimeout(() => {
+                        gifElement.classList.remove('opacity-0');
+                    }, fadeInDelay);
+                    
+                    // After gif plays, do crossfade transition
+                    setTimeout(() => {
+                        // Create static image with exact same styling but hidden
+                        const replacement = staticImg.cloneNode();
+                        replacement.className = gifElement.className + ' opacity-0';
+                        replacement.alt = gifElement.alt;
+                        replacement.style.position = 'absolute';
+                        replacement.style.top = '0';
+                        replacement.style.left = '0';
+                        replacement.style.width = '100%';
+                        replacement.style.height = '100%';
+                        
+                        // Make parent container relative for positioning
+                        const parent = gifElement.parentNode;
+                        parent.style.position = 'relative';
+                        
+                        // Add static image behind gif
+                        parent.appendChild(replacement);
+                        
+                        // Crossfade: hide gif and show static simultaneously
+                        requestAnimationFrame(() => {
+                            gifElement.classList.add('opacity-0');
+                            replacement.classList.remove('opacity-0');
+                            
+                            // Clean up after transition completes
+                            setTimeout(() => {
+                                gifElement.remove();
+                                replacement.style.position = 'static';
+                                replacement.style.top = 'auto';
+                                replacement.style.left = 'auto';
+                                parent.style.position = '';
+                            }, 1000); // Wait for opacity transition to complete
+                        });
+                    }, transitionDelay);
+                };
                 
-                // After gif completes one cycle, switch to static PNG image
-                setTimeout(() => {
-                    const staticImg = document.createElement('img');
-                    staticImg.src = 'images/north_ventures_branding/North Ventures Research.png';
-                    staticImg.className = researchGif.className;
-                    staticImg.alt = researchGif.alt;
-                    staticImg.style.pointerEvents = 'none';
-                    researchGif.parentNode.replaceChild(staticImg, researchGif);
-                }, 4000); // Adjust timing based on your gif duration
+                // Start loading the static image
+                staticImg.src = staticSrc;
             }
+            
+            // Hero gif - fade in at 500ms, transition at 4000ms  
+            createSmoothGifTransition(
+                document.getElementById('heroGif'),
+                'images/north_ventures_branding/North Ventures Mockup hero.png',
+                500,
+                4000
+            );
+            
+            // Research gif - fade in at 1000ms, transition at 5000ms
+            createSmoothGifTransition(
+                document.getElementById('researchGif'), 
+                'images/north_ventures_branding/North Ventures Research.png',
+                1000,
+                5000
+            );
         });
     </script>
 </body>
