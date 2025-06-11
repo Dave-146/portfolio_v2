@@ -172,7 +172,7 @@
                                 <!-- Brand Identity Carousel -->
                                 <div class="relative">
                                     <!-- Carousel Images -->
-                                    <div class="carousel-container overflow-hidden rounded-xl shadow-lg">
+                                    <div class="carousel-container overflow-hidden">
                                         <div class="carousel-slides flex transition-transform duration-300">
                                             <img src="images/north_ventures_branding/design_moodboard.png" alt="North Ventures Mood Board" class="w-full h-auto cursor-pointer">
                                             <img src="images/north_ventures_branding/deisgn_colour_palette.png" alt="North Ventures Color Palette" class="w-full h-auto cursor-pointer">
@@ -184,21 +184,21 @@
                                     </div>
                                     
                                     <!-- Navigation Buttons -->
-                                    <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-all" onclick="moveBrandSlide(-1)">
+                                    <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-all" id="brandPrevBtn">
                                         <i class="ri-arrow-left-s-line text-xl"></i>
                                     </button>
-                                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-all" onclick="moveBrandSlide(1)">
+                                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-all" id="brandNextBtn">
                                         <i class="ri-arrow-right-s-line text-xl"></i>
                                     </button>
                                     
                                     <!-- Dots Navigation -->
                                     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot active" onclick="goToBrandSlide(0)"></button>
-                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(1)"></button>
-                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(2)"></button>
-                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(3)"></button>
-                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(4)"></button>
-                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(5)"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot active" data-slide="0"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" data-slide="1"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" data-slide="2"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" data-slide="3"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" data-slide="4"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" data-slide="5"></button>
                                     </div>
                                 </div>
                             </div>
@@ -221,9 +221,19 @@
                         <!-- App Design Section - Text Left, Carousel Right -->
                         <div class="flex flex-col md:flex-row-reverse items-center gap-8">
                             <div class="w-full md:w-1/2">
-                                <!-- App Design Carousel -->
-                                <div class="flex items-center justify-center">
-                                    <img src="images/north_ventures_branding/North Ventures Mockup.gif" alt="North Ventures App Mockup" class="max-w-full h-auto">
+                                <!-- App Design Mockup with Play/Pause -->
+                                <div class="relative flex items-center justify-center">
+                                    <video id="appMockupVideo" class="max-w-full h-auto" style="display: none;" muted loop>
+                                        <source src="images/north_ventures_branding/North Ventures Mockup.mp4" type="video/mp4">
+                                        <!-- Fallback to GIF if MP4 not available -->
+                                        <img src="images/north_ventures_branding/North Ventures Mockup.gif" alt="North Ventures App Mockup">
+                                    </video>
+                                    <img id="appMockupStatic" src="images/north_ventures_branding/North Ventures Mockup hero.png" alt="North Ventures App Mockup" class="max-w-full h-auto">
+                                    
+                                    <!-- Play/Pause Button -->
+                                    <button id="playPauseBtn" class="absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full shadow-md transition-all duration-300">
+                                        <i id="playPauseIcon" class="ri-play-line text-xl"></i>
+                                    </button>
                                 </div>
                             </div>
                             
@@ -582,6 +592,112 @@
                 5000
             );
 
+            // App Mockup Play/Pause Functionality
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const playPauseIcon = document.getElementById('playPauseIcon');
+            const appMockupVideo = document.getElementById('appMockupVideo');
+            const appMockupStatic = document.getElementById('appMockupStatic');
+            
+            let isPlaying = false;
+            let useVideoPlayback = false;
+
+            // Check if video source is available and set up fallback
+            function initializePlayback() {
+                if (appMockupVideo) {
+                    // Try to load the video to see if it exists
+                    appMockupVideo.addEventListener('loadeddata', () => {
+                        useVideoPlayback = true;
+                        console.log('Video loaded successfully, using video playback with true pause/resume');
+                    });
+                    
+                    appMockupVideo.addEventListener('error', () => {
+                        useVideoPlayback = false;
+                        console.log('Video not available, using improved GIF experience');
+                        setupImprovedGifExperience();
+                    });
+                    
+                    // Try to load the video
+                    appMockupVideo.load();
+                } else {
+                    setupImprovedGifExperience();
+                }
+            }
+
+            function setupImprovedGifExperience() {
+                // Create a hidden GIF that stays loaded to minimize restart effect
+                const hiddenGifContainer = document.createElement('div');
+                hiddenGifContainer.style.position = 'absolute';
+                hiddenGifContainer.style.left = '-9999px';
+                hiddenGifContainer.style.top = '-9999px';
+                hiddenGifContainer.style.width = '1px';
+                hiddenGifContainer.style.height = '1px';
+                hiddenGifContainer.style.overflow = 'hidden';
+                
+                const preloadGif = document.createElement('img');
+                preloadGif.src = 'images/north_ventures_branding/North Ventures Mockup.gif';
+                hiddenGifContainer.appendChild(preloadGif);
+                document.body.appendChild(hiddenGifContainer);
+
+                // Create visible GIF element
+                const gifImg = document.createElement('img');
+                gifImg.src = 'images/north_ventures_branding/North Ventures Mockup.gif';
+                gifImg.className = 'max-w-full h-auto';
+                gifImg.style.display = 'none';
+                gifImg.id = 'appMockupGif';
+                appMockupVideo.parentNode.insertBefore(gifImg, appMockupVideo);
+            }
+
+            if (playPauseBtn && playPauseIcon && appMockupStatic) {
+                playPauseBtn.addEventListener('click', () => {
+                    if (isPlaying) {
+                        // Pause
+                        if (useVideoPlayback && appMockupVideo) {
+                            // True pause with video
+                            appMockupVideo.pause();
+                            appMockupVideo.style.display = 'none';
+                        } else {
+                            // Hide GIF (will restart when shown again, but user expects this)
+                            const gifImg = document.getElementById('appMockupGif');
+                            if (gifImg) {
+                                gifImg.style.display = 'none';
+                            }
+                        }
+                        
+                        appMockupStatic.classList.remove('hidden');
+                        playPauseIcon.className = 'ri-play-line text-xl';
+                        isPlaying = false;
+                    } else {
+                        // Play
+                        appMockupStatic.classList.add('hidden');
+                        
+                        if (useVideoPlayback && appMockupVideo) {
+                            // Resume video from paused position
+                            appMockupVideo.style.display = 'block';
+                            appMockupVideo.play().catch(e => {
+                                console.log('Video play failed, falling back to GIF');
+                                useVideoPlayback = false;
+                                const gifImg = document.getElementById('appMockupGif');
+                                if (gifImg) {
+                                    gifImg.style.display = 'block';
+                                }
+                            });
+                        } else {
+                            // Show GIF (will restart, but this is expected behavior for GIFs)
+                            const gifImg = document.getElementById('appMockupGif');
+                            if (gifImg) {
+                                gifImg.style.display = 'block';
+                            }
+                        }
+                        
+                        playPauseIcon.className = 'ri-pause-line text-xl';
+                        isPlaying = true;
+                    }
+                });
+
+                // Initialize playback system
+                initializePlayback();
+            }
+
             // Brand Identity Carousel Functionality
             let currentBrandSlide = 0;
             const totalBrandSlides = 6;
@@ -612,6 +728,41 @@
             let brandAutoSlideInterval = setInterval(() => {
                 moveBrandSlide(1);
             }, 5000);
+
+            // Add event listeners for navigation buttons
+            const brandPrevBtn = document.getElementById('brandPrevBtn');
+            const brandNextBtn = document.getElementById('brandNextBtn');
+            const brandDots = document.querySelectorAll('.brand-dot');
+
+            if (brandPrevBtn) {
+                brandPrevBtn.addEventListener('click', () => {
+                    clearInterval(brandAutoSlideInterval);
+                    moveBrandSlide(-1);
+                    brandAutoSlideInterval = setInterval(() => {
+                        moveBrandSlide(1);
+                    }, 5000);
+                });
+            }
+
+            if (brandNextBtn) {
+                brandNextBtn.addEventListener('click', () => {
+                    clearInterval(brandAutoSlideInterval);
+                    moveBrandSlide(1);
+                    brandAutoSlideInterval = setInterval(() => {
+                        moveBrandSlide(1);
+                    }, 5000);
+                });
+            }
+
+            brandDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(brandAutoSlideInterval);
+                    goToBrandSlide(index);
+                    brandAutoSlideInterval = setInterval(() => {
+                        moveBrandSlide(1);
+                    }, 5000);
+                });
+            });
 
             // Lightbox Logic for Brand Carousel
             const brandLightbox = document.getElementById('brandImageLightbox');
