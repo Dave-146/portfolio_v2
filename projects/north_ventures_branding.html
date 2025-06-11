@@ -170,53 +170,36 @@
                         <div class="flex flex-col md:flex-row items-center gap-8">
                             <div class="w-full md:w-1/2">
                                 <!-- Brand Identity Carousel -->
-                                <div class="relative overflow-hidden rounded-xl shadow-md bg-white" id="brandCarousel">
-                                    <div class="carousel-container relative w-full h-auto">
-                                        <div class="carousel-track flex transition-transform duration-700 ease-in-out">
-                                            <!-- Slide 1: Mood Board -->
-                                            <div class="carousel-slide w-full flex-shrink-0 flex items-center justify-center">
-                                                <img src="images/north_ventures_branding/design_moodboard.png" alt="North Ventures Mood Board" class="max-w-full h-auto object-contain">
-                                            </div>
-                                            <!-- Slide 2: Color Palette -->
-                                            <div class="carousel-slide w-full flex-shrink-0 flex items-center justify-center">
-                                                <img src="images/north_ventures_branding/deisgn_colour_palette.png" alt="North Ventures Color Palette" class="max-w-full h-auto object-contain">
-                                            </div>
-                                            <!-- Slide 3: Typography Guide -->
-                                            <div class="carousel-slide w-full flex-shrink-0 flex items-center justify-center">
-                                                <img src="images/north_ventures_branding/design_font_families.png" alt="North Ventures Typography Guide" class="max-w-full h-auto object-contain">
-                                            </div>
-                                            <!-- Slide 4: Logo Sketches -->
-                                            <div class="carousel-slide w-full flex-shrink-0 flex items-center justify-center">
-                                                <img src="images/north_ventures_branding/logo_sketches.png" alt="North Ventures Logo Sketches" class="max-w-full h-auto object-contain">
-                                            </div>
-                                            <!-- Slide 5: Logo Mockups -->
-                                            <div class="carousel-slide w-full flex-shrink-0 flex items-center justify-center">
-                                                <img src="images/north_ventures_branding/logo_mockups.png" alt="North Ventures Logo Mockups" class="max-w-full h-auto object-contain">
-                                            </div>
-                                            <!-- Slide 6: Final Logo -->
-                                            <div class="carousel-slide w-full flex-shrink-0 flex items-center justify-center">
-                                                <img src="images/north_ventures_branding/final_logo.png" alt="North Ventures Final Logo" class="max-w-full h-auto object-contain">
-                                            </div>
+                                <div class="relative">
+                                    <!-- Carousel Images -->
+                                    <div class="carousel-container overflow-hidden rounded-xl shadow-lg">
+                                        <div class="carousel-slides flex transition-transform duration-300">
+                                            <img src="images/north_ventures_branding/design_moodboard.png" alt="North Ventures Mood Board" class="w-full h-auto cursor-pointer">
+                                            <img src="images/north_ventures_branding/deisgn_colour_palette.png" alt="North Ventures Color Palette" class="w-full h-auto cursor-pointer">
+                                            <img src="images/north_ventures_branding/design_font_families.png" alt="North Ventures Typography Guide" class="w-full h-auto cursor-pointer">
+                                            <img src="images/north_ventures_branding/logo_sketches.png" alt="North Ventures Logo Sketches" class="w-full h-auto cursor-pointer">
+                                            <img src="images/north_ventures_branding/logo_mockups.png" alt="North Ventures Logo Mockups" class="w-full h-auto cursor-pointer">
+                                            <img src="images/north_ventures_branding/final_logo.png" alt="North Ventures Final Logo" class="w-full h-auto cursor-pointer">
                                         </div>
                                     </div>
                                     
-                                    <!-- Carousel Indicators -->
-                                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                                        <button class="carousel-indicator w-2 h-2 rounded-full bg-white bg-opacity-50 transition-all duration-300 hover:bg-opacity-80" data-slide="0"></button>
-                                        <button class="carousel-indicator w-2 h-2 rounded-full bg-white bg-opacity-50 transition-all duration-300 hover:bg-opacity-80" data-slide="1"></button>
-                                        <button class="carousel-indicator w-2 h-2 rounded-full bg-white bg-opacity-50 transition-all duration-300 hover:bg-opacity-80" data-slide="2"></button>
-                                        <button class="carousel-indicator w-2 h-2 rounded-full bg-white bg-opacity-50 transition-all duration-300 hover:bg-opacity-80" data-slide="3"></button>
-                                        <button class="carousel-indicator w-2 h-2 rounded-full bg-white bg-opacity-50 transition-all duration-300 hover:bg-opacity-80" data-slide="4"></button>
-                                        <button class="carousel-indicator w-2 h-2 rounded-full bg-white bg-opacity-50 transition-all duration-300 hover:bg-opacity-80" data-slide="5"></button>
-                                    </div>
+                                    <!-- Navigation Buttons -->
+                                    <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-all" onclick="moveBrandSlide(-1)">
+                                        <i class="ri-arrow-left-s-line text-xl"></i>
+                                    </button>
+                                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md transition-all" onclick="moveBrandSlide(1)">
+                                        <i class="ri-arrow-right-s-line text-xl"></i>
+                                    </button>
                                     
-                                    <!-- Navigation Arrows -->
-                                    <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black bg-opacity-20 hover:bg-opacity-40 rounded-full flex items-center justify-center text-white transition-all duration-300">
-                                        <i class="ri-arrow-left-s-line text-lg"></i>
-                                    </button>
-                                    <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black bg-opacity-20 hover:bg-opacity-40 rounded-full flex items-center justify-center text-white transition-all duration-300">
-                                        <i class="ri-arrow-right-s-line text-lg"></i>
-                                    </button>
+                                    <!-- Dots Navigation -->
+                                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot active" onclick="goToBrandSlide(0)"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(1)"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(2)"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(3)"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(4)"></button>
+                                        <button class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all brand-dot" onclick="goToBrandSlide(5)"></button>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -477,6 +460,45 @@
     </section>-->
     </main>
 
+    <style>
+        .carousel-container {
+            width: 100%;
+            position: relative;
+        }
+        .carousel-slides {
+            display: flex;
+            width: 600%;  /* 100% * 6 slides */
+        }
+        .carousel-slides img {
+            width: 16.666667%;  /* 100% / 6 slides */
+            flex-shrink: 0;
+        }
+        .brand-dot.active {
+            background-color: white !important;
+        }
+    </style>
+
+    <!-- Brand Lightbox Structure -->
+    <div id="brandImageLightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden p-4 md:p-8">
+        <div class="bg-white p-3 md:p-4 rounded-lg shadow-xl relative w-full max-w-3xl transform transition-all duration-300 ease-out scale-95 opacity-0" id="brandLightboxCard">
+            <!-- Lightbox Image -->
+            <img id="brandLightboxImage" src="" alt="Enlarged image" class="w-full h-auto max-h-[75vh] object-contain rounded-md">
+            
+            <!-- Close Button -->
+            <button id="closeBrandLightbox" class="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-primary hover:bg-opacity-80 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-lg md:text-xl shadow-lg z-10">&times;</button>
+            
+            <!-- Prev Button -->
+            <button id="prevBrandLightboxImage" class="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-xl md:text-2xl shadow-md z-10">
+                <i class="ri-arrow-left-s-line"></i>
+            </button>
+            
+            <!-- Next Button -->
+            <button id="nextBrandLightboxImage" class="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-xl md:text-2xl shadow-md z-10">
+                <i class="ri-arrow-right-s-line"></i>
+            </button>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
     <script>
         // Control gif playback with instant, flash-free transition
@@ -557,92 +579,120 @@
                 5000
             );
 
-            // Multiple Carousel Functionality
-            function initializeCarousel(carouselId, autoSlideDelay = 4000) {
-                const carousel = document.getElementById(carouselId);
-                if (!carousel) return;
-                
-                const track = carousel.querySelector('.carousel-track');
-                const slides = carousel.querySelectorAll('.carousel-slide');
-                const indicators = carousel.querySelectorAll('.carousel-indicator');
-                const prevBtn = carousel.querySelector('.carousel-prev');
-                const nextBtn = carousel.querySelector('.carousel-next');
-                
-                let currentSlide = 0;
-                const totalSlides = slides.length;
-                let autoSlideInterval;
-                
-                function updateCarousel() {
-                    // Move track
-                    track.style.transform = `translateX(-${currentSlide * 100}%)`;
-                    
-                    // Update indicators
-                    indicators.forEach((indicator, index) => {
-                        if (index === currentSlide) {
-                            indicator.classList.add('bg-white', 'bg-opacity-100');
-                            indicator.classList.remove('bg-opacity-50');
-                        } else {
-                            indicator.classList.remove('bg-white', 'bg-opacity-100');
-                            indicator.classList.add('bg-opacity-50');
-                        }
-                    });
-                }
-                
-                function nextSlide() {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateCarousel();
-                }
-                
-                function prevSlide() {
-                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                    updateCarousel();
-                }
-                
-                function goToSlide(slideIndex) {
-                    currentSlide = slideIndex;
-                    updateCarousel();
-                }
-                
-                function startAutoSlide() {
-                    autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
-                }
-                
-                function stopAutoSlide() {
-                    clearInterval(autoSlideInterval);
-                }
-                
-                // Event listeners
-                nextBtn.addEventListener('click', () => {
-                    stopAutoSlide();
-                    nextSlide();
-                    startAutoSlide();
-                });
-                
-                prevBtn.addEventListener('click', () => {
-                    stopAutoSlide();
-                    prevSlide();
-                    startAutoSlide();
-                });
-                
-                indicators.forEach((indicator, index) => {
-                    indicator.addEventListener('click', () => {
-                        stopAutoSlide();
-                        goToSlide(index);
-                        startAutoSlide();
-                    });
-                });
-                
-                // Pause auto-slide on hover
-                carousel.addEventListener('mouseenter', stopAutoSlide);
-                carousel.addEventListener('mouseleave', startAutoSlide);
-                
-                // Initialize carousel
-                updateCarousel();
-                startAutoSlide();
+            // Brand Identity Carousel Functionality
+            let currentBrandSlide = 0;
+            const totalBrandSlides = 6;
+
+            function moveBrandSlide(direction) {
+                currentBrandSlide = (currentBrandSlide + direction + totalBrandSlides) % totalBrandSlides;
+                updateBrandSlidePosition();
             }
-            
-            // Initialize carousels with different timing
-            initializeCarousel('brandCarousel', 4000);      // Brand Identity - 4 seconds
+
+            function goToBrandSlide(slideIndex) {
+                currentBrandSlide = slideIndex;
+                updateBrandSlidePosition();
+            }
+
+            function updateBrandSlidePosition() {
+                const slides = document.querySelector('.carousel-slides');
+                if (slides) {
+                    slides.style.transform = `translateX(-${currentBrandSlide * (100/totalBrandSlides)}%)`;
+                    
+                    // Update dots
+                    document.querySelectorAll('.brand-dot').forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentBrandSlide);
+                    });
+                }
+            }
+
+            // Auto-advance slides every 5 seconds
+            let brandAutoSlideInterval = setInterval(() => {
+                moveBrandSlide(1);
+            }, 5000);
+
+            // Lightbox Logic for Brand Carousel
+            const brandLightbox = document.getElementById('brandImageLightbox');
+            const brandLightboxCard = document.getElementById('brandLightboxCard');
+            const brandLightboxImage = document.getElementById('brandLightboxImage');
+            const closeBrandLightboxBtn = document.getElementById('closeBrandLightbox');
+            const brandCarouselImages = document.querySelectorAll('.carousel-slides img');
+            const prevBrandLightboxBtn = document.getElementById('prevBrandLightboxImage');
+            const nextBrandLightboxBtn = document.getElementById('nextBrandLightboxImage');
+            let currentBrandLightboxIndex = 0;
+
+            if (brandLightbox && brandLightboxCard && brandLightboxImage && closeBrandLightboxBtn && brandCarouselImages.length > 0 && prevBrandLightboxBtn && nextBrandLightboxBtn) {
+                brandCarouselImages.forEach((image, index) => {
+                    image.addEventListener('click', () => {
+                        currentBrandLightboxIndex = index;
+                        brandLightboxImage.src = image.src;
+                        brandLightboxImage.alt = image.alt;
+                        brandLightbox.classList.remove('hidden');
+                        setTimeout(() => {
+                            brandLightboxCard.classList.remove('scale-95', 'opacity-0');
+                            brandLightboxCard.classList.add('scale-100', 'opacity-100');
+                        }, 50);
+                        clearInterval(brandAutoSlideInterval);
+                    });
+                });
+
+                function closeBrandLightbox() {
+                    brandLightboxCard.classList.remove('scale-100', 'opacity-100');
+                    brandLightboxCard.classList.add('scale-95', 'opacity-0');
+                    
+                    setTimeout(() => {
+                        brandLightbox.classList.add('hidden');
+                    }, 300);
+
+                    clearInterval(brandAutoSlideInterval);
+                    brandAutoSlideInterval = setInterval(() => {
+                        moveBrandSlide(1);
+                    }, 5000);
+                }
+
+                closeBrandLightboxBtn.addEventListener('click', closeBrandLightbox);
+                brandLightbox.addEventListener('click', (e) => {
+                    if (e.target === brandLightbox) {
+                        closeBrandLightbox();
+                    }
+                });
+
+                function showBrandLightboxImage(index) {
+                    if (index >= 0 && index < brandCarouselImages.length) {
+                        brandLightboxImage.src = brandCarouselImages[index].src;
+                        brandLightboxImage.alt = brandCarouselImages[index].alt;
+                        currentBrandLightboxIndex = index;
+                    }
+                }
+
+                prevBrandLightboxBtn.addEventListener('click', () => {
+                    let newIndex = currentBrandLightboxIndex - 1;
+                    if (newIndex < 0) {
+                        newIndex = brandCarouselImages.length - 1;
+                    }
+                    showBrandLightboxImage(newIndex);
+                });
+
+                nextBrandLightboxBtn.addEventListener('click', () => {
+                    let newIndex = currentBrandLightboxIndex + 1;
+                    if (newIndex >= brandCarouselImages.length) {
+                        newIndex = 0;
+                    }
+                    showBrandLightboxImage(newIndex);
+                });
+
+                // Keyboard navigation for lightbox
+                document.addEventListener('keydown', (e) => {
+                    if (!brandLightbox.classList.contains('hidden')) {
+                        if (e.key === 'Escape') {
+                            closeBrandLightbox();
+                        } else if (e.key === 'ArrowLeft') {
+                            prevBrandLightboxBtn.click();
+                        } else if (e.key === 'ArrowRight') {
+                            nextBrandLightboxBtn.click();
+                        }
+                    }
+                });
+            }
         });
     </script>
 </body>
