@@ -174,31 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobileMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
     const navbarElement = document.getElementById('navbar');
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                const headerOffset = navbarElement.offsetHeight;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-
-                // Close mobile menu after click
-                if (mobileMenu.classList.contains('menu-is-shown')) {
-                    toggleMobileMenu();
-                }
-            }
-        });
-    });
     
     function toggleMobileMenu() {
         mobileMenuButton.classList.toggle('menu-open');
@@ -215,7 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
         Array.from(mobileMenuLinks).forEach(link => {
             link.addEventListener('click', () => {
-                toggleMobileMenu();
+                if (mobileMenuButton.classList.contains('menu-open')) {
+                    toggleMobileMenu();
+                }
             });
         });
 
@@ -227,20 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll-based navbar transformation
-    let lastScroll = 0;
-    const scrollThreshold = 100; // Increased from 50 to 100
-
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > scrollThreshold) {
+        if (window.scrollY > 50) {
             navbarElement.classList.add('nav-scrolled');
         } else {
             navbarElement.classList.remove('nav-scrolled');
         }
-        
-        lastScroll = currentScroll;
     });
 
     const logoImg = document.querySelector('#navbar img');
