@@ -7,10 +7,10 @@ const navbar = `
                     <img src="https://dave-146.github.io/portfolio_v2/images/logo.svg" alt="Dave Crean Design" class="h-12 w-auto">
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="https://dave-146.github.io/portfolio_v2/#work" class="text-gray-800 hover:text-primary transition-colors">Work</a>
-                    <a href="https://dave-146.github.io/portfolio_v2/#about" class="text-gray-800 hover:text-primary transition-colors">About</a>
-                    <a href="https://dave-146.github.io/portfolio_v2/#process" class="text-gray-800 hover:text-primary transition-colors">Process</a>
-                    <a href="https://dave-146.github.io/portfolio_v2/#contact" class="inline-flex items-center px-4 py-2 bg-primary text-white font-medium rounded-button hover:bg-primary/90 transition-colors">Let's Talk</a>
+                    <a href="#work" class="text-gray-800 hover:text-primary transition-colors">Work</a>
+                    <a href="#about" class="text-gray-800 hover:text-primary transition-colors">About</a>
+                    <a href="#process" class="text-gray-800 hover:text-primary transition-colors">Process</a>
+                    <a href="#contact" class="inline-flex items-center px-4 py-2 bg-primary text-white font-medium rounded-button hover:bg-primary/90 transition-colors">Let's Talk</a>
                 </nav>
                 <button class="md:hidden menu-button relative w-8 h-8" id="mobileMenuButton" aria-label="Toggle mobile menu">
                     <div class="menu-icon">
@@ -27,10 +27,10 @@ const navbar = `
     <div id="mobileMenu" class="fixed inset-0 bg-white transform -translate-y-full transition-transform duration-500 ease-in-out z-40">
         <div class="h-full flex flex-col justify-center items-center">
             <nav class="flex flex-col space-y-8 text-center">
-                <a href="https://dave-146.github.io/portfolio_v2/#work" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">Work</a>
-                <a href="https://dave-146.github.io/portfolio_v2/#about" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">About</a>
-                <a href="https://dave-146.github.io/portfolio_v2/#process" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">Process</a>
-                <a href="https://dave-146.github.io/portfolio_v2/#contact" class="mobile-menu-link text-3xl font-heading text-primary hover:text-primary/80 transition-all opacity-0">Let's Talk</a>
+                <a href="#work" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">Work</a>
+                <a href="#about" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">About</a>
+                <a href="#process" class="mobile-menu-link text-3xl font-heading text-gray-800 hover:text-primary transition-all opacity-0">Process</a>
+                <a href="#contact" class="mobile-menu-link text-3xl font-heading text-primary hover:text-primary/80 transition-all opacity-0">Let's Talk</a>
             </nav>
         </div>
     </div>
@@ -174,6 +174,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobileMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
     const navbarElement = document.getElementById('navbar');
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const headerOffset = navbarElement.offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+
+                // Close mobile menu after click
+                if (mobileMenu.classList.contains('menu-is-shown')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+    });
     
     function toggleMobileMenu() {
         mobileMenuButton.classList.toggle('menu-open');

@@ -9,64 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Custom smooth scroll function
-    function smoothScrollTo(targetPosition, duration = 800) {
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        let startTime = null;
-
-        function animation(currentTime) {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / duration, 1);
-            
-            // Easing function for smooth animation
-            const easeInOutQuad = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-            
-            window.scrollTo(0, startPosition + (distance * easeInOutQuad(progress)));
-
-            if (timeElapsed < duration) {
-                requestAnimationFrame(animation);
-            }
-        }
-
-        requestAnimationFrame(animation);
-    }
-
-    // Handle navigation clicks
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href').slice(1);
-            
-            // Handle home link
-            if (!targetId) {
-                smoothScrollTo(0);
-                return;
-            }
-
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                // Get header height for offset
-                const header = document.querySelector('header');
-                const headerHeight = header ? header.offsetHeight : 0;
-                
-                // Calculate target position
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-                
-                // Perform smooth scroll
-                smoothScrollTo(targetPosition);
-                
-                // Close mobile menu if open
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            }
-        });
-    });
-
     // Header scroll effect
     const header = document.querySelector('header');
     let lastScroll = 0;
