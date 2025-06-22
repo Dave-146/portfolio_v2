@@ -51,48 +51,191 @@ tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},b
     scroll-behavior: smooth;
   }
   .timeline-container {
+    max-width: 1488px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .timeline {
     position: relative;
   }
-  .timeline-line-bg {
+
+  .timeline-line {
     position: absolute;
-    left: 50%;
     top: 0;
     bottom: 0;
-    width: 6px;
-    background: #e0f7fa;
-    transform: translateX(-50%);
-    z-index: 0;
-    border-radius: 3px;
+    left: 20px;
+    width: 4px;
+    background: linear-gradient(to bottom, #41c1ba, #41c1ba);
+    transform-origin: top center;
+    transform: scaleY(0);
+    animation: grow-line 1.5s ease forwards;
   }
-  .timeline-line-fg {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 6px;
-    background: #41c1ba;
-    transform: translateX(-50%);
-    z-index: 1;
-    height: 0;
-    border-radius: 3px;
-    transition: height 0.5s cubic-bezier(.4,0,.2,1);
-  }
-  .timeline-section {
+
+  .timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 50px;
     opacity: 0;
-    pointer-events: none;
-    position: static;
-    transition: opacity 0.15s, transform 0.15s;
-    transform: translateY(5px);
-    z-index: 2;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
-  .timeline-section.visible {
+
+  .timeline-item.active {
     opacity: 1;
-    pointer-events: auto;
-    position: static;
-    transform: none;
-    z-index: 2;
+    transform: translateY(0);
   }
-  .timeline-section.fading {
-    opacity: 0.2;
+
+  .timeline-dot {
+    position: absolute;
+    left: 2px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid #41c1ba;
+    box-shadow: 0 0 0 4px rgba(65, 193, 186, 0.2);
+    transform: scale(0);
+    transition: transform 0.3s ease 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline-item.active .timeline-dot {
+    transform: scale(1);
+  }
+
+  .timeline-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #fff;
+  }
+
+  .timeline-date {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #41c1ba, #41c1ba);
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .timeline-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .timeline-text h3 {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 18px;
+  }
+
+  .timeline-text p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  @keyframes grow-line {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .timeline-line {
+      left: 50%;
+      margin-left: -2px;
+    }
+    
+    .timeline-item {
+      padding-left: 0;
+      width: 50%;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      padding-right: 40px;
+      margin-left: 0;
+      margin-right: auto;
+      text-align: right;
+    }
+    
+    .timeline-item:nth-child(even) {
+      padding-left: 40px;
+      margin-left: auto;
+      margin-right: 0;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-text {
+      text-align: left;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-image {
+      order: 2;
+    }
+    
+    .timeline-dot {
+      left: auto;
+      right: -20px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+      right: auto;
+      left: -20px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      left: auto;
+      right: -10px;
+      border-right: none;
+      border-left: 10px solid #fff;
+    }
+
+    .timeline-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .timeline-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    
+    .timeline-content {
+      padding: 15px;
+    }
   }
 </style>
 </head>
@@ -317,79 +460,97 @@ tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},b
 <p class="text-xl text-gray-700 max-w-2xl mx-auto font-body">Great design comes from a thoughtful, flexible approach. My process centres on understanding the people I'm designing for, always with the users needs in mind.</p>
 </div>
 <!-- Timeline Animation Wrapper Start -->
-<div class="timeline-container relative">
-  <div class="timeline-line-bg"></div>
-  <div class="timeline-line-fg"></div>
-  <div class="space-y-24">
-    <!-- Add timeline-section class to each timeline grid row below -->
-    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
-      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10">
-        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
-          <i class="ri-search-line text-xl"></i>
+<div class="timeline-container">
+  <div class="timeline">
+    <div class="timeline-line"></div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot">
+        <i class="ri-search-line text-xl text-primary"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-date">Step 1</div>
+        <div class="timeline-grid">
+          <div class="timeline-image">
+            <img src="./images/home/Discovery & Research.webp" alt="Discovery & Research" class="w-full rounded-xl object-cover object-top">
+          </div>
+          <div class="timeline-text">
+            <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Discovery & Research</h3>
+            <p class="text-gray-700 font-body">My design journey kicks off with deep-dive research, gathering insights about users, the business, and the market. Connecting every insight to uncover those important core user needs. Combining all of this creates the essential blueprint for impactful design.</p>
+          </div>
         </div>
-      </div>
-      <div class="order-2 md:order-3 md:pl-8 z-0">
-        <img src="./images/home/Discovery & Research.webp" alt="Discovery & Research" class="w-full rounded-xl shadow-md object-cover object-top">
-      </div>
-      <div class="order-3 md:order-1 md:text-center z-10">
-        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Discovery & Research</h3>
-        <p class="text-gray-700 font-body">My design journey kicks off with deep-dive research, gathering insights about users, the business, and the market. Connecting every insight to uncover those important core user needs. Combining all of this creates the essential blueprint for impactful design.<p>
       </div>
     </div>
-    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
-      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10">
-        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
-          <i class="ri-layout-2-line text-xl"></i>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot">
+        <i class="ri-layout-2-line text-xl text-primary"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-date">Step 2</div>
+        <div class="timeline-grid">
+          <div class="timeline-image">
+            <img src="./images/home/Ideation & Wireframing.webp" alt="Strategy & Wireframing" class="w-full rounded-xl object-cover object-top">
+          </div>
+          <div class="timeline-text">
+            <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Ideation & Wireframing</h3>
+            <p class="text-gray-700 font-body">With the research insights in hand, I start creating the experience, by developing the information architecture and sketch out low-fidelity wireframes. This step is crucial for clearly defining how users will use the product and their core journey. It ensures everything is intuitive and usable before any visual elements are introduced.</p>
+          </div>
         </div>
-      </div>
-      <div class="order-2 md:order-3 md:pl-8 z-0">
-        <img src="./images/home/Ideation & Wireframing.webp" alt="Strategy & Wireframing" class="w-full rounded-xl shadow-md object-cover object-top">
-      </div>
-      <div class="order-3 md:order-1 md:text-right z-10">
-        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Ideation & Wireframing</h3>
-        <p class="text-gray-700 font-body">With the research insights in hand, I start creating the experience, by developing the information architecture and sketch out low-fidelity wireframes. This step is crucial for clearly defining how users will use the product and their core journey. It ensures everything is intuitive and usable before any visual elements are introduced.</p>
       </div>
     </div>
-    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
-      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10">
-        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
-          <i class="ri-palette-line text-xl"></i>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot">
+        <i class="ri-palette-line text-xl text-primary"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-date">Step 3</div>
+        <div class="timeline-grid">
+          <div class="timeline-image">
+            <img src="./images/home/Visual Design.webp" alt="Visual Design" class="w-full rounded-xl object-cover object-top">
+          </div>
+          <div class="timeline-text">
+            <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Visual Design</h3>
+            <p class="text-gray-700 font-body">Once the structural foundation is set, I start working on the visual aspect. Turning wireframes into high-fidelity designs, to build that cohesive visual language that communicates the brands identity. This means creating something that looks great and aligns with the brand, but also enhances usability and an emotional connection with users.</p>
+          </div>
         </div>
-      </div>
-      <div class="order-2 md:order-3 md:pl-8 z-0">
-        <img src="./images/home/Visual Design.webp" alt="Visual Design" class="w-full rounded-xl shadow-md object-cover object-top">
-      </div>
-      <div class="order-3 md:order-1 md:text-right z-10">
-        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Visual Design</h3>
-        <p class="text-gray-700 font-body">Once the structural foundation is set, I start working on the visual aspect. Turning wireframes into high-fidelity designs, to build that cohesive visual language that communicates the brands identity. This means creating something that looks great and aligns with the brand, but also enhances usability and an emotional connection with users.</p>
       </div>
     </div>
-    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
-      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10"> 
-        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
-          <i class="ri-test-tube-line text-xl"></i>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot">
+        <i class="ri-test-tube-line text-xl text-primary"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-date">Step 4</div>
+        <div class="timeline-grid">
+          <div class="timeline-image">
+            <img src="./images/home/Prototyping & Testing.webp" alt="Prototyping & Testing" class="w-full rounded-xl object-cover object-top">
+          </div>
+          <div class="timeline-text">
+            <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Prototyping & Testing</h3>
+            <p class="text-gray-700 font-body">After Visual Design, I develop interactive prototypes to simulate the user experience. Putting these to the test through usability testing, gathering direct feedback. This crucial step validates design decisions and brings to light key opportunities for improvements, making sure the product meets core user needs.</p>
+          </div>
         </div>
-      </div>
-      <div class="order-2 md:order-3 md:pl-8 z-0">
-        <img src="./images/home/Prototyping & Testing.webp" alt="Prototyping & Testing" class="w-full rounded-xl shadow-md object-cover object-top">
-      </div>
-      <div class="order-3 md:order-1 md:text-right z-10">
-        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Prototyping & Testing</h3>
-        <p class="text-gray-700 font-body">After Visual Design, I develop interactive prototypes to simulate the user experience. Putting these to the test through usability testing, gathering direct feedback. This crucial step validates design decisions and brings to light key opportunities for improvements, making sure the product meets core user needs.</p>
       </div>
     </div>
-    <div class="relative grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-8 timeline-section">
-      <div class="order-1 md:order-2 w-full flex justify-center my-4 md:my-0 z-10">
-        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto z-20">
-          <i class="ri-code-s-slash-line text-xl"></i>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot">
+        <i class="ri-code-s-slash-line text-xl text-primary"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-date">Step 5</div>
+        <div class="timeline-grid">
+          <div class="timeline-image">
+            <img src="./images/home/Implementation & Iteration.webp" alt="Implementation & Iteration" class="w-full rounded-xl object-cover object-top">
+          </div>
+          <div class="timeline-text">
+            <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Implementation & Iteration</h3>
+            <p class="text-gray-700 font-body">My work doesn't stop at the hand-off. Even after launch, I continue to gather feedback and data, using these insights to make thoughtful improvements and iterate on the experience.</p>
+          </div>
         </div>
-      </div>
-      <div class="order-2 md:order-3 md:pl-8 z-0">
-        <img src="./images/home/Implementation & Iteration.webp" alt="Implementation & Iteration" class="w-full rounded-xl shadow-md object-cover object-top">
-      </div>
-      <div class="order-3 md:order-1 md:text-right z-10">
-        <h3 class="text-2xl font-bold mb-3 text-gray-900 font-heading">Implementation & Iteration</h3>
-        <p class="text-gray-700 font-body">My work doesn't stop at the hand-off. Even after launch, I continue to gather feedback and data, using these insights to make thoughtful improvements and iterate on the experience.</p>
       </div>
     </div>
   </div>
@@ -492,69 +653,46 @@ tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},b
 </section>
 <script src="./js/script.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.timeline-section');
-  const fgLine = document.querySelector('.timeline-line-fg');
-  const container = document.querySelector('.timeline-container');
-
-  function updateTimeline() {
-    let activeIdx = 0;
-
-    // Find the step whose icon is currently in the viewport
-    sections.forEach((section, idx) => {
-      const icon = section.querySelector('.w-12.h-12.bg-primary');
-      if (!icon) return;
-      const iconRect = icon.getBoundingClientRect();
-      if (iconRect.top < window.innerHeight && iconRect.bottom > 0) {
-        activeIdx = idx;
-      }
-    });
-
-    // If scrolling up and no icon is in the viewport, fallback to the previous icon that has left the bottom
-    if (activeIdx === 0) {
-      sections.forEach((section, idx) => {
-        const icon = section.querySelector('.w-12.h-12.bg-primary');
-        if (!icon) return;
-        const iconRect = icon.getBoundingClientRect();
-        if (iconRect.bottom < window.innerHeight && iconRect.top < 0) {
-          activeIdx = idx;
-        }
-      });
-    }
-
-    sections.forEach((section, idx) => {
-      const icon = section.querySelector('.w-12.h-12.bg-primary');
-      const iconRect = icon ? icon.getBoundingClientRect() : { top: Infinity, bottom: -Infinity };
-
-      // Show if top is in viewport
-      if (section.getBoundingClientRect().top < window.innerHeight && section.getBoundingClientRect().bottom > 0) {
-        section.classList.add('visible');
-      } else {
-        section.classList.remove('visible');
-      }
-
-      // Fading logic: previous step fades as its icon hits the top
-      if (idx === activeIdx - 1 && icon && iconRect.top <= 0 && section.getBoundingClientRect().bottom > 0) {
-        section.classList.add('fading');
-      } else {
-        section.classList.remove('fading');
-      }
-    });
-
-    // Fill the line up to the active icon
-    const icon = sections[activeIdx].querySelector('.w-12.h-12.bg-primary');
-    if (icon) {
-      const iconRect = icon.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-      const fillHeight = iconRect.top - containerRect.top;
-      fgLine.style.height = fillHeight + 'px';
-    }
+/**
+ * Initialize the scrolling timeline
+ */
+function initTimeline() {
+  // All timeline items
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  
+  /**
+   * Check if an element is in the viewport
+   * @param {HTMLElement} element - The element to check
+   * @returns {boolean} - Whether the element is in viewport
+   */
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+      rect.bottom >= 0
+    );
   }
+  
+  /**
+   * Handle scroll event to reveal timeline items
+   */
+  function onScroll() {
+    timelineItems.forEach(item => {
+      if (isInViewport(item)) {
+        item.classList.add('active');
+      }
+    });
+  }
+  
+  // Add scroll event listener
+  window.addEventListener('scroll', onScroll);
+  
+  // Initial check on page load
+  window.addEventListener('load', onScroll);
+}
 
-  window.addEventListener('scroll', updateTimeline);
-  window.addEventListener('resize', updateTimeline);
-  updateTimeline();
-});
+// Initialize when the DOM is ready
+document.addEventListener('DOMContentLoaded', initTimeline);
 </script>
 </body>
 </html>
