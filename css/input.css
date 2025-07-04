@@ -197,4 +197,10 @@ html {
   animation: float 9s ease-in-out infinite;
   position: absolute;
   z-index: 0;
+}
+
+/* Hero text overlay for project pages */
+.hero-text-overlay {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
 } 
