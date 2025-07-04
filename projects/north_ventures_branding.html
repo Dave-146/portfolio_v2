@@ -22,6 +22,7 @@
     <meta property="twitter:image" content="https://www.davidcrean.com/images/cover_project-3.gif">
 
     <!-- External resources -->
+    
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
     
     <!-- Google Fonts -->
@@ -29,9 +30,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
-
-    <style>
+    <!-- Tailwind config -->
+    <script>
         .carousel-slides {
             display: flex;
             width: 600%;  /* 100% * 6 slides */
@@ -47,190 +47,6 @@
             background-color: white !important;
         }
     </style>
-</head>
-<body class="bg-white overflow-x-hidden font-body">
-    <!-- Components -->
-    <script src="components/navbar.js"></script>
-
-    <!-- Main Content -->
-    <main class="pt-20">
-        <!-- Hero Section -->
-        <section class="pt-24 relative overflow-hidden">
-            <div class="absolute inset-0 hero-text-overlay"></div>
-            <div class="container mx-auto px-6 py-12 relative z-10 flex flex-col md:flex-row items-center">
-                <!-- Left Column for Text -->
-                <div class="w-full md:w-1/2 lg:w-3/5 text-center md:text-left py-8 md:py-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6">North Ventures Branding</h1>
-                    <p class="text-xl text-gray-600 mb-8 mx-auto md:mx-0">Designed North Ventures' brand and app to inspire adventure and let users customize their Canadian tours.</p>
-                    
-                    <!-- Project Details/Tags: Vertically stacked -->
-                    <div class="space-y-3 text-left">
-                        <span class="inline-block px-4 py-2 bg-gray-100 rounded-full text-gray-600">Brand Design</span>
-                        <span class="inline-block px-4 py-2 bg-gray-100 rounded-full text-gray-600">Mobile App</span>
-                        <span class="inline-block px-4 py-2 bg-gray-100 rounded-full text-gray-600">Visual Identity</span>
-                        <span class="inline-block px-4 py-2 bg-gray-100 rounded-full text-gray-600">2024</span>
-                    </div>
-                </div>
-                <!-- Right Column (for spacing on larger screens) -->
-                <div class="hidden md:block md:w-1/2 lg:w-2/5">
-                    <!-- Intentionally empty to create the two-column effect with text on left -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Project Overview -->
-        <section class="container mx-auto px-6 py-12">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Project Overview</h2>
-                <p class="text-gray-600 mb-6 font-body">North Ventures is a Canadian adventure tourism company that needed a complete brand identity and mobile app design. The project focused on creating a cohesive visual system that captures the spirit of Canadian wilderness while providing an intuitive platform for tour customization.</p>
-                
-                <!-- Hero Image -->
-                <div class="mb-8">
-                    <img id="heroGif" src="./images/north_ventures_branding/North Ventures Mockup hero.gif" alt="North Ventures Hero Mockup" class="w-full rounded-lg shadow-lg opacity-0 transition-opacity duration-1000">
-                </div>
-            </div>
-        </section>
-
-        <!-- Brand Identity -->
-        <section class="container mx-auto px-6 py-12 bg-gray-50">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Brand Identity</h2>
-                <p class="text-gray-600 mb-8 font-body">The brand identity was designed to reflect the rugged beauty of the Canadian wilderness while maintaining a modern, approachable feel that appeals to adventure seekers.</p>
-                
-                <!-- Brand Elements -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Logo Design</h3>
-                        <p class="text-gray-600 mb-4 font-body">The logo combines geometric elements representing mountain peaks with organic curves suggesting flowing rivers, creating a balance between structure and nature.</p>
-                        <img src="./images/north_ventures_branding/final_logo.png" alt="North Ventures Final Logo" class="w-full rounded-lg shadow-md">
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Color Palette</h3>
-                        <p class="text-gray-600 mb-4 font-body">A carefully selected color palette inspired by Canadian landscapes, featuring deep forest greens, warm earth tones, and crisp whites.</p>
-                        <img src="./images/north_ventures_branding/deisgn_colour_palette.png" alt="North Ventures Color Palette" class="w-full rounded-lg shadow-md">
-                    </div>
-                </div>
-                
-                <!-- Typography -->
-                <div class="mb-8">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Typography</h3>
-                    <p class="text-gray-600 mb-4 font-body">Typography choices emphasize readability and personality, with a combination of strong sans-serif fonts for headings and clean, legible fonts for body text.</p>
-                    <img src="./images/north_ventures_branding/design_font_families.png" alt="North Ventures Typography" class="w-full rounded-lg shadow-md">
-                </div>
-            </div>
-        </section>
-
-        <!-- Design Process -->
-        <section class="container mx-auto px-6 py-12">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Design Process</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Research & Discovery</h3>
-                        <p class="text-gray-600 mb-4 font-body">Conducted market research and competitor analysis to understand the adventure tourism landscape and identify opportunities for differentiation.</p>
-                        <img id="researchGif" src="./images/north_ventures_branding/North Ventures Research.gif" alt="North Ventures Research Process" class="w-full rounded-lg shadow-md opacity-0 transition-opacity duration-1000">
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Visual Development</h3>
-                        <p class="text-gray-600 mb-4 font-body">Explored various visual directions through mood boards, sketches, and iterations to find the perfect balance of adventure and accessibility.</p>
-                        <img src="./images/north_ventures_branding/design_moodboard.png" alt="North Ventures Moodboard" class="w-full rounded-lg shadow-md">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Logo Development -->
-        <section class="container mx-auto px-6 py-12 bg-gray-50">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Logo Development</h2>
-                <p class="text-gray-600 mb-8 font-body">The logo went through multiple iterations, from initial sketches to final polished versions, ensuring it works across all applications and sizes.</p>
-                
-                <!-- Logo Carousel -->
-                <div class="relative overflow-hidden rounded-xl shadow-lg mb-8">
-                    <div class="carousel-slides">
-                        <img src="./images/north_ventures_branding/logo_sketches.png" alt="Logo Sketches" class="cursor-pointer">
-                        <img src="./images/north_ventures_branding/logo_mockups.png" alt="Logo Mockups" class="cursor-pointer">
-                        <img src="./images/north_ventures_branding/final_logo.png" alt="Final Logo" class="cursor-pointer">
-                        <img src="./images/north_ventures_branding/social media.png" alt="Social Media Applications" class="cursor-pointer">
-                        <img src="./images/north_ventures_branding/North Ventures Mockup.png" alt="Brand Applications" class="cursor-pointer">
-                        <img src="./images/north_ventures_branding/North Ventures Mockup hero.png" alt="Hero Application" class="cursor-pointer">
-                    </div>
-                    
-                    <!-- Navigation Arrows -->
-                    <button onclick="moveBrandSlide(-1)" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-70 transition-all">
-                        <i class="ri-arrow-left-s-line"></i>
-                    </button>
-                    <button onclick="moveBrandSlide(1)" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-70 transition-all">
-                        <i class="ri-arrow-right-s-line"></i>
-                    </button>
-                    
-                    <!-- Dots -->
-                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                        <span class="brand-dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer active" onclick="goToBrandSlide(0)"></span>
-                        <span class="brand-dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToBrandSlide(1)"></span>
-                        <span class="brand-dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToBrandSlide(2)"></span>
-                        <span class="brand-dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToBrandSlide(3)"></span>
-                        <span class="brand-dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToBrandSlide(4)"></span>
-                        <span class="brand-dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToBrandSlide(5)"></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- App Design -->
-        <section class="container mx-auto px-6 py-12">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Mobile App Design</h2>
-                <p class="text-gray-600 mb-8 font-body">The mobile app extends the brand experience, allowing users to browse tours, customize their adventures, and book experiences seamlessly.</p>
-                
-                <!-- App Mockup -->
-                <div class="text-center mb-8">
-                    <div class="relative inline-block">
-                        <img id="appMockupStatic" src="./images/north_ventures_branding/North Ventures Mockup.png" alt="North Ventures App Mockup" class="w-full max-w-md rounded-lg shadow-lg">
-                        <video id="appMockupVideo" class="absolute inset-0 w-full h-full object-cover rounded-lg hidden" muted loop>
-                            <source src="./images/north_ventures_branding/North Ventures Mockup.mp4" type="video/mp4">
-                        </video>
-                        <button id="playPauseBtn" class="absolute top-4 right-4 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all">
-                            <i id="playPauseIcon" class="ri-play-fill text-xl text-gray-800"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Results & Impact -->
-        <section class="container mx-auto px-6 py-12 bg-gray-50">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Results & Impact</h2>
-                <p class="text-gray-600 mb-6 font-body">The North Ventures brand identity successfully captures the essence of Canadian adventure while providing a solid foundation for the company's digital presence and marketing efforts.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">100%</div>
-                        <p class="text-gray-600 font-body">Brand consistency across all touchpoints</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">85%</div>
-                        <p class="text-gray-600 font-body">User engagement increase</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">90%</div>
-                        <p class="text-gray-600 font-body">Brand recognition improvement</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Next Project -->
-        <section class="container mx-auto px-6 py-12">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Next Project</h2>
-                <a href="/projects/corlican_pet_motel" class="inline-flex items-center gap-2 text-xl text-primary hover:text-primary/80 transition-colors">
-                    Corlican Pet Motel
-                    <i class="ri-arrow-right-line"></i>
-                </a>
-            </div>
-        </section>
-    </main>
 
     <!-- Brand Lightbox Structure -->
     <div id="brandImageLightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden p-4 md:p-8">
@@ -253,34 +69,8 @@
         </div>
     </div>
 
-    <!-- Components -->
-    <script src="components/footer.js"></script>
     <script src="js/script.js"></script>
-
     <script>
-        let currentBrandSlide = 0;
-        const totalBrandSlides = 6;
-
-        function moveBrandSlide(direction) {
-            currentBrandSlide = (currentBrandSlide + direction + totalBrandSlides) % totalBrandSlides;
-            updateBrandSlidePosition();
-        }
-
-        function goToBrandSlide(slideIndex) {
-            currentBrandSlide = slideIndex;
-            updateBrandSlidePosition();
-        }
-
-        function updateBrandSlidePosition() {
-            const slides = document.querySelector('.carousel-slides');
-            slides.style.transform = `translateX(-${currentBrandSlide * 16.666667}%)`;
-            
-            // Update dots
-            document.querySelectorAll('.brand-dot').forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentBrandSlide);
-            });
-        }
-
         // Control gif playback with instant, flash-free transition
         document.addEventListener('DOMContentLoaded', function() {
             
@@ -408,36 +198,130 @@
                 // Create visible GIF element
                 const gifImg = document.createElement('img');
                 gifImg.src = 'images/north_ventures_branding/North Ventures Mockup.gif';
-                gifImg.className = 'w-full max-w-md rounded-lg shadow-lg';
-                gifImg.alt = 'North Ventures App Mockup';
+                gifImg.className = 'max-w-full h-auto';
                 gifImg.style.display = 'none';
+                gifImg.id = 'appMockupGif';
+                appMockupVideo.parentNode.insertBefore(gifImg, appMockupVideo);
+            }
 
-                // Replace static image with GIF container
-                const container = appMockupStatic.parentNode;
-                container.appendChild(gifImg);
-
-                // Play/Pause functionality
+            if (playPauseBtn && playPauseIcon && appMockupStatic) {
                 playPauseBtn.addEventListener('click', () => {
                     if (isPlaying) {
-                        // Pause - show static image
-                        gifImg.style.display = 'none';
-                        appMockupStatic.style.display = 'block';
-                        playPauseIcon.className = 'ri-play-fill text-xl text-gray-800';
+                        // Pause
+                        if (useVideoPlayback && appMockupVideo) {
+                            // True pause with video
+                            appMockupVideo.pause();
+                            appMockupVideo.style.display = 'none';
+                        } else {
+                            // Hide GIF (will restart when shown again, but user expects this)
+                            const gifImg = document.getElementById('appMockupGif');
+                            if (gifImg) {
+                                gifImg.style.display = 'none';
+                            }
+                        }
+                        
+                        appMockupStatic.classList.remove('hidden');
+                        playPauseIcon.className = 'ri-play-line text-xl';
                         isPlaying = false;
                     } else {
-                        // Play - show GIF
-                        appMockupStatic.style.display = 'none';
-                        gifImg.style.display = 'block';
-                        playPauseIcon.className = 'ri-pause-fill text-xl text-gray-800';
+                        // Play
+                        appMockupStatic.classList.add('hidden');
+                        
+                        if (useVideoPlayback && appMockupVideo) {
+                            // Resume video from paused position
+                            appMockupVideo.style.display = 'block';
+                            appMockupVideo.play().catch(e => {
+                                console.log('Video play failed, falling back to GIF');
+                                useVideoPlayback = false;
+                                const gifImg = document.getElementById('appMockupGif');
+                                if (gifImg) {
+                                    gifImg.style.display = 'block';
+                                }
+                            });
+                        } else {
+                            // Show GIF (will restart, but this is expected behavior for GIFs)
+                            const gifImg = document.getElementById('appMockupGif');
+                            if (gifImg) {
+                                gifImg.style.display = 'block';
+                            }
+                        }
+                        
+                        playPauseIcon.className = 'ri-pause-line text-xl';
                         isPlaying = true;
                     }
                 });
+
+                // Initialize playback system
+                initializePlayback();
             }
 
-            // Initialize playback
-            initializePlayback();
+            // Brand Identity Carousel Functionality
+            let currentBrandSlide = 0;
+            const totalBrandSlides = 6;
 
-            // Lightbox functionality for brand carousel
+            function moveBrandSlide(direction) {
+                currentBrandSlide = (currentBrandSlide + direction + totalBrandSlides) % totalBrandSlides;
+                updateBrandSlidePosition();
+            }
+
+            function goToBrandSlide(slideIndex) {
+                currentBrandSlide = slideIndex;
+                updateBrandSlidePosition();
+            }
+
+            function updateBrandSlidePosition() {
+                const slides = document.querySelector('.carousel-slides');
+                if (slides) {
+                    slides.style.transform = `translateX(-${currentBrandSlide * (100/totalBrandSlides)}%)`;
+                    
+                    // Update dots
+                    document.querySelectorAll('.brand-dot').forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentBrandSlide);
+                    });
+                }
+            }
+
+            // Auto-advance slides every 5 seconds
+            let brandAutoSlideInterval = setInterval(() => {
+                moveBrandSlide(1);
+            }, 5000);
+
+            // Add event listeners for navigation buttons
+            const brandPrevBtn = document.getElementById('brandPrevBtn');
+            const brandNextBtn = document.getElementById('brandNextBtn');
+            const brandDots = document.querySelectorAll('.brand-dot');
+
+            if (brandPrevBtn) {
+                brandPrevBtn.addEventListener('click', () => {
+                    clearInterval(brandAutoSlideInterval);
+                    moveBrandSlide(-1);
+                    brandAutoSlideInterval = setInterval(() => {
+                        moveBrandSlide(1);
+                    }, 5000);
+                });
+            }
+
+            if (brandNextBtn) {
+                brandNextBtn.addEventListener('click', () => {
+                    clearInterval(brandAutoSlideInterval);
+                    moveBrandSlide(1);
+                    brandAutoSlideInterval = setInterval(() => {
+                        moveBrandSlide(1);
+                    }, 5000);
+                });
+            }
+
+            brandDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(brandAutoSlideInterval);
+                    goToBrandSlide(index);
+                    brandAutoSlideInterval = setInterval(() => {
+                        moveBrandSlide(1);
+                    }, 5000);
+                });
+            });
+
+            // Lightbox Logic for Brand Carousel
             const brandLightbox = document.getElementById('brandImageLightbox');
             const brandLightboxCard = document.getElementById('brandLightboxCard');
             const brandLightboxImage = document.getElementById('brandLightboxImage');
@@ -452,11 +336,13 @@
                     image.addEventListener('click', () => {
                         currentBrandLightboxIndex = index;
                         brandLightboxImage.src = image.src;
+                        brandLightboxImage.alt = image.alt;
                         brandLightbox.classList.remove('hidden');
                         setTimeout(() => {
                             brandLightboxCard.classList.remove('scale-95', 'opacity-0');
                             brandLightboxCard.classList.add('scale-100', 'opacity-100');
                         }, 50);
+                        clearInterval(brandAutoSlideInterval);
                     });
                 });
 
@@ -467,6 +353,11 @@
                     setTimeout(() => {
                         brandLightbox.classList.add('hidden');
                     }, 300);
+
+                    clearInterval(brandAutoSlideInterval);
+                    brandAutoSlideInterval = setInterval(() => {
+                        moveBrandSlide(1);
+                    }, 5000);
                 }
 
                 closeBrandLightboxBtn.addEventListener('click', closeBrandLightbox);
@@ -479,6 +370,7 @@
                 function showBrandLightboxImage(index) {
                     if (index >= 0 && index < brandCarouselImages.length) {
                         brandLightboxImage.src = brandCarouselImages[index].src;
+                        brandLightboxImage.alt = brandCarouselImages[index].alt;
                         currentBrandLightboxIndex = index;
                     }
                 }
@@ -499,6 +391,7 @@
                     showBrandLightboxImage(newIndex);
                 });
 
+                // Keyboard navigation for lightbox
                 document.addEventListener('keydown', (e) => {
                     if (!brandLightbox.classList.contains('hidden')) {
                         if (e.key === 'Escape') {
