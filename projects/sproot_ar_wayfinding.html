@@ -22,7 +22,7 @@
     <meta property="twitter:image" content="https://www.davidcrean.com/images/cover_project-2.gif">
 
     <!-- External resources -->
-    
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
     
     <!-- Google Fonts -->
@@ -32,6 +32,539 @@
 
     <!-- Tailwind config -->
     <script>
+    tailwind.config={theme:{extend:{colors:{primary:'#41c1ba',secondary:'#41c1ba'},borderRadius:{'none':'0px','sm':'8px',DEFAULT:'12px','md':'16px','lg':'20px','xl':'24px','2xl':'28px','3xl':'32px','full':'9999px','button':'12px'},fontFamily:{heading:['Comfortaa','cursive'],body:['Montserrat','sans-serif']}}}}
+    </script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/input.css" rel="stylesheet">
+</head>
+<body class="bg-white overflow-x-hidden font-body">
+    <!-- Components -->
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+
+    <!-- Main Content -->
+    <main>
+    <!-- Hero Section -->
+    <section class="pt-24 relative overflow-hidden bg-cover bg-center" style="background-image: url('images/backgrounds/sproot_bg.png');">
+        <div class="absolute inset-0 hero-text-overlay"></div>
+        <div class="container mx-auto px-6 pt-12 pb-24 relative z-10 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 lg:w-3/5 text-center md:text-left py-8 md:py-0">
+                <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-medium mb-6">Mobile App</span>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 font-heading">Sproot AR Wayfinding</h1>
+                
+                <!-- Project Details: Vertically stacked -->
+                <div class="space-y-6 text-left mb-12">
+                    <div>
+                        <h3 class="text-lg font-bold mb-1 text-gray-900 font-heading">Timeline</h3>
+                        <p class="text-gray-600">16 Weeks</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-1 text-gray-900 font-heading">Role</h3>
+                        <p class="text-gray-600">UX/UI Designer</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-1 text-gray-900 font-heading">Tools</h3>
+                        <div class="flex flex-wrap justify-start gap-2">
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Figma</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">Adobe Illustrator</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block md:w-1/2 lg:w-2/5">
+                <!-- Intentionally empty to create the two-column effect with text on left -->
+            </div>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Challenge & Solution -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-gray-900 font-heading">Challenge</h2>
+                        <p class="text-gray-600 mb-4">In person grocery shopping in large stores, like Loblaws can  lead to frustration for some of the following reasons:</p>
+                        <ul class="space-y-3 mb-4">
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Shoppers can't find items easily</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Lack of personalized recommendations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Digital coupons and promotions go unnoticed</span>
+                            </li>
+                        </ul>
+                        <p class="text-gray-600 mb-4">Retailers face their own issues: missed opportunities to promote deals or suggest relevant products. These gaps highlighted a need for a smart, fast, shopper-focused digital assistant.</p>
+                        
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-gray-900 font-heading">Solution</h2>
+                        <p class="text-gray-600 mb-4"><strong>Sproot</strong> is an AR-powered grocery companion app. It uses a smartphone camera to guide users through the store and deliver instant product information. Key features of this app include:</p>
+                        <ul class="space-y-3 mb-4">
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600"><strong>AR Navigation:</strong> Real-time arrows guide shoppers directly to the items</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600"><strong>Personalized Recommendations:</strong> Based on past purchases and preferences</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600"><strong>Promotion recommendations:</strong>Recommended sale items offered to user based on items in their shopping list</span>
+                            </li>
+                        </ul>
+                        <p class="text-gray-600 mb-4">The result is a faster, smarter trips for users and better visibility for retailers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process & Approach -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Process & Approach</h2>
+                <div class="space-y-16">
+                    <!-- Research Phase -->
+                    <div class="flex flex-col items-center gap-8">
+                        <div class="w-full">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center md:text-left font-heading">Research</h3>
+                            <p class="text-gray-600 mb-6">To investigate the struggles of everyday grocery shopping and shoppers, I conducted a thorough research plan to understand shoppers' needs and find gaps in existing apps. This involved Field Research, User Interviews along with competitive analysis of the competition.</p>
+
+                            <!-- Collapsible 1: Competitive Analysis -->
+                            <div class="mb-6">
+                                <button class="flex justify-between items-center w-full py-3 px-1 text-left text-xl font-bold text-gray-900 font-heading hover:text-primary focus:outline-none transition-colors duration-200" onclick="toggleCollapse('competitiveAnalysisContent', this)" aria-expanded="false" aria-controls="competitiveAnalysisContent">
+                                    <span>Where Others Missed the Mark: Competitive Analysis</span>
+                                    <i class="ri-arrow-down-s-line transform transition-transform duration-200 text-2xl"></i>
+                                </button>
+                                <div id="competitiveAnalysisContent" class="hidden mt-4 text-gray-600 space-y-4 prose prose-sm max-w-none">
+                                    <p>Following a competitive analysis of other grocery apps, I was able to list features they offered and the strengths of that feature, and this led me to discover some gaps Sproot could fill.</p>
+                                    <p>Here's a summary of what I found:</p>
+                                    <div class="overflow-x-auto my-4 shadow border border-gray-200 rounded-lg">
+                                        <table class="min-w-full w-full text-sm divide-y divide-gray-200">
+                                            <thead class="bg-gray-50">
+                                                <tr class="divide-x divide-gray-200">
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Loblaws (PC Express)</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Walmart App</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Instacart</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                <tr class="divide-x divide-gray-200">
+                                                    <td class="px-4 py-3 align-top font-semibold text-gray-800">Product</td>
+                                                    <td class="px-4 py-3 align-top">Loblaws' grocery pickup & delivery app with PC Optimum loyalty integration</td>
+                                                    <td class="px-4 py-3 align-top">Walmarts shopping app (groceries & general merchandise)</td>
+                                                    <td class="px-4 py-3 align-top">3rd-party grocery delivery platform connecting customers with local retailers</td>
+                                                </tr>
+                                                <tr class="divide-x divide-gray-200">
+                                                    <td class="px-4 py-3 align-top font-semibold text-gray-800">Key Features</td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Online orders with scheduled pickup/delivery</li>
+                                                            <li>Scan barcodes to check prices & find product details</li>
+                                                            <li>Recurring shopping lists (pre-trip planning)</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Multi-store online shopping</li>
+                                                            <li>In-store item locator/maps (only for select stores)</li>
+                                                            <li>Digital weekly flyer</li>
+                                                            <li>Standard shipping</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Earn/redeem PC Optimum points on purchases</li>
+                                                            <li>Same-day delivery (as fast as 2h)</li>
+                                                            <li>Digital Coupons (redeemable in-store)</li>
+                                                            <li>Instacart+ subscription (unlimited free delivery)</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr class="divide-x divide-gray-200">
+                                                    <td class="px-4 py-3 align-top font-semibold text-gray-800">Strengths</td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Strong loyalty rewards (PC Optimum) drive repeat use</li>
+                                                            <li>Large Canadian grocery chain support</li>
+                                                            <li>Unified, user-friendly app experience</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Omnichannel reach (in-store, pickup, delivery)</li>
+                                                            <li>Barcode scanning for price/details</li>
+                                                            <li>Personalized recommendations</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Wide variety of partner stores</li>
+                                                            <li>Convenience</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr class="divide-x divide-gray-200">
+                                                    <td class="px-4 py-3 align-top font-semibold text-gray-800">Weaknesses</td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Primarily focused on pickup/delivery, not active in-store assistance</li>
+                                                            <li>Limited direct in-store navigation or item location features</li>
+                                                            <li>Limited to Canadian markets and Loblaws-owned stores</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>No standalone points-based loyalty program</li>
+                                                            <li>Occasional app reliability or stock-out issues</li>
+                                                            <li>Fewer personalization options</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="px-4 py-3 align-top">
+                                                        <ul class="list-disc list-outside pl-5 space-y-1">
+                                                            <li>Delivery and service fees can add up</li>
+                                                            <li>Inventory data can be inaccurate</li>
+                                                            <li>No integrated loyalty program</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <p>One important takeaway from this analysis is that these apps focus mostly on online orders and delivery – they fell short in the actual in-store experience. No app specifically focused on helping shoppers inside the aisles or offering real-time promotion nudges. Using this information, it led to focus on the in store experience by making the in-store trip faster, smarter, and less frustrating.</p>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible 2: User Interviews -->
+                            <div class="mb-6">
+                                <button class="flex justify-between items-center w-full py-3 px-1 text-left text-xl font-bold text-gray-900 font-heading hover:text-primary focus:outline-none transition-colors duration-200" onclick="toggleCollapse('userInterviewsContent', this)" aria-expanded="false" aria-controls="userInterviewsContent">
+                                    <span>Listening to the Shoppers: User Interviews</span>
+                                    <i class="ri-arrow-down-s-line transform transition-transform duration-200 text-2xl"></i>
+                                </button>
+                                <div id="userInterviewsContent" class="hidden mt-4 text-gray-600 space-y-4 prose prose-sm max-w-none">
+                                    <p>Surveys and user interviews were also conducted to validate the findings above, the core pain points that the project aimed to solve:</p>
+                                    <ul class="list-disc list-outside pl-5 space-y-2">
+                                        <li><strong>Time is Gold:</strong> Shoppers desperately want to save time and make their trips more efficient.</li>
+                                        <li><strong>Health Matters:</strong> Easy access to nutritional info and health benefits is a huge priority.</li>
+                                        <li><strong>"Where Is It?!"</strong> Most in-store apps just weren't cutting it for navigation or finding deals, leading to wasted time and missed savings.</li>
+                                    </ul>
+                                    <p>These insights solidified the core problem: shoppers are frustrated by "not finding items", and missing coupons.</p>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible 3: Persona Development -->
+                            <div class="mb-6">
+                                <button class="flex justify-between items-center w-full py-3 px-1 text-left text-xl font-bold text-gray-900 font-heading hover:text-primary focus:outline-none transition-colors duration-200" onclick="toggleCollapse('personaDevelopmentContent', this)" aria-expanded="false" aria-controls="personaDevelopmentContent">
+                                    <span>Bringing Users to Life: Persona Development</span>
+                                    <i class="ri-arrow-down-s-line transform transition-transform duration-200 text-2xl"></i>
+                                </button>
+                                <div id="personaDevelopmentContent" class="hidden mt-4 text-gray-600 space-y-4 prose prose-sm max-w-none">
+                                    <p>With these insights in mind, I created two personas that embodied the diverse needs and frustrations found in my research. These personas give me a focus point to ensure Sproot's features were designed with real users in mind, driving every decision from AR navigation to personalized recommendations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Section -->
+                    <section class="py-10 bg-white">
+                        <div class="relative w-full overflow-hidden rounded-xl" id="project-carousel">
+                            <div class="flex transition-transform duration-700 ease-in-out" id="carousel-slides">
+                                <!-- Slide 1 -->
+                                <div class="w-full flex-shrink-0">
+                                    <figure class="flex flex-col items-center">
+                                        <img src="images/sproot_ar_wayfinding/sproot_moodboard.png" alt="Sproot App Moodboard" class="w-full h-[30rem] md:h-[40rem] object-contain">
+                                        <figcaption class="p-4 md:p-6 bg-white rounded-lg text-gray-800 text-center w-11/12 md:w-3/4 lg:w-1/2 shadow-md mt-0 mx-auto">
+                                            <p class="text-sm md:text-base">Sproot Moodboard: Visual inspiration and color palette for the app.</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="w-full flex-shrink-0">
+                                    <figure class="flex flex-col items-center">
+                                        <img src="images/sproot_ar_wayfinding/persona_1.png" alt="User Persona Sarah for Sproot App" class="w-full h-[30rem] md:h-[40rem] object-contain">
+                                        <figcaption class="p-4 md:p-6 bg-white rounded-lg text-gray-800 text-center w-11/12 md:w-3/4 lg:w-1/2 shadow-md mt-0 mx-auto">
+                                            <p class="text-sm md:text-base">User Persona: Sarah - Understanding the busy mom's needs and goals.</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="w-full flex-shrink-0">
+                                    <figure class="flex flex-col items-center">
+                                        <img src="images/sproot_ar_wayfinding/persona_2.png" alt="User Persona Alex for Sproot App" class="w-full h-[30rem] md:h-[40rem] object-contain">
+                                        <figcaption class="p-4 md:p-6 bg-white rounded-lg text-gray-800 text-center w-11/12 md:w-3/4 lg:w-1/2 shadow-md mt-0 mx-auto">
+                                            <p class="text-sm md:text-base">User Persona: Alex - Catering to the tech-savvy student.</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <!-- Slide 4 -->
+                                <div class="w-full flex-shrink-0">
+                                    <figure class="flex flex-col items-center">
+                                        <img src="images/sproot_ar_wayfinding/storyboard.png" alt="Storyboard for Sproot App User Journey" class="w-full h-[30rem] md:h-[40rem] object-contain">
+                                        <figcaption class="p-4 md:p-6 bg-white rounded-lg text-gray-800 text-center w-11/12 md:w-3/4 lg:w-1/2 shadow-md mt-0 mx-auto">
+                                            <p class="text-sm md:text-base">Sproot Storyboard: Visualizing the user's journey through the app.</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <!-- Indicators moved below slides and styled for normal flow -->
+                            <div class="flex justify-center space-x-2 md:space-x-3 py-2" id="carousel-indicators">
+                                <!-- JS will populate this -->
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <button id="prev-slide" aria-label="Previous slide" class="absolute bottom-12 left-4 md:left-8 lg:left-12 bg-white/70 hover:bg-white rounded-full p-2 md:p-3 text-gray-800 shadow-md transition-colors duration-200 z-10">
+                                <i class="ri-arrow-left-s-line text-2xl md:text-3xl"></i>
+                            </button>
+                            <button id="next-slide" aria-label="Next slide" class="absolute bottom-12 right-4 md:right-8 lg:right-12 bg-white/70 hover:bg-white rounded-full p-2 md:p-3 text-gray-800 shadow-md transition-colors duration-200 z-10">
+                                <i class="ri-arrow-right-s-line text-2xl md:text-3xl"></i>
+                            </button>
+
+                        </div>
+                    </section>
+
+                    <!-- Design Phase -->
+                    <div class="flex flex-col items-center gap-8">
+                        <div class="w-full">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center md:text-left font-heading">Design</h3>
+                            <ul class="list-disc list-outside pl-5 space-y-2 mb-4 text-gray-600">
+                                <li><strong>User Flows</strong> mapped the key tasks: locating items, scanning products, redeeming discounts</li>
+                                <li><strong>Wireframes and Sketches</strong> explored layout and interaction models for AR navigation and scanning</li>
+                                <li><strong>Visual System</strong>:
+                                    <ul class="list-disc list-outside pl-5 space-y-1">
+                                        <li>Vibrant orange and green palette = energy and health</li>
+                                        <li>Friendly, clean typography for legibility in busy environments</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Prototypes</strong>:
+                                    <ul class="list-disc list-outside pl-5 space-y-1">
+                                        <li>Mid-fidelity screens tested AR overlays and scan interfaces</li>
+                                        <li>Quick usability tests led to clearer icons, simplified menus, and unobstructed camera views</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Final UI</strong> prioritized speed and clarity:
+                                    <ul class="list-disc list-outside pl-5 space-y-1">
+                                        <li>Large visuals</li>
+                                        <li>Minimal text</li>
+                                        <li>Smart cues like color-coded deal tags</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h4 class="text-xl font-bold mb-2 text-gray-900 text-center md:text-left font-heading">Storyboard Example</h4>
+                            <ul class="list-disc list-outside pl-5 space-y-2 mb-4 text-gray-600">
+                                <li><strong>Enter Store</strong>: App highlights nearby deals <em class="font-bold">e.g. baby carrots on sale in produce</em>.</li>
+                                <li><strong>Scan Product</strong>: A pasta box reveals calories, nutrition facts, and a spinach lasagna recipe.</li>
+                                <li><strong>Find Item</strong>: Olive oil needed? AR arrow points straight to Aisle 4.</li>
+                                <li><strong>Checkout</strong>: A digital yogurt coupon is auto-applied <em class="font-bold">e.g. just scan and save</em>.</li>
+                            </ul>
+                            <p class="text-gray-600">This flow illustrates how real-time guidance, smart suggestions, and product insights all work together.</p>
+                        </div>
+                        <div class="w-full">
+                            <img src="images/fashion-design.jpg" alt="Design Phase" class="rounded-xl shadow-md w-full h-auto object-cover" style="max-height: 500px;">
+                        </div>
+                    </div>
+
+                    <!-- Testing Phase -->
+                    <!--<div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="w-full md:w-1/2">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900">Testing</h3>
+                            <p class="text-gray-600 mb-4">Conducted extensive usability testing and A/B testing to optimize the shopping experience.</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Usability testing with 20 participants</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">A/B testing of checkout flow variations</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <img src="./images/fashion-testing.jpg" alt="Testing Phase" class="rounded-xl shadow-md">
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Key Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="card">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="ri-shopping-bag-line text-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">AR Wayfinding</h3>
+                        <p class="text-gray-600">Interactive wayfinding feature to help users navigate the store using arrows and a map view.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="card">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="ri-camera-line text-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Personalized Recommendations</h3>
+                        <p class="text-gray-600">Using the users shopping history and preferences, the app will recommend products and deals.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="card">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="ri-shopping-cart-line text-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">One-Click Checkout</h3>
+                        <p class="text-gray-600">Streamlined checkout process with saved payment options and shipping details.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="card">
+                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="ri-book-open-line text-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Digital Lookbook</h3>
+                        <p class="text-gray-600">Interactive digital lookbook with shoppable product links and styling tips.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Final Design</h2>
+                <div class="flex flex-col items-center gap-8">
+                    <div class="w-full">
+                        <p class="text-gray-600 mb-4 text-center md:text-left">Showcasing the culmination of the design process, the final mockups and interactive prototypes.</p>
+                        <!-- Add more descriptive text or lists here as needed -->
+                    </div>
+                    <div class="w-full">
+                        <img src="images/placeholder-final-design.jpg" alt="Final Design" class="rounded-xl shadow-md w-full h-auto object-cover" style="max-height: 600px;">
+                        <!-- Replace with actual final design image -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Results & Impact -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Results & Impact</h2>
+                <div class="card">
+                    <ul class="list-disc list-outside pl-5 space-y-2 mb-4 text-gray-600">
+                        <li><strong>For Users</strong>: Time saved. Smarter decisions. Better shopping experiences.</li>
+                        <li><strong>For Retailers</strong>: Improved engagement, promotion visibility, and data on shopper behavior.</li>
+                    </ul>
+                    <p class="text-gray-600">The app bridges digital and physical retail, with AR as a tool to help shoppers find products faster and smarter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo & Brand Design -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Logo & Brand Design</h2>
+                <div class="card">
+                    <p class="text-gray-600 mb-4">The Sproot identity was crafted to reflect speed, health, and accessibility:</p>
+                    <ul class="list-disc list-outside pl-5 space-y-2 mb-4 text-gray-600">
+                        <li><strong>Icon</strong>: A stylized carrot = natural, fresh, fast</li>
+                        <li><strong>Motion Lines</strong>: Visual shorthand for quick navigation</li>
+                        <li><strong>Colors</strong>: Bright orange (energy) + green (vitality)</li>
+                        <li><strong>Typography</strong>: Clean, rounded, and mobile-optimized</li>
+                    </ul>
+                    <p class="text-gray-600">Explorations included variations with other vegetables and motion symbols. The carrot stood out as clear, friendly, and brand-appropriate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Lessons Learned</h2>
+                <div class="card">
+                     <ul class="list-disc list-outside pl-5 space-y-2 mb-4 text-gray-600">
+                        <li><strong>Simplicity beats complexity</strong> - especially in AR</li>
+                        <li><strong>Testing early</strong> improves feature clarity and UI visibility</li>
+                        <li><strong>Real-world environments</strong> require thoughtful adjustments to keep overlays usable and intuitive</li>
+                    </ul>
+                    <p class="text-gray-600">A field test in a real store would be the next step in order to fine-tune the user experience and accuracy of the AR features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps 
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Next Steps & Future Improvements</h2>
+                <div class="card">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-arrow-right-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">AI Styling Assistant</h3>
+                                <p class="text-gray-600">Implement AI-powered styling recommendations based on user preferences</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-arrow-right-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">Virtual Fitting Room</h3>
+                                <p class="text-gray-600">Expand AR capabilities to include full-body virtual fitting</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-arrow-right-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900">Social Shopping</h3>
+                                <p class="text-gray-600">Add social features for sharing outfits and getting feedback</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    </main>
+
+    <script>
+        function toggleCollapse(contentId, button) {
+            const content = document.getElementById(contentId);
+            const icon = button.querySelector('i');
+            if (content) {
+                const isHidden = content.classList.toggle('hidden');
+                button.setAttribute('aria-expanded', String(!isHidden));
+                if (isHidden) {
+                    icon.classList.remove('ri-arrow-up-s-line');
+                    icon.classList.add('ri-arrow-down-s-line');
+                } else {
                     icon.classList.remove('ri-arrow-down-s-line');
                     icon.classList.add('ri-arrow-up-s-line');
                 }
