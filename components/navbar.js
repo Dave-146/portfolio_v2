@@ -3,8 +3,8 @@ const navbar = `
     <div class="nav-wrapper w-full">
         <div class="nav-container bg-white bg-opacity-95 transition-all duration-500 rounded-none w-screen">
             <div class="flex items-center justify-between px-8 py-4 max-w-[2000px] mx-auto">
-                <a href="https://dave-146.github.io/portfolio_v2/" class="flex items-center">
-                    <img src="https://dave-146.github.io/portfolio_v2/images/logo.svg" alt="Dave Crean Design" class="h-12 w-auto">
+                <a href="https://www.davidcrean.com/" class="flex items-center">
+                    <img src="https://www.davidcrean.com/images/logo.svg" alt="Dave Crean Design" class="h-12 w-auto">
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="#work" class="text-gray-800 hover:text-primary transition-colors">Work</a>

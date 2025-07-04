@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Personal portfolio website",
   "scripts": {
+    "dev": "npm run watch",
     "build": "tailwindcss -i ./css/input.css -o ./css/style.css --minify",
     "watch": "tailwindcss -i ./css/input.css -o ./css/style.css --watch"
   },
