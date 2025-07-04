@@ -197,7 +197,7 @@ html {
   animation: float 9s ease-in-out infinite;
   position: absolute;
   z-index: 0;
-}
+} 
 
 /* Hero text overlay for project pages */
 .hero-text-overlay {

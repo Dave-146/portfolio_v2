@@ -22,7 +22,6 @@
     <meta property="twitter:image" content="https://www.davidcrean.com/images/walmart-hero.jpg">
 
     <!-- External resources -->     
-    
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
     
     <!-- Google Fonts -->   
@@ -30,537 +29,285 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <script>
-                        .carousel-slides {
-                            display: flex;
-                            width: 1000%;  /* 100% * number of slides */
-                        }
-                        .carousel-slides img {
-                            width: 10%;  /* 100% / number of slides */
-                            flex-shrink: 0;
-                        }
-                        .dot.active {
-                            background-color: white;
-                        }
-                    </style>
+    <link href="css/style.css" rel="stylesheet">
 
-                    <script>
-                        let currentSlide = 0;
-                        const totalSlides = 10;
+    <style>
+        .carousel-slides {
+            display: flex;
+            width: 1000%;  /* 100% * number of slides */
+        }
+        .carousel-slides img {
+            width: 10%;  /* 100% / number of slides */
+            flex-shrink: 0;
+        }
+        .dot.active {
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="bg-white overflow-x-hidden font-body">
+    <!-- Components -->
+    <script src="components/navbar.js"></script>
 
-                        function moveSlide(direction) {
-                            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-                            updateSlidePosition();
-                        }
-
-                        function goToSlide(slideIndex) {
-                            currentSlide = slideIndex;
-                            updateSlidePosition();
-                        }
-
-                        function updateSlidePosition() {
-                            const slides = document.querySelector('.carousel-slides');
-                            slides.style.transform = `translateX(-${currentSlide * 10}%)`;
-                            
-                            // Update dots
-                            document.querySelectorAll('.dot').forEach((dot, index) => {
-                                dot.classList.toggle('active', index === currentSlide);
-                            });
-                        }
-
-                        // Auto-advance slides every 5 seconds
-                        let autoSlideInterval = setInterval(() => {
-                            moveSlide(1);
-                        }, 5000);
-
-                        // Lightbox Logic
-                        document.addEventListener('DOMContentLoaded', () => {
-                            const lightbox = document.getElementById('imageLightbox');
-                            const lightboxCard = document.getElementById('lightboxCard'); // Get the card element
-                            const lightboxImage = document.getElementById('lightboxImage');
-                            const closeLightboxBtn = document.getElementById('closeLightbox');
-                            const carouselImages = document.querySelectorAll('.carousel-slides img');
-                            const prevLightboxBtn = document.getElementById('prevLightboxImage'); // New
-                            const nextLightboxBtn = document.getElementById('nextLightboxImage'); // New
-                            let currentLightboxIndex = 0; // New
-
-                            if (lightbox && lightboxCard && lightboxImage && closeLightboxBtn && carouselImages.length > 0 && prevLightboxBtn && nextLightboxBtn) {
-                                carouselImages.forEach((image, index) => { // Added index here
-                                    image.addEventListener('click', () => {
-                                        currentLightboxIndex = index; // Store index
-                                        lightboxImage.src = image.src;
-                                        lightbox.classList.remove('hidden');
-                                        // Trigger card appearance animation
-                                        setTimeout(() => {
-                                            lightboxCard.classList.remove('scale-95', 'opacity-0');
-                                            lightboxCard.classList.add('scale-100', 'opacity-100');
-                                        }, 50); // Small delay to ensure transition is applied
-                                        clearInterval(autoSlideInterval); // Pause carousel
-                                    });
-                                });
-
-                                function closeLightbox() { // Function to restore
-                                    // Trigger card disappearance animation
-                                    lightboxCard.classList.remove('scale-100', 'opacity-100');
-                                    lightboxCard.classList.add('scale-95', 'opacity-0');
-                                    
-                                    // Hide lightbox after animation (duration-300 from Tailwind class)
-                                    setTimeout(() => {
-                                        lightbox.classList.add('hidden');
-                                    }, 300);
-
-                                    clearInterval(autoSlideInterval);
-                                    autoSlideInterval = setInterval(() => {
-                                        moveSlide(1);
-                                    }, 5000);
-                                }
-
-                                closeLightboxBtn.addEventListener('click', closeLightbox); // Restore listener
-                                lightbox.addEventListener('click', (e) => { // Restore overlay click listener
-                                    if (e.target === lightbox) {
-                                        closeLightbox();
-                                    }
-                                });
-
-                                function showLightboxImage(index) {
-                                    if (index >= 0 && index < carouselImages.length) {
-                                        lightboxImage.src = carouselImages[index].src;
-                                        currentLightboxIndex = index;
-                                    }
-                                }
-
-                                prevLightboxBtn.addEventListener('click', () => {
-                                    let newIndex = currentLightboxIndex - 1;
-                                    if (newIndex < 0) {
-                                        newIndex = carouselImages.length - 1; // Loop to last
-                                    }
-                                    showLightboxImage(newIndex);
-                                });
-
-                                nextLightboxBtn.addEventListener('click', () => {
-                                    let newIndex = currentLightboxIndex + 1;
-                                    if (newIndex >= carouselImages.length) {
-                                        newIndex = 0; // Loop to first
-                                    }
-                                    showLightboxImage(newIndex);
-                                });
-
-                                // Optional: Keyboard navigation for lightbox
-                                document.addEventListener('keydown', (e) => {
-                                    if (!lightbox.classList.contains('hidden')) {
-                                        if (e.key === 'Escape') { // Restore Escape key functionality
-                                            closeLightbox();
-                                        } else if (e.key === 'ArrowLeft') {
-                                            prevLightboxBtn.click(); // Trigger click on prev button
-                                        } else if (e.key === 'ArrowRight') {
-                                            nextLightboxBtn.click(); // Trigger click on next button
-                                        }
-                                    }
-                                });
-
-                                // Logic to toggle prototypes based on screen width
-                                const desktopPrototype = document.getElementById('desktopPrototype');
-                                const mobilePrototype = document.getElementById('mobilePrototype');
-                                const breakpoint = 768; // Tailwind's md breakpoint
-
-                                function togglePrototypes() {
-                                    if (desktopPrototype && mobilePrototype) {
-                                        if (window.innerWidth < breakpoint) {
-                                            desktopPrototype.classList.add('hidden');
-                                            mobilePrototype.classList.remove('hidden');
-                                        } else {
-                                            desktopPrototype.classList.remove('hidden');
-                                            mobilePrototype.classList.add('hidden');
-                                        }
-                                    }
-                                }
-
-                                // Initial check
-                                togglePrototypes();
-
-                                // Check on resize
-                                window.addEventListener('resize', togglePrototypes);
-                            } else {
-                                console.error('Lightbox elements not found. Check IDs or script placement.');
-                            }
-                        });
-
-                        // Carousel functionality
-                        let currentSlide = 0;
-                        const slides = document.querySelectorAll('.carousel-slide');
-                        const totalSlides = slides.length;
-                        let autoSlideInterval;
-
-                        function moveSlide(direction) {
-                            currentSlide += direction;
-                            if (currentSlide >= totalSlides) {
-                                currentSlide = 0;
-                            } else if (currentSlide < 0) {
-                                currentSlide = totalSlides - 1;
-                            }
-                            updateCarousel();
-                        }
-
-                        function goToSlide(index) {
-                            currentSlide = index;
-                            updateCarousel();
-                        }
-
-                        function updateCarousel() {
-                            const carouselSlides = document.querySelector('.carousel-slides');
-                            if (carouselSlides) {
-                                carouselSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
-                            }
-                            
-                            // Update indicators
-                            const indicators = document.querySelectorAll('.carousel-indicator');
-                            indicators.forEach((indicator, index) => {
-                                if (index === currentSlide) {
-                                    indicator.classList.add('bg-primary');
-                                    indicator.classList.remove('bg-gray-300');
-                                } else {
-                                    indicator.classList.remove('bg-primary');
-                                    indicator.classList.add('bg-gray-300');
-                                }
-                            });
-                        }
-
-                        // Auto-slide functionality
-                        function startAutoSlide() {
-                            autoSlideInterval = setInterval(() => {
-                                moveSlide(1);
-                            }, 5000);
-                        }
-
-                        function stopAutoSlide() {
-                            clearInterval(autoSlideInterval);
-                        }
-
-                        // Initialize carousel
-                        if (slides.length > 0) {
-                            startAutoSlide();
-                            
-                            // Pause auto-slide on hover
-                            const carouselContainer = document.querySelector('.carousel-container');
-                            if (carouselContainer) {
-                                carouselContainer.addEventListener('mouseenter', stopAutoSlide);
-                                carouselContainer.addEventListener('mouseleave', startAutoSlide);
-                            }
-                        }
-                    </script>
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="pt-24 relative overflow-hidden">
+            <div class="absolute inset-0 hero-text-overlay"></div>
+            <div class="container mx-auto px-6 py-12 relative z-10 flex flex-col md:flex-row items-center">
+                <!-- Left Column for Text -->
+                <div class="w-full md:w-1/2 lg:w-3/5 text-center md:text-left py-8 md:py-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6">Walmart UX Case Study</h1>
+                    <p class="text-xl text-gray-600 mb-8 mx-auto md:mx-0">UX audit and redesign of the online shopping experience with a focus on the product information and purchasing process on walmart.ca.</p>
+                    
+                    <!-- Project Details/Tags: Vertically stacked -->
+                    <div class="space-y-3 text-left">
+                        <span class="inline-block px-4 py-2 bg-gray-100 rounded-full text-gray-600">UX Audit</span>
+                        <span class="inline-block px-4 py-2 bg-gray-100 rounded-full text-gray-600">Redesign</span>
+                        <span class="inline-block px-4 py-2 bg-gray-100 rounded-full text-gray-600">Usability Testing</span>
+                        <span class="inline-block px-4 py-2 bg-gray-100 rounded-full text-gray-600">2024</span>
+                    </div>
+                </div>
+                <!-- Right Column (for spacing on larger screens) -->
+                <div class="hidden md:block md:w-1/2 lg:w-2/5">
+                    <!-- Intentionally empty to create the two-column effect with text on left -->
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Design Carousel -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Design Process</h2>
-                <p class="text-gray-600 mb-8 text-center font-body max-w-3xl mx-auto">
-                    From low-fidelity wireframes to high-fidelity prototypes, explore the evolution of the Walmart.ca redesign through our iterative design process.
-                </p>
+        <!-- Project Overview -->
+        <section class="container mx-auto px-6 py-12">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-heading font-bold text-gray-900 mb-6">Project Overview</h2>
+                <p class="text-gray-600 mb-6 font-body">This case study examines Walmart.ca's search and review experience, identifying critical usability issues and implementing principle-based redesigns to improve the online shopping experience.</p>
                 
-                <!-- Carousel Container -->
-                <div class="relative max-w-4xl mx-auto">
-                    <div class="carousel-container overflow-hidden rounded-xl shadow-lg">
-                        <div class="carousel-slides flex transition-transform duration-500 ease-in-out">
-                            <!-- Lo-Fi Home -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_lofi_home.png" alt="Walmart Lo-Fi Home Page" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Lo-Fi Home Page</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Hi-Fi Home -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_hifi_home.png" alt="Walmart Hi-Fi Home Page" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Hi-Fi Home Page</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Lo-Fi Menu 1 -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_lofi_menu_1.png" alt="Walmart Lo-Fi Menu 1" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Lo-Fi Menu 1</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Hi-Fi Menu 1 -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_hifi_menu_1.png" alt="Walmart Hi-Fi Menu 1" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Hi-Fi Menu 1</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Lo-Fi Menu 2 -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_lofi_menu_2.png" alt="Walmart Lo-Fi Menu 2" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Lo-Fi Menu 2</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Hi-Fi Menu 2 -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_hifi_menu_2.png" alt="Walmart Hi-Fi Menu 2" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Hi-Fi Menu 2</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Lo-Fi Category -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_lofi_category.png" alt="Walmart Lo-Fi Category Page" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Lo-Fi Category Page</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Hi-Fi Category -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_hifi_category.png" alt="Walmart Hi-Fi Category Page" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Hi-Fi Category Page</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Lo-Fi Product -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_lofi_product.png" alt="Walmart Lo-Fi Product Page" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Lo-Fi Product Page</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Hi-Fi Product -->
-                            <div class="carousel-slide min-w-full">
-                                <img src="images/walmart_case_study/web_hifi_product.png" alt="Walmart Hi-Fi Product Page" class="w-full h-auto cursor-pointer hover:opacity-90 transition-opacity">
-                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                    <p class="text-sm font-semibold text-gray-800">Hi-Fi Product Page</p>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Image Carousel -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg mb-8">
+                    <div class="carousel-slides">
+                        <img src="./images/walmart_case_study/web_hifi_home.png" alt="Walmart Home Page Design" class="cursor-pointer">
+                        <img src="./images/walmart_case_study/web_hifi_category.png" alt="Walmart Category Page Design" class="cursor-pointer">
+                        <img src="./images/walmart_case_study/web_hifi_product.png" alt="Walmart Product Page Design" class="cursor-pointer">
+                        <img src="./images/walmart_case_study/web_hifi_menu_1.png" alt="Walmart Menu Design 1" class="cursor-pointer">
+                        <img src="./images/walmart_case_study/web_hifi_menu_2.png" alt="Walmart Menu Design 2" class="cursor-pointer">
+                        <img src="./images/walmart_case_study/web_lofi_home.png" alt="Walmart Home Page Wireframe" class="cursor-pointer">
+                        <img src="./images/walmart_case_study/web_lofi_category.png" alt="Walmart Category Page Wireframe" class="cursor-pointer">
+                        <img src="./images/walmart_case_study/web_lofi_product.png" alt="Walmart Product Page Wireframe" class="cursor-pointer">
+                        <img src="./images/walmart_case_study/web_lofi_menu_1.png" alt="Walmart Menu Wireframe 1" class="cursor-pointer">
+                        <img src="./images/walmart_case_study/web_lofi_menu_2.png" alt="Walmart Menu Wireframe 2" class="cursor-pointer">
                     </div>
                     
-                    <!-- Carousel Navigation -->
-                    <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-200" onclick="moveSlide(-1)">
-                        <i class="ri-arrow-left-s-line text-xl"></i>
+                    <!-- Navigation Arrows -->
+                    <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-70 transition-all">
+                        <i class="ri-arrow-left-s-line"></i>
                     </button>
-                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-200" onclick="moveSlide(1)">
-                        <i class="ri-arrow-right-s-line text-xl"></i>
+                    <button onclick="moveSlide(1)" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-70 transition-all">
+                        <i class="ri-arrow-right-s-line"></i>
                     </button>
                     
-                    <!-- Carousel Indicators -->
-                    <div class="flex justify-center mt-6 space-x-2">
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(0)"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(1)"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(2)"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(3)"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(4)"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(5)"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(6)"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(7)"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(8)"></button>
-                        <button class="carousel-indicator w-3 h-3 bg-gray-300 rounded-full hover:bg-primary transition-colors" onclick="goToSlide(9)"></button>
+                    <!-- Dots -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer active" onclick="goToSlide(0)"></span>
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToSlide(1)"></span>
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToSlide(2)"></span>
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToSlide(3)"></span>
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToSlide(4)"></span>
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToSlide(5)"></span>
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToSlide(6)"></span>
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToSlide(7)"></span>
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToSlide(8)"></span>
+                        <span class="dot w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer" onclick="goToSlide(9)"></span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Key Features -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Key Changes</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Feature 1 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md">
-                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                            <i class="ri-menu-line text-xl text-primary"></i>
+        <!-- Key Features -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Key Changes</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Feature 1 -->
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="ri-menu-line text-xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Simplified Navigation</h3>
+                            <p class="text-gray-600 font-body">Reduced menu items and created clearer labeling browsing experience.</p>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Simplified Navigation</h3>
-                        <p class="text-gray-600 font-body">Reduced menu items and created clearer labeling browsing experience.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md">
-                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                            <i class="ri-layout-line text-xl text-primary"></i>
+                        <!-- Feature 2 -->
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="ri-layout-line text-xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Standardized Layouts</h3>
+                            <p class="text-gray-600 font-body">Consistent structure across department category pages for reduced cognitive load.</p>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Standardized Layouts</h3>
-                        <p class="text-gray-600 font-body">Consistent structure across department category pages for reduced cognitive load.</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md">
-                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                            <i class="ri-filter-line text-xl text-primary"></i>
+                        <!-- Feature 3 -->
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="ri-filter-line text-xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Optimized Filtering</h3>
+                            <p class="text-gray-600 font-body">Single sidebar filter with clearer categories. Added an "Apply" button for multi-selection of filters.</p>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Optimized Filtering</h3>
-                        <p class="text-gray-600 font-body">Single sidebar filter with clearer categories. Added an "Apply" button for multi-selection of filters.</p>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md">
-                        <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                            <i class="ri-eye-line text-xl text-primary"></i>
+                        <!-- Feature 4 -->
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="ri-eye-line text-xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Enhanced Accessibility</h3>
+                            <p class="text-gray-600 font-body">Increased font sizes and improved visual hierarchy for better readability and usability.</p>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Enhanced Accessibility</h3>
-                        <p class="text-gray-600 font-body">Increased font sizes and improved visual hierarchy for better readability and usability.</p>
                     </div>
-                </div>
-                <div class="py-12 my-8 bg-gray-100 rounded-xl shadow-md">
-                    <h3 class="text-2xl font-bold mb-8 text-center text-gray-900 font-heading">Interactive Prototype</h3>
-                    <div class="flex justify-center">
-                        <!-- Desktop Prototype -->
-                        <iframe id="desktopPrototype" style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 75vh;" src="https://embed.figma.com/proto/v4LAFPUEMG01laMfeZTMyD/Walmart-UX-Audit?page-id=617%3A22088&node-id=1368-36884&viewport=655%2C665%2C0.02&scaling=width&content-scaling=responsive&starting-point-node-id=1368%3A36884&embed-host=share" allowfullscreen></iframe>
-                        <!-- Mobile Prototype (initially hidden) -->
-                        <iframe id="mobilePrototype" style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 75vh;" src="https://embed.figma.com/proto/v4LAFPUEMG01laMfeZTMyD/Walmart-UX-Audit?page-id=617%3A22088&node-id=1368-60500&viewport=5139%2C2371%2C0.18&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1368%3A60500&show-proto-sidebar=1&embed-host=share" allowfullscreen class="hidden"></iframe>
+                    <div class="py-12 my-8 bg-gray-100 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold mb-8 text-center text-gray-900 font-heading">Interactive Prototype</h3>
+                        <div class="flex justify-center">
+                            <!-- Desktop Prototype -->
+                            <iframe id="desktopPrototype" style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 75vh;" src="https://embed.figma.com/proto/v4LAFPUEMG01laMfeZTMyD/Walmart-UX-Audit?page-id=617%3A22088&node-id=1368-36884&viewport=655%2C665%2C0.02&scaling=width&content-scaling=responsive&starting-point-node-id=1368%3A36884&embed-host=share" allowfullscreen></iframe>
+                            <!-- Mobile Prototype (initially hidden) -->
+                            <iframe id="mobilePrototype" style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 75vh;" src="https://embed.figma.com/proto/v4LAFPUEMG01laMfeZTMyD/Walmart-UX-Audit?page-id=617%3A22088&node-id=1368-60500&viewport=5139%2C2371%2C0.18&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1368%3A60500&show-proto-sidebar=1&embed-host=share" allowfullscreen class="hidden"></iframe>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results & Impact -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Results & Impact</h2>
-                <p class="text-gray-600 mb-4 font-body text-left">The audit, redesign, and usability testing led to a smoother shopping experience for our testers. Navigation became more intuitive, product discovery was faster, and many of the key frustrations were addressed through thoughtful interaction and layout updates. 
-                </p>
-                <p class="text-gray-600 mb-4 font-body text-left">While the redesign addressed many critical usability issues, further testing is recommended to inform deeper, more impactful changes in the following areas:
-                    <ul class="space-y-3 font-body text-left">
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Search Optimization: Research is needed to refine search-based interaction flows based on real user behaviour</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Localization Features: Current language and visual cues caused confusion for non-English speakers, indicating a need for better localization support</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Cart and Checkout: These areas remained largely unaffected by the updates, highlighting an opportunity for future iterations</span>
-                    </ul>
-                </p> 
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900 font-heading">Key Achievements</h3>
-                    <ul class="space-y-3 font-body">
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Conducted a thorough website audit identifying critical usability flaws</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Applied principle-based redesigns for better online shopping experience</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Executed mixed-methods usability testing with think-aloud and eye-tracking</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600"> Validated key design hypotheses through user testing</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                            <span class="text-gray-600">Iterated designs based on nuanced qualitative and quantitative feedback</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Lessons Learned -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Lessons Learned</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-8 rounded-xl shadow-md">
-                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">What Worked Well</h3>
-                        <ul class="space-y-3 font-body">
+        <!-- Results & Impact -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Results & Impact</h2>
+                    <p class="text-gray-600 mb-4 font-body text-left">The audit, redesign, and usability testing led to a smoother shopping experience for our testers. Navigation became more intuitive, product discovery was faster, and many of the key frustrations were addressed through thoughtful interaction and layout updates. 
+                    </p>
+                    <p class="text-gray-600 mb-4 font-body text-left">While the redesign addressed many critical usability issues, further testing is recommended to inform deeper, more impactful changes in the following areas:
+                        <ul class="space-y-3 font-body text-left">
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Heat mapping validated the user reliance of a search bar</span>
+                                <span class="text-gray-600">Search Optimization: Research is needed to refine search-based interaction flows based on real user behaviour</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Implemented user feedback to improve the design</span>
+                                <span class="text-gray-600">Localization Features: Current language and visual cues caused confusion for non-English speakers, indicating a need for better localization support</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Improved labeling and visuals for cleaer navigation</span>
-                            </li>
+                                <span class="text-gray-600">Cart and Checkout: These areas remained largely unaffected by the updates, highlighting an opportunity for future iterations</span>
                         </ul>
-                    </div>
+                    </p> 
                     <div class="bg-white p-8 rounded-xl shadow-md">
-                        <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Challenges Overcome</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 font-heading">Key Achievements</h3>
                         <ul class="space-y-3 font-body">
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Balancing search complexity with ease of use</span>
+                                <span class="text-gray-600">Conducted a thorough website audit identifying critical usability flaws</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Managing large volumes of product reviews effectively</span>
+                                <span class="text-gray-600">Applied principle-based redesigns for better online shopping experience</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
-                                <span class="text-gray-600">Accommodating different user expectations for filter interactions</span>
+                                <span class="text-gray-600">Executed mixed-methods usability testing with think-aloud and eye-tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600"> Validated key design hypotheses through user testing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Iterated designs based on nuanced qualitative and quantitative feedback</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Next Steps -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Future Improvements</h2>
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <ul class="space-y-4 font-body">
-                        <li class="flex items-start">
-                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                <i class="ri-arrow-right-line text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 font-heading">Search Optimization</h3>
-                                <p class="text-gray-600 font-body">Prioritize research and optimization of search-based interaction flow based on user behavior patterns</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                <i class="ri-arrow-right-line text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 font-heading">Localization Features</h3>
-                                <p class="text-gray-600 font-body">Enhance support for non-English speaking users through improved visual cues and localization</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                <i class="ri-arrow-right-line text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 font-heading">Mobile Experience</h3>
-                                <p class="text-gray-600 font-body">Further optimize the mobile shopping experience for on-the-go users</p>
-                            </div>
-                        </li>
-                    </ul>
+        <!-- Lessons Learned -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Lessons Learned</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">What Worked Well</h3>
+                            <ul class="space-y-3 font-body">
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Heat mapping validated the user reliance of a search bar</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Implemented user feedback to improve the design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Improved labeling and visuals for cleaer navigation</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <h3 class="text-xl font-bold mb-4 text-gray-900 font-heading">Challenges Overcome</h3>
+                            <ul class="space-y-3 font-body">
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Balancing search complexity with ease of use</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Managing large volumes of product reviews effectively</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-checkbox-circle-line text-primary mt-1 mr-3"></i>
+                                    <span class="text-gray-600">Accommodating different user expectations for filter interactions</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 font-heading">Future Improvements</h2>
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <ul class="space-y-4 font-body">
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-arrow-right-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900 font-heading">Search Optimization</h3>
+                                    <p class="text-gray-600 font-body">Prioritize research and optimization of search-based interaction flow based on user behavior patterns</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-arrow-right-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900 font-heading">Localization Features</h3>
+                                    <p class="text-gray-600 font-body">Enhance support for non-English speaking users through improved visual cues and localization</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-arrow-right-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900 font-heading">Mobile Experience</h3>
+                                    <p class="text-gray-600 font-body">Further optimize the mobile shopping experience for on-the-go users</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Lightbox Structure -->
@@ -584,6 +331,150 @@
         </div>
     </div>
 
+    <!-- Components -->
+    <script src="components/footer.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 10;
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateSlidePosition();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateSlidePosition();
+        }
+
+        function updateSlidePosition() {
+            const slides = document.querySelector('.carousel-slides');
+            slides.style.transform = `translateX(-${currentSlide * 10}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Auto-advance slides every 5 seconds
+        let autoSlideInterval = setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+
+        // Lightbox Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxCard = document.getElementById('lightboxCard'); // Get the card element
+            const lightboxImage = document.getElementById('lightboxImage');
+            const closeLightboxBtn = document.getElementById('closeLightbox');
+            const carouselImages = document.querySelectorAll('.carousel-slides img');
+            const prevLightboxBtn = document.getElementById('prevLightboxImage'); // New
+            const nextLightboxBtn = document.getElementById('nextLightboxImage'); // New
+            let currentLightboxIndex = 0; // New
+
+            if (lightbox && lightboxCard && lightboxImage && closeLightboxBtn && carouselImages.length > 0 && prevLightboxBtn && nextLightboxBtn) {
+                carouselImages.forEach((image, index) => { // Added index here
+                    image.addEventListener('click', () => {
+                        currentLightboxIndex = index; // Store index
+                        lightboxImage.src = image.src;
+                        lightbox.classList.remove('hidden');
+                        // Trigger card appearance animation
+                        setTimeout(() => {
+                            lightboxCard.classList.remove('scale-95', 'opacity-0');
+                            lightboxCard.classList.add('scale-100', 'opacity-100');
+                        }, 50); // Small delay to ensure transition is applied
+                        clearInterval(autoSlideInterval); // Pause carousel
+                    });
+                });
+
+                function closeLightbox() { // Function to restore
+                    // Trigger card disappearance animation
+                    lightboxCard.classList.remove('scale-100', 'opacity-100');
+                    lightboxCard.classList.add('scale-95', 'opacity-0');
+                    
+                    // Hide lightbox after animation (duration-300 from Tailwind class)
+                    setTimeout(() => {
+                        lightbox.classList.add('hidden');
+                    }, 300);
+
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = setInterval(() => {
+                        moveSlide(1);
+                    }, 5000);
+                }
+
+                closeLightboxBtn.addEventListener('click', closeLightbox); // Restore listener
+                lightbox.addEventListener('click', (e) => { // Restore overlay click listener
+                    if (e.target === lightbox) {
+                        closeLightbox();
+                    }
+                });
+
+                function showLightboxImage(index) {
+                    if (index >= 0 && index < carouselImages.length) {
+                        lightboxImage.src = carouselImages[index].src;
+                        currentLightboxIndex = index;
+                    }
+                }
+
+                prevLightboxBtn.addEventListener('click', () => {
+                    let newIndex = currentLightboxIndex - 1;
+                    if (newIndex < 0) {
+                        newIndex = carouselImages.length - 1; // Loop to last
+                    }
+                    showLightboxImage(newIndex);
+                });
+
+                nextLightboxBtn.addEventListener('click', () => {
+                    let newIndex = currentLightboxIndex + 1;
+                    if (newIndex >= carouselImages.length) {
+                        newIndex = 0; // Loop to first
+                    }
+                    showLightboxImage(newIndex);
+                });
+
+                // Optional: Keyboard navigation for lightbox
+                document.addEventListener('keydown', (e) => {
+                    if (!lightbox.classList.contains('hidden')) {
+                        if (e.key === 'Escape') { // Restore Escape key functionality
+                            closeLightbox();
+                        } else if (e.key === 'ArrowLeft') {
+                            prevLightboxBtn.click(); // Trigger click on prev button
+                        } else if (e.key === 'ArrowRight') {
+                            nextLightboxBtn.click(); // Trigger click on next button
+                        }
+                    }
+                });
+
+                // Logic to toggle prototypes based on screen width
+                const desktopPrototype = document.getElementById('desktopPrototype');
+                const mobilePrototype = document.getElementById('mobilePrototype');
+                const breakpoint = 768; // Tailwind's md breakpoint
+
+                function togglePrototypes() {
+                    if (desktopPrototype && mobilePrototype) {
+                        if (window.innerWidth < breakpoint) {
+                            desktopPrototype.classList.add('hidden');
+                            mobilePrototype.classList.remove('hidden');
+                        } else {
+                            desktopPrototype.classList.remove('hidden');
+                            mobilePrototype.classList.add('hidden');
+                        }
+                    }
+                }
+
+                // Initial check
+                togglePrototypes();
+
+                // Check on resize
+                window.addEventListener('resize', togglePrototypes);
+            } else {
+                console.error('Lightbox elements not found. Check IDs or script placement.');
+            }
+        });
+    </script>
 </body>
 </html> 
