@@ -10,7 +10,7 @@ window.EMAILJS_CONFIG = {
     SERVICE_ID: 'service_o2dfgk1',
     
     // Your EmailJS Template ID (found in EmailJS dashboard under Email Templates)
-    TEMPLATE_ID: 'template_h07arbc'
+    TEMPLATE_ID: 'template_3ynk99f'
 };
 
 // Initialize EmailJS with the public key
