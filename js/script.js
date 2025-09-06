@@ -129,6 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 templateId: window.EMAILJS_CONFIG.TEMPLATE_ID
             });
             
+            // Test EmailJS connection
+            console.log('Testing EmailJS connection...');
+            console.log('EmailJS object available:', !!window.emailjs);
+            
             // Show loading state
             setLoadingState(true);
             
@@ -140,6 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     message: message.value.trim(),
                     to_name: 'Dave Crean'
                 };
+                
+                // Debug: Log template parameters
+                console.log('Template parameters:', templateParams);
                 
                 // Send email using EmailJS
                 const response = await emailjs.send(
