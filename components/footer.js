@@ -1,7 +1,7 @@
 const footer = `
 <footer class="bg-gray-900 text-white py-12">
     <div class="container mx-auto px-6">
-        <div class="flex flex-col items-center text-center mb-12 mt-6">
+        <div class="flex flex-col items-center text-center mb-12 mt-12">
             <a href="/" class="flex items-center justify-center">
                 <img src="./images/logo-white.svg" alt="Dave Crean Design" class="h-12 w-auto">
             </a>
