@@ -122,6 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
+            // Debug: Log configuration (remove in production)
+            console.log('EmailJS Config:', {
+                publicKey: window.EMAILJS_CONFIG.PUBLIC_KEY,
+                serviceId: window.EMAILJS_CONFIG.SERVICE_ID,
+                templateId: window.EMAILJS_CONFIG.TEMPLATE_ID
+            });
+            
             // Show loading state
             setLoadingState(true);
             
@@ -148,7 +155,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 
             } catch (error) {
                 console.error('EmailJS Error:', error);
-                showMessage('Sorry, there was an error sending your message. Please try again or contact me directly.', 'error');
+                console.error('Error details:', {
+                    status: error.status,
+                    text: error.text,
+                    message: error.message
+                });
+                
+                // More specific error messages
+                let errorMessage = 'Sorry, there was an error sending your message. ';
+                if (error.status === 400) {
+                    errorMessage += 'Please check that all fields are filled correctly.';
+                } else if (error.status === 401) {
+                    errorMessage += 'Authentication failed. Please check your EmailJS configuration.';
+                } else if (error.status === 403) {
+                    errorMessage += 'Access denied. Please check your EmailJS service settings.';
+                } else if (error.status === 404) {
+                    errorMessage += 'Service not found. Please check your EmailJS service ID.';
+                } else {
+                    errorMessage += `Error code: ${error.status}. Please try again or contact me directly.`;
+                }
+                
+                showMessage(errorMessage, 'error');
             } finally {
                 // Hide loading state
                 setLoadingState(false);
